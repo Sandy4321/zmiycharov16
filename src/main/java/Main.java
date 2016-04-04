@@ -1,9 +1,11 @@
+import features.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		for (Feature feature : Config.Features) {
+		    System.out.println(feature.getName());
+		}
 	}
 
 }
