@@ -3,6 +3,7 @@ package features;
 public class DocumentsSimilarity {
 	private String document1;
 	private String document2;
+	// Positive number
 	private Double score;
 	
 	public String getDocument1() {

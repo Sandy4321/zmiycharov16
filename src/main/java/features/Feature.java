@@ -4,7 +4,7 @@ import java.util.List;
 
 public abstract class Feature {
 	private String name;
-	// Between 0 and 1
+	// Positive number
 	private double weight;
 	private List<DocumentsSimilarity> similarities;
 	
@@ -28,4 +28,19 @@ public abstract class Feature {
 	}
 	
 	public abstract double getSimilarity(String text1, String text2);
+	
+	public void normalizeSimilarities() {
+		double maxScore = 0;
+		
+		for (DocumentsSimilarity similarity : this.similarities) {
+		    if(maxScore < similarity.getScore()) {
+		    	maxScore = similarity.getScore();
+		    }
+		}
+
+		for (DocumentsSimilarity similarity : this.similarities) {
+			double score = similarity.getScore() / maxScore;
+			similarity.setScore(score);
+		}
+	}
 }

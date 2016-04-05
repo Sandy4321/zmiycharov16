@@ -28,6 +28,8 @@ public class FeaturesGenerator {
 		List<File> docFiles = getDocFiles(docsDirUri);
 		
 		setFeaturesSimilarities(docFiles);
+		
+		normalizeFeaturesSimilarities();
 	}
 
 	private static List<File> getDocFiles(URI docsDirUri) {
@@ -65,4 +67,11 @@ public class FeaturesGenerator {
 	    	feature.setSimilarities(similarities);
 		}
 	}
+
+	private static void normalizeFeaturesSimilarities() {
+		for (Feature feature : Config.Features) {
+			feature.normalizeSimilarities();
+		}
+	}
+
 }

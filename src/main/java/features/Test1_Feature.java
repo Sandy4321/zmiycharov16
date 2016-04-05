@@ -11,7 +11,7 @@ public class Test1_Feature extends Feature {
 	@Override
 	public double getSimilarity(String text1, String text2) {
 		Random generator = new Random();
-		double result = generator.nextDouble();
+		double result = generator.nextDouble()*20;
 		
 		return result;
 	}
