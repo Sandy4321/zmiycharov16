@@ -2,8 +2,10 @@ package main;
 import java.io.File;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
@@ -14,59 +16,63 @@ import com.google.gson.reflect.TypeToken;
 import features.*;
 
 public class Results {
-	public static List<DocumentsSimilarity> CalculatedRankings;
-	public static List<DocumentsSimilarity> JsonRankings;
-	public static List<Set<ClusterDocument>> JsonClusters;
+	public static Map<String, List<DocumentsSimilarity>> CalculatedRankings = new HashMap<String, List<DocumentsSimilarity>>();
+	public static Map<String, List<DocumentsSimilarity>> JsonRankings = new HashMap<String, List<DocumentsSimilarity>>();
+	public static Map<String, List<Set<ClusterDocument>>> JsonClusters = new HashMap<String, List<Set<ClusterDocument>>>();
 
-	public static void generateResults() {
-		calculateRankings();
-		generateRankings();
-		generateClusters();
+	public static void generateResults(String folderName) {
+		calculateRankings(folderName);
+		generateRankings(folderName);
+		generateClusters(folderName);
 	}
 
-	private static void calculateRankings() {
-		CalculatedRankings = new ArrayList<DocumentsSimilarity>();
-
-		for (int i = 0; i < Globals.Features.get(0).getSimilarities().size(); i++) {
-			DocumentsSimilarity configSimilarity = Globals.Features.get(0).getSimilarities().get(i);
+	private static void calculateRankings(String folderName) {
+		List<DocumentsSimilarity> rankings = new ArrayList<DocumentsSimilarity>();
+		
+		for (int i = 0; i < Globals.Features.get(0).getSimilaritiesForFolder(folderName).size(); i++) {
+			DocumentsSimilarity configSimilarity = Globals.Features.get(0).getSimilaritiesForFolder(folderName).get(i);
 
 			DocumentsSimilarity similarity = new DocumentsSimilarity();
 			similarity.setDocument1(configSimilarity.getDocument1());
 			similarity.setDocument2(configSimilarity.getDocument2());
 
-			CalculatedRankings.add(similarity);
+			rankings.add(similarity);
 		}
 
-		for (int i = 0; i < CalculatedRankings.size(); i++) {
-			DocumentsSimilarity similarity = CalculatedRankings.get(i);
+		for (int i = 0; i < rankings.size(); i++) {
+			DocumentsSimilarity similarity = rankings.get(i);
 
 			double score = 0;
 			for (Feature feature : Globals.Features) {
-				score += feature.getWeight() * feature.getSimilarities().get(i).getScore();
+				score += feature.getWeight() * feature.getSimilaritiesForFolder(folderName).get(i).getScore();
 			}
 
 			similarity.setScore(score);
 		}
+
+		CalculatedRankings.put(folderName, rankings);
 	}
 
-	private static void generateRankings() {
-		JsonRankings = new ArrayList<DocumentsSimilarity>();
-
-		for (DocumentsSimilarity similarity : CalculatedRankings) {
+	private static void generateRankings(String folderName) {
+		List<DocumentsSimilarity> rankings = new ArrayList<DocumentsSimilarity>();
+		
+		for (DocumentsSimilarity similarity : CalculatedRankings.get(folderName)) {
 			if (similarity.getScore() >= Config.MIN_SCORE_TO_RANK) {
-				JsonRankings.add(similarity);
+				rankings.add(similarity);
 			}
 		}
+
+		JsonRankings.put(folderName, rankings);
 	}
 
-	private static void generateClusters() {
-		JsonClusters = new ArrayList<Set<ClusterDocument>>();
-
+	private static void generateClusters(String folderName) {
+		List<Set<ClusterDocument>> clusters = new ArrayList<Set<ClusterDocument>>();
+		
 		for (int i = 0; i < JsonRankings.size(); i++) {
-			DocumentsSimilarity ranking = JsonRankings.get(i);
+			DocumentsSimilarity ranking = JsonRankings.get(folderName).get(i);
 
 			// Skip if ranking is clustered
-			if (isDocumentClustered(ranking.getDocument1())) {
+			if (isDocumentClustered(ranking.getDocument1(), clusters)) {
 				continue;
 			}
 
@@ -76,7 +82,7 @@ public class Results {
 			cluster.add(new ClusterDocument(ranking.getDocument2()));
 
 			for (int j = i + 1; j < JsonRankings.size(); j++) {
-				DocumentsSimilarity nextRanking = JsonRankings.get(j);
+				DocumentsSimilarity nextRanking = JsonRankings.get(folderName).get(j);
 				String doc1 = nextRanking.getDocument1();
 				String doc2 = nextRanking.getDocument2();
 
@@ -91,22 +97,24 @@ public class Results {
 				}
 			}
 
-			JsonClusters.add(cluster);
+			clusters.add(cluster);
 		}
 
 		// Add single docs
-		for (File file : Globals.DocFiles) {
+		for (File file : Globals.DocFiles.get(folderName)) {
 			String document = file.getName();
-			if (!isDocumentClustered(document)) {
+			if (!isDocumentClustered(document, clusters)) {
 				Set<ClusterDocument> cluster = new HashSet<ClusterDocument>();
 				cluster.add(new ClusterDocument(document));
-				JsonClusters.add(cluster);
+				clusters.add(cluster);
 			}
 		}
+
+		JsonClusters.put(folderName, clusters);
 	}
 
-	private static boolean isDocumentClustered(String document) {
-		for (Set<ClusterDocument> cluster : JsonClusters) {
+	private static boolean isDocumentClustered(String document, List<Set<ClusterDocument>> clusters) {
+		for (Set<ClusterDocument> cluster : clusters) {
 			for (ClusterDocument doc : cluster) {
 				if (doc.getContent().equals(document)) {
 					return true;

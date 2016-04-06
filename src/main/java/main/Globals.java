@@ -3,7 +3,9 @@ package main;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import features.Feature;
 import features.Test1_Feature;
@@ -15,5 +17,5 @@ public class Globals {
 		, new Test2_Feature()
 	);
 	
-	public static List<File> DocFiles;
+	public static Map<String, List<File>> DocFiles = new HashMap<String, List<File>>();
 }

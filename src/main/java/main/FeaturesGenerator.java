@@ -24,9 +24,9 @@ public class FeaturesGenerator {
 	}
 
 	public static void generateFeaturesSimilarities(String folderName) throws Exception {
-		Globals.DocFiles = getDocFiles(new File(Config.inputFolderPath, folderName));
+		Globals.DocFiles.put(folderName, getDocFiles(new File(Config.inputFolderPath, folderName)));
 		
-		setFeaturesSimilarities(Globals.DocFiles);
+		setFeaturesSimilarities(folderName);
 		
 		normalizeFeaturesSimilarities();
 	}
@@ -42,7 +42,8 @@ public class FeaturesGenerator {
 		return result;
 	}
 	
-	private static void setFeaturesSimilarities(List<File> docFiles) throws Exception {
+	private static void setFeaturesSimilarities(String folderName) throws Exception {
+		List<File> docFiles = Globals.DocFiles.get(folderName);
 		for (Feature feature : Globals.Features) {
 		    List<DocumentsSimilarity> similarities = new ArrayList<DocumentsSimilarity>();
 		    for(int i = 0; i < docFiles.size()-1;i++) {
@@ -64,7 +65,7 @@ public class FeaturesGenerator {
 			    }
 		    }
 
-	    	feature.setSimilarities(similarities);
+	    	feature.setSimilarities(folderName, similarities);
 		}
 	}
 
