@@ -2,6 +2,8 @@ package features;
 
 import java.util.List;
 
+import main.Config;
+
 public abstract class Feature {
 	private String name;
 	// Positive number
