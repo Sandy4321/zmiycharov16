@@ -9,4 +9,6 @@ public class Config {
 		new Test1_Feature()
 		, new Test2_Feature()
 	);
+	
+	public static final double MIN_SCORE_TO_RANK = 0.5;
 }

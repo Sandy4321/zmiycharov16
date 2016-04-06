@@ -10,6 +10,8 @@ public class Main {
 		
 		FeaturesGenerator.generateFeaturesSimilarities(folderName);
 		
+		Results.generateResults();
+		
 		List<DocumentsSimilarity> trainSimilarities = FeaturesGenerator.getActualSimilarities(folderName);
 	}
 
