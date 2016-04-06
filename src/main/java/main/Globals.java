@@ -9,14 +9,11 @@ import features.Feature;
 import features.Test1_Feature;
 import features.Test2_Feature;
 
-public class Config {
+public class Globals {
 	public static List<Feature> Features = Arrays.asList(
 		new Test1_Feature()
 		, new Test2_Feature()
 	);
 	
 	public static List<File> DocFiles;
-	
-	public static final double MIN_SCORE_TO_RANK = 0.5;
-	public static final double DEFAULT_FEATURE_WEIGHT = 0.28;
 }

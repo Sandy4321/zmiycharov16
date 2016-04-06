@@ -2,7 +2,7 @@ package features;
 
 import java.util.List;
 
-import main.Config;
+import main.Constants;
 
 public abstract class Feature {
 	private String name;
@@ -47,6 +47,6 @@ public abstract class Feature {
 	}
 	
 	public Feature() {
-		this.weight = Config.DEFAULT_FEATURE_WEIGHT;
+		this.weight = Constants.DEFAULT_FEATURE_WEIGHT;
 	}
 }

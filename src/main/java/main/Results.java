@@ -27,8 +27,8 @@ public class Results {
 	private static void calculateRankings() {
 		CalculatedRankings = new ArrayList<DocumentsSimilarity>();
 
-		for (int i = 0; i < Config.Features.get(0).getSimilarities().size(); i++) {
-			DocumentsSimilarity configSimilarity = Config.Features.get(0).getSimilarities().get(i);
+		for (int i = 0; i < Globals.Features.get(0).getSimilarities().size(); i++) {
+			DocumentsSimilarity configSimilarity = Globals.Features.get(0).getSimilarities().get(i);
 
 			DocumentsSimilarity similarity = new DocumentsSimilarity();
 			similarity.setDocument1(configSimilarity.getDocument1());
@@ -41,7 +41,7 @@ public class Results {
 			DocumentsSimilarity similarity = CalculatedRankings.get(i);
 
 			double score = 0;
-			for (Feature feature : Config.Features) {
+			for (Feature feature : Globals.Features) {
 				score += feature.getWeight() * feature.getSimilarities().get(i).getScore();
 			}
 
@@ -53,7 +53,7 @@ public class Results {
 		JsonRankings = new ArrayList<DocumentsSimilarity>();
 
 		for (DocumentsSimilarity similarity : CalculatedRankings) {
-			if (similarity.getScore() >= Config.MIN_SCORE_TO_RANK) {
+			if (similarity.getScore() >= Constants.MIN_SCORE_TO_RANK) {
 				JsonRankings.add(similarity);
 			}
 		}
@@ -95,7 +95,7 @@ public class Results {
 		}
 
 		// Add single docs
-		for (File file : Config.DocFiles) {
+		for (File file : Globals.DocFiles) {
 			String document = file.getName();
 			if (!isDocumentClustered(document)) {
 				Set<ClusterDocument> cluster = new HashSet<ClusterDocument>();

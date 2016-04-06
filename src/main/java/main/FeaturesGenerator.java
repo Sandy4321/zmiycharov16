@@ -26,9 +26,9 @@ public class FeaturesGenerator {
 	public static void generateFeaturesSimilarities(String folderName) throws Exception {
 		URI docsDirUri = FeaturesGenerator.class.getResource( "/dataset/" + folderName ).toURI();
 		
-		Config.DocFiles = getDocFiles(docsDirUri);
+		Globals.DocFiles = getDocFiles(docsDirUri);
 		
-		setFeaturesSimilarities(Config.DocFiles);
+		setFeaturesSimilarities(Globals.DocFiles);
 		
 		normalizeFeaturesSimilarities();
 	}
@@ -46,7 +46,7 @@ public class FeaturesGenerator {
 	}
 	
 	private static void setFeaturesSimilarities(List<File> docFiles) throws Exception {
-		for (Feature feature : Config.Features) {
+		for (Feature feature : Globals.Features) {
 		    List<DocumentsSimilarity> similarities = new ArrayList<DocumentsSimilarity>();
 		    for(int i = 0; i < docFiles.size()-1;i++) {
 		    	File file1 = docFiles.get(i);
@@ -72,7 +72,7 @@ public class FeaturesGenerator {
 	}
 
 	private static void normalizeFeaturesSimilarities() {
-		for (Feature feature : Config.Features) {
+		for (Feature feature : Globals.Features) {
 			feature.normalizeSimilarities();
 		}
 	}
