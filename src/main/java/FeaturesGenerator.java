@@ -25,9 +25,9 @@ public class FeaturesGenerator {
 	public static void generateFeaturesSimilarities(String folderName) throws Exception {
 		URI docsDirUri = FeaturesGenerator.class.getResource( "/dataset/" + folderName ).toURI();
 		
-		List<File> docFiles = getDocFiles(docsDirUri);
+		Config.DocFiles = getDocFiles(docsDirUri);
 		
-		setFeaturesSimilarities(docFiles);
+		setFeaturesSimilarities(Config.DocFiles);
 		
 		normalizeFeaturesSimilarities();
 	}

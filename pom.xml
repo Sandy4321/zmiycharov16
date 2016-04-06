@@ -3,9 +3,6 @@
   <groupId>com.ad.author-identification</groupId>
   <artifactId>author-identification</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <configuration>
-    <includeEmptyDirectories>true</includeEmptyDirectories> <!-- since 2.4 -->
-  </configuration>
   
   <dependencies>
   	<dependency>
