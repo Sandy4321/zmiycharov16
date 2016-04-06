@@ -14,4 +14,5 @@ public class Config {
 	public static List<File> DocFiles;
 	
 	public static final double MIN_SCORE_TO_RANK = 0.5;
+	public static final double DEFAULT_FEATURE_WEIGHT = 0.28;
 }

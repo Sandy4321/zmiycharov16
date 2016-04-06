@@ -5,6 +5,7 @@ import java.util.Random;
 public class Test2_Feature extends Feature {
 
 	public Test2_Feature() {
+		super();
 		this.setName("Test2 Feature");
 	}
 	

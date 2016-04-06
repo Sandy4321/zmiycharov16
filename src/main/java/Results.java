@@ -1,6 +1,5 @@
 import java.io.File;
 import java.lang.reflect.Type;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -82,10 +81,12 @@ public class Results {
 
 				if (isDocumentContainedInCluster(cluster, doc1) && !isDocumentContainedInCluster(cluster, doc2)) {
 					cluster.add(new ClusterDocument(doc2));
+					j = i;
 				}
 
 				if (!isDocumentContainedInCluster(cluster, doc1) && isDocumentContainedInCluster(cluster, doc2)) {
 					cluster.add(new ClusterDocument(doc1));
+					j = i;
 				}
 			}
 

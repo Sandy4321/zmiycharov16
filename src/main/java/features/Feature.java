@@ -43,4 +43,8 @@ public abstract class Feature {
 			similarity.setScore(score);
 		}
 	}
+	
+	public Feature() {
+		this.weight = Config.DEFAULT_FEATURE_WEIGHT;
+	}
 }
