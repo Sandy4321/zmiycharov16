@@ -15,7 +15,7 @@ import features.*;
 public class FeaturesGenerator {
 	
 	public static List<DocumentsSimilarity> getActualSimilarities(String folderName) throws Exception {
-		File truthFile = new File(FeaturesGenerator.class.getResource( "/dataset/truth/" + folderName + "/ranking.json" ).toURI());
+		File truthFile = new File(Config.truthFolderPath + "/" + folderName, "ranking.json");
 		
 		Type listType = new TypeToken<ArrayList<DocumentsSimilarity>>() {}.getType();
 		List<DocumentsSimilarity> result = new Gson().fromJson(FileUtils.readFileToString(truthFile), listType);
@@ -24,17 +24,14 @@ public class FeaturesGenerator {
 	}
 
 	public static void generateFeaturesSimilarities(String folderName) throws Exception {
-		URI docsDirUri = FeaturesGenerator.class.getResource( "/dataset/" + folderName ).toURI();
-		
-		Globals.DocFiles = getDocFiles(docsDirUri);
+		Globals.DocFiles = getDocFiles(new File(Config.inputFolderPath, folderName));
 		
 		setFeaturesSimilarities(Globals.DocFiles);
 		
 		normalizeFeaturesSimilarities();
 	}
 
-	private static List<File> getDocFiles(URI docsDirUri) {
-		File docsDir = new File(docsDirUri);
+	private static List<File> getDocFiles(File docsDir) {
 		
 		List<File> result = new ArrayList<File>();
 		

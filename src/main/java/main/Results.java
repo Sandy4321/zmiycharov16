@@ -53,7 +53,7 @@ public class Results {
 		JsonRankings = new ArrayList<DocumentsSimilarity>();
 
 		for (DocumentsSimilarity similarity : CalculatedRankings) {
-			if (similarity.getScore() >= Constants.MIN_SCORE_TO_RANK) {
+			if (similarity.getScore() >= Config.MIN_SCORE_TO_RANK) {
 				JsonRankings.add(similarity);
 			}
 		}
