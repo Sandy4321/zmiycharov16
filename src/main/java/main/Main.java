@@ -15,6 +15,9 @@ public class Main {
 		File inputFolder = new File(Config.inputFolderPath);
 		File infoJson = new File(inputFolder, "info.json");
 		
+		File outputFolder = new File(Config.outputFolderPath);
+		FileUtils.cleanDirectory(outputFolder);
+		
 		Type listType = new TypeToken<ArrayList<JsonProblem>>() {}.getType();
 		List<JsonProblem> jsonProblems = new Gson().fromJson(FileUtils.readFileToString(infoJson), listType);
 		
@@ -25,7 +28,7 @@ public class Main {
 			
 			Results.generateResults(folderName);
 			
-			FeaturesGenerator.setActualSimilarities(folderName);
+			Results.generateOutput(new File(outputFolder, folderName));
 		}
 	}
 

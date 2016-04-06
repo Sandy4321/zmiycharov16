@@ -7,6 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import features.*;
 
 public class Results {
@@ -127,5 +132,19 @@ public class Results {
 		}
 
 		return false;
+	}
+	
+	public static void generateOutput(File outputDir) throws Exception {
+		outputDir.mkdir();
+		
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		
+		File ranking = new File(outputDir, "ranking.json");
+		ranking.createNewFile();
+		FileUtils.write(ranking, gson.toJson(JsonRankings.get(outputDir.getName())));
+		
+		File clustering = new File(outputDir, "clustering.json");
+		clustering.createNewFile();
+		FileUtils.write(clustering, gson.toJson(JsonClusters.get(outputDir.getName())));
 	}
 }
