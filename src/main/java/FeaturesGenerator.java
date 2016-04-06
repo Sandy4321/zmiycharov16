@@ -48,16 +48,18 @@ public class FeaturesGenerator {
 		for (Feature feature : Config.Features) {
 		    List<DocumentsSimilarity> similarities = new ArrayList<DocumentsSimilarity>();
 		    for(int i = 0; i < docFiles.size()-1;i++) {
-		    	File doc1 = docFiles.get(i);
+		    	File file1 = docFiles.get(i);
 		    	for(int j = i+1; j < docFiles.size();j++) {
-			    	File doc2 = docFiles.get(j);
+			    	File file2 = docFiles.get(j);
+			    	
+			    	Document doc1 = new Document(file1);
+			    	Document doc2 = new Document(file2);
 			    	
 			    	DocumentsSimilarity similarity = new DocumentsSimilarity();
-			    	similarity.setDocument1(doc1.getName());
-			    	similarity.setDocument2(doc2.getName());
+			    	similarity.setDocument1(doc1.getFileName());
+			    	similarity.setDocument2(doc2.getFileName());
 			    	similarity.setScore(feature.getSimilarity(
-		    				FileUtils.readFileToString(doc1),
-		    				FileUtils.readFileToString(doc2)
+		    				doc1, doc2
 		    			));
 			    	
 			    	similarities.add(similarity);

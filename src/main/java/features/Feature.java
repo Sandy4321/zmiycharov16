@@ -27,7 +27,7 @@ public abstract class Feature {
 		this.similarities = similarities;
 	}
 	
-	public abstract double getSimilarity(String text1, String text2);
+	public abstract double getSimilarity(Document doc1, Document doc2);
 	
 	public void normalizeSimilarities() {
 		double maxScore = 0;

@@ -9,7 +9,7 @@ public class Test2_Feature extends Feature {
 	}
 	
 	@Override
-	public double getSimilarity(String text1, String text2) {
+	public double getSimilarity(Document doc1, Document doc2) {
 		Random generator = new Random();
 		double result = generator.nextDouble()*50;
 		
