@@ -28,7 +28,7 @@ public class Main {
 			
 			Results.generateResults(folderName);
 			
-			List<DocumentsSimilarity> trainSimilarities = FeaturesGenerator.getActualSimilarities(folderName);
+			FeaturesGenerator.setActualSimilarities(folderName);
 		}
 	}
 

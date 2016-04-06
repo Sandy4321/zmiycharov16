@@ -14,13 +14,13 @@ import features.*;
 
 public class FeaturesGenerator {
 	
-	public static List<DocumentsSimilarity> getActualSimilarities(String folderName) throws Exception {
+	public static void setActualSimilarities(String folderName) throws Exception {
 		File truthFile = new File(Config.truthFolderPath + "/" + folderName, "ranking.json");
 		
 		Type listType = new TypeToken<ArrayList<DocumentsSimilarity>>() {}.getType();
 		List<DocumentsSimilarity> result = new Gson().fromJson(FileUtils.readFileToString(truthFile), listType);
 
-		return result;
+		Globals.TrainSimilarities.put(folderName, result);
 	}
 
 	public static void generateFeaturesSimilarities(String folderName) throws Exception {
