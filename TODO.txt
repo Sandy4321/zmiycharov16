@@ -1,10 +1,8 @@
 Output result in json files
-read if flag, trainSimilarities -> Globals
-warnings
 
 Gira submit preparation
 
 Calculate weights
-Calculate errors
+Calculate errors IF FLAG
 
 Implement features

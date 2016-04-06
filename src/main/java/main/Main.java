@@ -9,11 +9,8 @@ import org.apache.commons.io.FileUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import features.*;
-
 public class Main {
 
-	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Exception {
 		File inputFolder = new File(Config.inputFolderPath);
 		File infoJson = new File(inputFolder, "info.json");
