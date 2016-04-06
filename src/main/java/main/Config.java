@@ -14,7 +14,7 @@ public class Config {
 	public static final double DEFAULT_FEATURE_WEIGHT = 0.28;
 	
 	// CHANGE FOR PERSONAL USE
-	public static String inputFolderPath = "D:/University/Projects/pam-author-identification/_DATA/dataset";
-	public static String outputFolderPath = "D:/University/Projects/pam-author-identification/_DATA/output";
-	public static String truthFolderPath = "D:/University/Projects/pam-author-identification/_DATA/truth";
+	public static String inputFolderPath = "./_DATA/dataset";
+	public static String outputFolderPath = "./_DATA/output";
+	public static String truthFolderPath = "./_DATA/truth";
 }
