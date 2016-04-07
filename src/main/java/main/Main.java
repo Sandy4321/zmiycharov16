@@ -15,6 +15,7 @@ import com.google.gson.reflect.TypeToken;
 
 public class Main {
 
+	// To run from console: mvn exec:java -Dexec.args="-i inputDir -o outputDir"
 	public static void main(String[] args) throws Exception {
 		try {
 			// READ OPTIONS
@@ -31,14 +32,12 @@ public class Main {
 			Config.inputFolderPath = cmd.getOptionValue("i");
 			Config.outputFolderPath = cmd.getOptionValue("o");
 
+			// TODO: Add real paths for tira
 			Config.trainFolderPath = "F:/";
 			Config.truthFolderPath = "F:/";
-			
-			System.out.println("YEY COMMAND LINES READ!");
-			return;
 		}
 		catch(Exception ex) {
-			System.out.println("System not loaded in TIRA!");
+			System.out.println("Folders NOT READ from command line!");
 		}
 		
 		// TRAINING
