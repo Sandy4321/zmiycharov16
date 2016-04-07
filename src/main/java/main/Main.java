@@ -4,6 +4,10 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.cli.BasicParser;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.Options;
 import org.apache.commons.io.FileUtils;
 
 import com.google.gson.Gson;
@@ -12,6 +16,30 @@ import com.google.gson.reflect.TypeToken;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
+		try {
+			// READ OPTIONS
+			Options options = new Options();
+			options.addOption("i", true, "path to input directory");
+			options.addOption("o", true, "path to output directory");
+			CommandLineParser parser = new BasicParser();
+			CommandLine cmd = parser.parse(options, args);
+			
+			if(cmd.getOptionValue("i") == null) {
+				throw new Exception("Missing parameters");
+			}
+	
+			Config.inputFolderPath = cmd.getOptionValue("i");
+			Config.outputFolderPath = cmd.getOptionValue("o");
+
+			Config.trainFolderPath = "F:/";
+			Config.truthFolderPath = "F:/";
+			
+			System.out.println("YEY COMMAND LINES READ!");
+			return;
+		}
+		catch(Exception ex) {
+			System.out.println("System not loaded in TIRA!");
+		}
 		
 		// TRAINING
 		File trainFolder = new File(Config.trainFolderPath);

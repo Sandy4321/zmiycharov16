@@ -15,6 +15,12 @@
 		<artifactId>gson</artifactId>
 		<version>2.6.2</version>
 	</dependency>
+	<dependency>
+		<groupId>org.mod4j.org.apache.commons</groupId>
+		<artifactId>cli</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	
   </dependencies>
   
 </project>
