@@ -78,13 +78,17 @@ public class FeaturesGenerator {
 
 	// LEARN
 	public static void trainResults() throws Exception {
-		// TODO: Implement
-	}
-
-	// CLEAR SIMILARITIES
-	public static void clearTrainSimilarities() throws Exception {
-		for (Feature feature : Globals.Features) {
-			feature.clearSimilarities();
+		File trainFile = new File(Config.TRAIN_FILE_PATH);
+		if(Config.isTrainMode) {
+			// TODO: learn and save results to file
+			String learn = "asd";
+			
+			trainFile.createNewFile();
+			FileUtils.write(trainFile, learn);
+		}
+		else {
+			// TODO: read results from file
+			String learn = FileUtils.readFileToString(trainFile);
 		}
 	}
 }

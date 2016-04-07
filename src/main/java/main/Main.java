@@ -23,26 +23,6 @@ public class Main {
 		// SET FOLDERS
 		Config.setFolders(args);
 
-		// TRAINING
-		File trainFolder = new File(Config.inputFolderPath);
-		File trainInfoJson = new File(trainFolder, "info.json");
-		
-		Type jsonProblemListType = new TypeToken<ArrayList<JsonProblem>>() {}.getType();
-		List<JsonProblem> trainJsonProblems = new Gson().fromJson(FileUtils.readFileToString(trainInfoJson), jsonProblemListType);
-		
-		for(JsonProblem problem : trainJsonProblems) {
-			String folderName = problem.getFolder();
-			
-			FeaturesGenerator.generateFeaturesSimilarities(trainFolder, folderName);
-			
-			FeaturesGenerator.setActualSimilarities(folderName);
-		}
-		FeaturesGenerator.trainResults();
-		
-		
-		// CLEAR TRAINING SIMILARITIES
-		FeaturesGenerator.clearTrainSimilarities();
-
 		// CLEAR OUTPUT FOLDER
 		File outputFolder = new File(Config.outputFolderPath);
 		FileUtils.cleanDirectory(outputFolder);
@@ -51,13 +31,25 @@ public class Main {
 		File inputFolder = new File(Config.inputFolderPath);
 		File inputInfoJson = new File(inputFolder, "info.json");
 		
+		Type jsonProblemListType = new TypeToken<ArrayList<JsonProblem>>() {}.getType();
 		List<JsonProblem> jsonProblems = new Gson().fromJson(FileUtils.readFileToString(inputInfoJson), jsonProblemListType);
 		
-		// GENERATE RESULTS
 		for(JsonProblem problem : jsonProblems) {
 			String folderName = problem.getFolder();
 			
 			FeaturesGenerator.generateFeaturesSimilarities(inputFolder, folderName);
+			
+			if(Config.isTrainMode) {
+				FeaturesGenerator.setActualSimilarities(folderName);
+			}
+		}
+		
+		// TRAIN
+		FeaturesGenerator.trainResults();
+		
+		// GENERATE RESULTS
+		for(JsonProblem problem : jsonProblems) {
+			String folderName = problem.getFolder();
 			
 			Results.generateResults(folderName);
 			
@@ -65,7 +57,9 @@ public class Main {
 		}
 		
 		// CALCULATE ERROR ONLY IF TRAIN MODE
-		Results.calculateError();
+		if(Config.isTrainMode) {
+			Results.calculateError();
+		}
 	}
 
 }
