@@ -17,6 +17,9 @@ public class Main {
 
 	// To run from console: mvn exec:java -Dexec.args="-i $inputDataset -o $outputDir"
 	public static void main(String[] args) throws Exception {
+		// SET IsTrainMode
+		Config.isTrainMode = !(new File(Config.TRAIN_FILE_PATH).exists());
+		
 		// SET FOLDERS
 		Config.setFolders(args);
 

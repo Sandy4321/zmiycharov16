@@ -8,6 +8,9 @@ import org.apache.commons.cli.Options;
 public class Config {
 	public static final double MIN_SCORE_TO_RANK = 0.5;
 	public static final double DEFAULT_FEATURE_WEIGHT = 0.28;
+
+	public static final String TRAIN_FILE_PATH = "./train.txt";
+	public static boolean isTrainMode;
 	
 	public static String inputFolderPath;
 	public static String outputFolderPath;
