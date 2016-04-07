@@ -15,33 +15,13 @@ import com.google.gson.reflect.TypeToken;
 
 public class Main {
 
-	// To run from console: mvn exec:java -Dexec.args="-i inputDir -o outputDir"
+	// To run from console: mvn exec:java -Dexec.args="-i $inputDataset -o $outputDir"
 	public static void main(String[] args) throws Exception {
-		try {
-			// READ OPTIONS
-			Options options = new Options();
-			options.addOption("i", true, "path to input directory");
-			options.addOption("o", true, "path to output directory");
-			CommandLineParser parser = new BasicParser();
-			CommandLine cmd = parser.parse(options, args);
-			
-			if(cmd.getOptionValue("i") == null) {
-				throw new Exception("Missing parameters");
-			}
-	
-			Config.inputFolderPath = cmd.getOptionValue("i");
-			Config.outputFolderPath = cmd.getOptionValue("o");
+		// SET FOLDERS
+		Config.setFolders(args);
 
-			// TODO: Add real paths for tira
-			Config.trainFolderPath = "F:/";
-			Config.truthFolderPath = "F:/";
-		}
-		catch(Exception ex) {
-			System.out.println("Folders NOT READ from command line!");
-		}
-		
 		// TRAINING
-		File trainFolder = new File(Config.trainFolderPath);
+		File trainFolder = new File(Config.inputFolderPath);
 		File trainInfoJson = new File(trainFolder, "info.json");
 		
 		Type jsonProblemListType = new TypeToken<ArrayList<JsonProblem>>() {}.getType();
@@ -81,10 +61,8 @@ public class Main {
 			Results.generateOutput(new File(outputFolder, folderName));
 		}
 		
-		// CALCULATE ERROR ONLY IF TRAIN AND INPUT ARE THE SAME
-		if(Config.trainFolderPath.equals(Config.inputFolderPath)) {
-			Results.calculateError();
-		}
+		// CALCULATE ERROR ONLY IF TRAIN MODE
+		Results.calculateError();
 	}
 
 }
