@@ -5,7 +5,9 @@ public class Config {
 	public static final double DEFAULT_FEATURE_WEIGHT = 0.28;
 	
 	// CHANGE FOR PERSONAL USE
+	public static String trainFolderPath = "./_DATA/dataset";
+	public static String truthFolderPath = "./_DATA/truth";
+	
 	public static String inputFolderPath = "./_DATA/dataset";
 	public static String outputFolderPath = "./_DATA/output";
-	public static String truthFolderPath = "./_DATA/truth";
 }

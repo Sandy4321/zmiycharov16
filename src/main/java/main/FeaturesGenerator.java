@@ -13,17 +13,9 @@ import features.*;
 
 public class FeaturesGenerator {
 	
-	public static void setActualSimilarities(String folderName) throws Exception {
-		File truthFile = new File(Config.truthFolderPath + "/" + folderName, "ranking.json");
-		
-		Type listType = new TypeToken<ArrayList<DocumentsSimilarity>>() {}.getType();
-		List<DocumentsSimilarity> result = new Gson().fromJson(FileUtils.readFileToString(truthFile), listType);
-
-		Globals.TrainSimilarities.put(folderName, result);
-	}
-
-	public static void generateFeaturesSimilarities(String folderName) throws Exception {
-		Globals.DocFiles.put(folderName, getDocFiles(new File(Config.inputFolderPath, folderName)));
+	// GENERATE FEATURES SIMILARITY
+	public static void generateFeaturesSimilarities(File parentFolder, String folderName) throws Exception {
+		Globals.DocFiles.put(folderName, getDocFiles(new File(parentFolder, folderName)));
 		
 		setFeaturesSimilarities(folderName);
 		
@@ -74,4 +66,25 @@ public class FeaturesGenerator {
 		}
 	}
 
+	// SET ACTUAL SIMILARITIES
+	public static void setActualSimilarities(String folderName) throws Exception {
+		File truthFile = new File(Config.truthFolderPath + "/" + folderName, "ranking.json");
+		
+		Type listType = new TypeToken<ArrayList<DocumentsSimilarity>>() {}.getType();
+		List<DocumentsSimilarity> result = new Gson().fromJson(FileUtils.readFileToString(truthFile), listType);
+
+		Globals.TrainSimilarities.put(folderName, result);
+	}
+
+	// LEARN
+	public static void trainResults() throws Exception {
+		// TODO: Implement
+	}
+
+	// CLEAR SIMILARITIES
+	public static void clearTrainSimilarities() throws Exception {
+		for (Feature feature : Globals.Features) {
+			feature.clearSimilarities();
+		}
+	}
 }

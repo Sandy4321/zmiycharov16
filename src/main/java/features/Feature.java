@@ -30,6 +30,10 @@ public abstract class Feature {
 	public void setSimilarities(String folderName, List<DocumentsSimilarity> similarities) {
 		this.similarities.put(folderName, similarities);
 	}
+
+	public void clearSimilarities() {
+		this.similarities = new HashMap<String, List<DocumentsSimilarity>>();
+	}
 	
 	public abstract double getSimilarity(Document doc1, Document doc2);
 	

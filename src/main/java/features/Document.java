@@ -24,7 +24,7 @@ public class Document {
 		this.fileName = fileName;
 	}
 	
-	// Add other properties such as annotations, etc ...
+	// TODO: Add other properties such as annotations, etc ...
 	
 	public Document() {}
 	
