@@ -36,6 +36,8 @@ public class Main {
 		for(JsonProblem problem : jsonProblems) {
 			String folderName = problem.getFolder();
 			
+			System.out.println(folderName);
+			
 			FeaturesGenerator.generateFeaturesSimilarities(inputFolder, folderName);
 			
 			if(Config.isTrainMode) {

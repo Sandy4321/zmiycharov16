@@ -3,7 +3,9 @@ package features;
 import java.util.Random;
 
 import featureHelpers.Document;
+import featureHelpers.DocumentsSimilarity;
 import featureHelpers.Feature;
+import main.Globals;
 
 public class Train_Feature extends Feature {
 
@@ -14,10 +16,16 @@ public class Train_Feature extends Feature {
 	
 	@Override
 	public double getSimilarity(Document doc1, Document doc2) {
-		Random generator = new Random();
-		double result = generator.nextDouble()*50;
+		for(DocumentsSimilarity similarity : Globals.TrainSimilarities.get(doc1.getFolderName())) {
+			if(
+					(similarity.getDocument1().equals(doc1.getFileName()) && similarity.getDocument2().equals(doc2.getFileName()))
+					|| (similarity.getDocument1().equals(doc2.getFileName()) && similarity.getDocument2().equals(doc1.getFileName()))
+				) {
+				return similarity.getScore();
+			}
+		}
 		
-		return result;
+		return 0;
 	}
 
 }

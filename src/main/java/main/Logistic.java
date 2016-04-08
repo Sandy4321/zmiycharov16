@@ -78,32 +78,39 @@ public class Logistic {
 		
 		public Instance() {}
 		
-		public Instance(String folderName, String document1, String document2) {
+		public Instance(String folderName, String document1, String document2, int similarityIndex) {
 			this.folderName = folderName;
 			this.document1 = document1;
 			this.document1 = document2;
 			this.scores = new HashMap<String, Double>();
 	    	
-	    	for(Feature feature : Globals.Features) {
-	    		this.scores.put(feature.getName(), 
-	    				FeaturesGenerator.getCalculatedSimilarity(folderName, document1, document2, feature));
+			// Last feature is train
+			int i = 0;
+	    	for(; i < Globals.Features.size() - 1; i++) {
+	    		Feature feature = Globals.Features.get(i);
+	    		
+	    		this.scores.put(feature.getName(), feature.getSimilaritiesForFolder(folderName).get(similarityIndex).getScore());
 	    	}
-	    	
-	    	this.actualScore = FeaturesGenerator.getActualSimilarity(folderName, document1, document2);
+
+    		Feature trainFeature = Globals.Features.get(i);
+    		
+	    	this.actualScore = trainFeature.getSimilaritiesForFolder(folderName).get(similarityIndex).getScore();
 		}
 	}
 
 	public static List<Instance> readDataSet() throws FileNotFoundException {
 		List<Instance> dataset = new ArrayList<Instance>();
 
+		int similarityIndex = 0;
+		
 		for(String folderName : Globals.DocFiles.keySet()) {
 			List<File> docFiles = Globals.DocFiles.get(folderName);
 			for(int i = 0; i < docFiles.size()-1;i++) {
 		    	File file1 = docFiles.get(i);
-		    	for(int j = i+1; j < docFiles.size();j++) {
+		    	for(int j = i+1; j < docFiles.size();j++, similarityIndex++) {
 			    	File file2 = docFiles.get(j);
 			    	
-			    	dataset.add(new Instance(folderName, file1.getName(), file2.getName()));
+			    	dataset.add(new Instance(folderName, file1.getName(), file2.getName(), similarityIndex));
 			    }
 		    }
 		}

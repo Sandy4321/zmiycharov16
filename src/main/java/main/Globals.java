@@ -10,6 +10,7 @@ import featureHelpers.DocumentsSimilarity;
 import featureHelpers.Feature;
 import features.Test1_Feature;
 import features.Test2_Feature;
+import features.Train_Feature;
 
 public class Globals {
 	public static List<Feature> Features;
@@ -28,5 +29,9 @@ public class Globals {
 				new Test1_Feature()
 				, new Test2_Feature()
 			);
+		
+		if(Config.isTrainMode) {
+			Features.add(new Train_Feature());
+		}
 	}
 }

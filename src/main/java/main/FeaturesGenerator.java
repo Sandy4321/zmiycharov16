@@ -68,19 +68,6 @@ public class FeaturesGenerator {
 		}
 	}
 	
-	public static double getCalculatedSimilarity(String folderName, String document1, String document2, Feature feature) {
-		for(DocumentsSimilarity similarity : feature.getSimilaritiesForFolder(folderName)) {
-			if(
-					(similarity.getDocument1().equals(document1) && similarity.getDocument2().equals(document2))
-					|| (similarity.getDocument1().equals(document2) && similarity.getDocument2().equals(document1))
-				) {
-				return similarity.getScore();
-			}
-		}
-		
-		return 0;
-	}
-
 	// ACTUAL SIMILARITIES
 	public static void setActualSimilarities(String folderName) throws Exception {
 		File truthFile = new File(Config.truthFolderPath + "/" + folderName, "ranking.json");
@@ -89,18 +76,5 @@ public class FeaturesGenerator {
 		List<DocumentsSimilarity> result = new Gson().fromJson(FileUtils.readFileToString(truthFile), listType);
 
 		Globals.TrainSimilarities.put(folderName, result);
-	}
-	
-	public static double getActualSimilarity(String folderName, String document1, String document2) {
-		for(DocumentsSimilarity similarity : Globals.TrainSimilarities.get(folderName)) {
-			if(
-					(similarity.getDocument1().equals(document1) && similarity.getDocument2().equals(document2))
-					|| (similarity.getDocument1().equals(document2) && similarity.getDocument2().equals(document1))
-				) {
-				return similarity.getScore();
-			}
-		}
-		
-		return 0;
 	}
 }
