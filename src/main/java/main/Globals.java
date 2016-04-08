@@ -1,6 +1,7 @@
 package main;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -25,10 +26,9 @@ public class Globals {
 		TrainSimilarities = new HashMap<String, List<DocumentsSimilarity>>(); 
 		FeaturesWeights = new HashMap<String, Double>();
 		
-		Features = Arrays.asList(
-				new Test1_Feature()
-				, new Test2_Feature()
-			);
+		Features = new ArrayList<Feature>();
+		Features.add(new Test1_Feature());
+		Features.add(new Test2_Feature());
 		
 		if(Config.isTrainMode) {
 			Features.add(new Train_Feature());

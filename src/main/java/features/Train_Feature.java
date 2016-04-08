@@ -10,8 +10,7 @@ import main.Globals;
 public class Train_Feature extends Feature {
 
 	public Train_Feature() {
-		super();
-		this.setName("Test2 Feature");
+		super("Train Feature");
 	}
 	
 	@Override

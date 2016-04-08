@@ -13,19 +13,15 @@ public class Main {
 
 	// To run from console: mvn exec:java -Dexec.args="-i $inputDataset -o $outputDir"
 	public static void main(String[] args) throws Exception {
-		// INIT
-		Globals.init();
-		
 		// SET IsTrainMode
 		Config.isTrainMode = !(new File(Config.TRAIN_FILE_PATH).exists());
+		
+		// INIT
+		Globals.init();
 		
 		// SET FOLDERS
 		Config.setFolders(args);
 
-		// CLEAR OUTPUT FOLDER
-		File outputFolder = new File(Config.outputFolderPath);
-		FileUtils.cleanDirectory(outputFolder);
-		
 		// SETUP INPUT
 		File inputFolder = new File(Config.inputFolderPath);
 		File inputInfoJson = new File(inputFolder, "info.json");
@@ -36,17 +32,21 @@ public class Main {
 		for(JsonProblem problem : jsonProblems) {
 			String folderName = problem.getFolder();
 			
-			System.out.println(folderName);
-			
-			FeaturesGenerator.generateFeaturesSimilarities(inputFolder, folderName);
-			
 			if(Config.isTrainMode) {
 				FeaturesGenerator.setActualSimilarities(folderName);
 			}
+			
+			System.out.println("Generate features: " + folderName);
+			FeaturesGenerator.generateFeaturesSimilarities(inputFolder, folderName);
 		}
 		
 		// TRAIN
 		Logistic.trainResults();
+
+		// CLEAR OUTPUT FOLDER
+		System.out.println("Generate output");
+		File outputFolder = new File(Config.outputFolderPath);
+		FileUtils.cleanDirectory(outputFolder);
 		
 		// GENERATE RESULTS
 		for(JsonProblem problem : jsonProblems) {

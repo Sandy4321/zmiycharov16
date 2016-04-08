@@ -57,7 +57,8 @@ public abstract class Feature {
 		}
 	}
 	
-	public Feature() {
+	public Feature(String name) {
+		this.setName(name);
 		this.setWeight(0);
 		this.similarities = new HashMap<String, List<DocumentsSimilarity>>();
 	}

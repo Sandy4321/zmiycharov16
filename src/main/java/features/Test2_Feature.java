@@ -8,8 +8,7 @@ import featureHelpers.Feature;
 public class Test2_Feature extends Feature {
 
 	public Test2_Feature() {
-		super();
-		this.setName("Test2 Feature");
+		super("Test2 Feature");
 	}
 	
 	@Override

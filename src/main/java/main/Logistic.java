@@ -21,10 +21,7 @@ import featureHelpers.DocumentsSimilarity;
 import featureHelpers.Feature;
 
 /**
- * Performs simple logistic regression.
- * User: tpeng
- * Date: 6/22/12
- * Time: 11:01 PM
+ * Performs simple logistic regression. User: tpeng Date: 6/22/12 Time: 11:01 PM
  * 
  * @author tpeng
  * @author Matthieu Labas
@@ -46,24 +43,45 @@ public class Logistic {
 	}
 
 	public void train(List<Instance> instances) {
-		for (int n=0; n<ITERATIONS; n++) {
-			for(Instance instance : instances) {
-				double predicted = classify(instance.folderName, instance.document1, instance.document2);
-				for(String key : Globals.FeaturesWeights.keySet()) {
-					double currentWeight = Globals.FeaturesWeights.get(key);
-					double featureScore = instance.scores.get(key);
-					
-					Globals.FeaturesWeights.put(key, currentWeight + rate * (instance.actualScore - predicted) * featureScore);
+		for (int n = 0; n < ITERATIONS; n++) {
+
+			System.out.println("Train iteration: " + (n + 1));
+
+			for (Instance instance : instances) {
+				double predicted = classify(instance);
+
+				// Last feature is train
+				for (int i = 0; i < Globals.Features.size() - 1; i++) {
+					Feature feature = Globals.Features.get(i);
+					double currentWeight = feature.getWeight();
+					double featureScore = instance.scores.get(feature.getName());
+
+					feature.setWeight(
+							currentWeight + rate * (instance.actualScore - predicted) * featureScore);
 				}
 			}
 		}
 	}
 
-	public static double classify(String folderName, String document1, String document2) {
+	public static double classify(Instance instance) {
 		double logit = .0;
-		
-		for (Feature feature : Globals.Features) {
-			logit += feature.getWeight() * feature.getScore(folderName, document1, document2);
+
+		// Last feature is train
+		for (int i = 0; i < Globals.Features.size() - 1; i++) {
+			Feature feature = Globals.Features.get(i);
+			logit += feature.getWeight() * instance.scores.get(feature.getName());
+		}
+
+		return sigmoid(logit);
+	}
+
+	public static double classify(String folderName, int similarityIndex) {
+		double logit = .0;
+
+		// Last feature is train
+		for (int i = 0; i < Globals.Features.size() - 1; i++) {
+			Feature feature = Globals.Features.get(i);
+			logit += feature.getWeight() * feature.getSimilaritiesForFolder(folderName).get(similarityIndex).getScore();
 		}
 
 		return sigmoid(logit);
@@ -75,46 +93,50 @@ public class Logistic {
 		public String document2;
 		public Map<String, Double> scores;
 		public double actualScore;
-		
-		public Instance() {}
-		
+
+		public Instance() {
+		}
+
 		public Instance(String folderName, String document1, String document2, int similarityIndex) {
 			this.folderName = folderName;
 			this.document1 = document1;
 			this.document1 = document2;
 			this.scores = new HashMap<String, Double>();
-	    	
+
 			// Last feature is train
 			int i = 0;
-	    	for(; i < Globals.Features.size() - 1; i++) {
-	    		Feature feature = Globals.Features.get(i);
-	    		
-	    		this.scores.put(feature.getName(), feature.getSimilaritiesForFolder(folderName).get(similarityIndex).getScore());
-	    	}
+			for (; i < Globals.Features.size() - 1; i++) {
+				Feature feature = Globals.Features.get(i);
 
-    		Feature trainFeature = Globals.Features.get(i);
-    		
-	    	this.actualScore = trainFeature.getSimilaritiesForFolder(folderName).get(similarityIndex).getScore();
+				this.scores.put(feature.getName(),
+						feature.getSimilaritiesForFolder(folderName).get(similarityIndex).getScore());
+			}
+
+			Feature trainFeature = Globals.Features.get(i);
+
+			this.actualScore = trainFeature.getSimilaritiesForFolder(folderName).get(similarityIndex).getScore();
 		}
 	}
 
 	public static List<Instance> readDataSet() throws FileNotFoundException {
 		List<Instance> dataset = new ArrayList<Instance>();
 
-		int similarityIndex = 0;
-		
-		for(String folderName : Globals.DocFiles.keySet()) {
+		for (String folderName : Globals.DocFiles.keySet()) {
+			System.out.println("Add to train folder: " + folderName);
+
+			int similarityIndex = 0;
+
 			List<File> docFiles = Globals.DocFiles.get(folderName);
-			for(int i = 0; i < docFiles.size()-1;i++) {
-		    	File file1 = docFiles.get(i);
-		    	for(int j = i+1; j < docFiles.size();j++, similarityIndex++) {
-			    	File file2 = docFiles.get(j);
-			    	
-			    	dataset.add(new Instance(folderName, file1.getName(), file2.getName(), similarityIndex));
-			    }
-		    }
+			for (int i = 0; i < docFiles.size() - 1; i++) {
+				File file1 = docFiles.get(i);
+				for (int j = i + 1; j < docFiles.size(); j++, similarityIndex++) {
+					File file2 = docFiles.get(j);
+
+					dataset.add(new Instance(folderName, file1.getName(), file2.getName(), similarityIndex));
+				}
+			}
 		}
-		
+
 		return dataset;
 	}
 
@@ -122,19 +144,19 @@ public class Logistic {
 	public static void trainResults() throws Exception {
 		File trainFile = new File(Config.TRAIN_FILE_PATH);
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		
-		if(Config.isTrainMode) {
+
+		if (Config.isTrainMode) {
 
 			List<Instance> instances = readDataSet();
 			Logistic logistic = new Logistic();
 			logistic.train(instances);
-			
+
 			trainFile.createNewFile();
 			FileUtils.write(trainFile, gson.toJson(Globals.FeaturesWeights));
-		}
-		else {
-			Type mapType = new TypeToken<HashMap<String, Double>>() {}.getType();
-			Globals.FeaturesWeights = gson.fromJson(FileUtils.readFileToString(trainFile), mapType) ;
+		} else {
+			Type mapType = new TypeToken<HashMap<String, Double>>() {
+			}.getType();
+			Globals.FeaturesWeights = gson.fromJson(FileUtils.readFileToString(trainFile), mapType);
 		}
 	}
 

@@ -35,13 +35,9 @@ public class Results {
 			similarity.setDocument1(configSimilarity.getDocument1());
 			similarity.setDocument2(configSimilarity.getDocument2());
 
+			similarity.setScore(Logistic.classify(folderName, i));
+
 			rankings.add(similarity);
-		}
-
-		for (int i = 0; i < rankings.size(); i++) {
-			DocumentsSimilarity similarity = rankings.get(i);
-
-			similarity.setScore(Logistic.classify(folderName, similarity.getDocument1(), similarity.getDocument2()));
 		}
 
 		CalculatedRankings.put(folderName, rankings);
@@ -62,7 +58,7 @@ public class Results {
 	private static void generateClusters(String folderName) {
 		List<Set<ClusterDocument>> clusters = new ArrayList<Set<ClusterDocument>>();
 		
-		for (int i = 0; i < JsonRankings.size(); i++) {
+		for (int i = 0; i < JsonRankings.get(folderName).size(); i++) {
 			DocumentsSimilarity ranking = JsonRankings.get(folderName).get(i);
 
 			// Skip if ranking is clustered
@@ -75,7 +71,7 @@ public class Results {
 			cluster.add(new ClusterDocument(ranking.getDocument1()));
 			cluster.add(new ClusterDocument(ranking.getDocument2()));
 
-			for (int j = i + 1; j < JsonRankings.size(); j++) {
+			for (int j = i + 1; j < JsonRankings.get(folderName).size(); j++) {
 				DocumentsSimilarity nextRanking = JsonRankings.get(folderName).get(j);
 				String doc1 = nextRanking.getDocument1();
 				String doc2 = nextRanking.getDocument2();
