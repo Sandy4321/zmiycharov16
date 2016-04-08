@@ -41,12 +41,7 @@ public class Results {
 		for (int i = 0; i < rankings.size(); i++) {
 			DocumentsSimilarity similarity = rankings.get(i);
 
-			double score = 0;
-			for (Feature feature : Globals.Features) {
-				score += feature.getWeight() * feature.getSimilaritiesForFolder(folderName).get(i).getScore();
-			}
-
-			similarity.setScore(score);
+			similarity.setScore(Logistic.classify(folderName, similarity.getDocument1(), similarity.getDocument2()));
 		}
 
 		CalculatedRankings.put(folderName, rankings);

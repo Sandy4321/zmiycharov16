@@ -5,11 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import main.Config;
+import main.Globals;
 
 public abstract class Feature {
 	private String name;
-	// Positive number
-	private double weight;
 	private Map<String, List<DocumentsSimilarity>> similarities;
 	
 	public String getName() {
@@ -19,10 +18,10 @@ public abstract class Feature {
 		this.name = name;
 	}
 	public double getWeight() {
-		return weight;
+		return Globals.FeaturesWeights.get(this.getName());
 	}
 	public void setWeight(double weight) {
-		this.weight = weight;
+		Globals.FeaturesWeights.put(this.getName(), weight);
 	}
 	public List<DocumentsSimilarity> getSimilaritiesForFolder(String folderName) {
 		return similarities.get(folderName);
@@ -59,7 +58,20 @@ public abstract class Feature {
 	}
 	
 	public Feature() {
-		this.weight = Config.DEFAULT_FEATURE_WEIGHT;
+		this.setWeight(0);
 		this.similarities = new HashMap<String, List<DocumentsSimilarity>>();
+	}
+	
+	public double getScore(String folderName, String document1, String document2) {
+		for(DocumentsSimilarity similarity : this.getSimilaritiesForFolder(folderName)) {
+			if(
+					(similarity.getDocument1().equals(document1) && similarity.getDocument2().equals(document2))
+					|| (similarity.getDocument1().equals(document2) && similarity.getDocument2().equals(document1))
+				) {
+				return similarity.getScore();
+			}
+		}
+		
+		return 0;
 	}
 }

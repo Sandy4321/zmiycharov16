@@ -4,10 +4,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.cli.BasicParser;
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.Options;
 import org.apache.commons.io.FileUtils;
 
 import com.google.gson.Gson;
@@ -45,7 +41,7 @@ public class Main {
 		}
 		
 		// TRAIN
-		FeaturesGenerator.trainResults();
+		Logistic.trainResults();
 		
 		// GENERATE RESULTS
 		for(JsonProblem problem : jsonProblems) {

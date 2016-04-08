@@ -2,11 +2,13 @@ package main;
 import java.io.File;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import features.*;
@@ -65,8 +67,21 @@ public class FeaturesGenerator {
 			feature.normalizeSimilarities();
 		}
 	}
+	
+	public static double getCalculatedSimilarity(String folderName, String document1, String document2, Feature feature) {
+		for(DocumentsSimilarity similarity : feature.getSimilaritiesForFolder(folderName)) {
+			if(
+					(similarity.getDocument1().equals(document1) && similarity.getDocument2().equals(document2))
+					|| (similarity.getDocument1().equals(document2) && similarity.getDocument2().equals(document1))
+				) {
+				return similarity.getScore();
+			}
+		}
+		
+		return 0;
+	}
 
-	// SET ACTUAL SIMILARITIES
+	// ACTUAL SIMILARITIES
 	public static void setActualSimilarities(String folderName) throws Exception {
 		File truthFile = new File(Config.truthFolderPath + "/" + folderName, "ranking.json");
 		
@@ -75,20 +90,17 @@ public class FeaturesGenerator {
 
 		Globals.TrainSimilarities.put(folderName, result);
 	}
-
-	// LEARN
-	public static void trainResults() throws Exception {
-		File trainFile = new File(Config.TRAIN_FILE_PATH);
-		if(Config.isTrainMode) {
-			// TODO: learn and save results to file
-			String learn = "asd";
-			
-			trainFile.createNewFile();
-			FileUtils.write(trainFile, learn);
+	
+	public static double getActualSimilarity(String folderName, String document1, String document2) {
+		for(DocumentsSimilarity similarity : Globals.TrainSimilarities.get(folderName)) {
+			if(
+					(similarity.getDocument1().equals(document1) && similarity.getDocument2().equals(document2))
+					|| (similarity.getDocument1().equals(document2) && similarity.getDocument2().equals(document1))
+				) {
+				return similarity.getScore();
+			}
 		}
-		else {
-			// TODO: read results from file
-			String learn = FileUtils.readFileToString(trainFile);
-		}
+		
+		return 0;
 	}
 }

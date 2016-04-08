@@ -19,4 +19,6 @@ public class Globals {
 	
 	public static Map<String, List<File>> DocFiles = new HashMap<String, List<File>>();
 	public static Map<String, List<DocumentsSimilarity>> TrainSimilarities = new HashMap<String, List<DocumentsSimilarity>>(); 
+
+	public static Map<String, Double> FeaturesWeights = new HashMap<String, Double>();
 }
