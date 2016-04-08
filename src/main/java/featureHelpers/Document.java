@@ -7,6 +7,7 @@ import org.apache.commons.io.FileUtils;
 public class Document {
 	private String content;
 	private String fileName;
+	private String folderName;
 
 	public String getContent() {
 		return content;
@@ -24,6 +25,14 @@ public class Document {
 		this.fileName = fileName;
 	}
 	
+	public String getFolderName() {
+		return folderName;
+	}
+
+	public void setFolderName(String folderName) {
+		this.folderName = folderName;
+	}
+
 	// TODO: Add other properties such as annotations, etc ...
 	
 	public Document() {}
@@ -31,6 +40,7 @@ public class Document {
 	public Document(File file) throws Exception {
 		this.content = FileUtils.readFileToString(file);
 		this.fileName = file.getName();
+		this.folderName = file.getParentFile().getName();
 		
 		setFeatures();
 	}
