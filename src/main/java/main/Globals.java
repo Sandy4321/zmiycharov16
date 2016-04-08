@@ -12,13 +12,21 @@ import features.Test1_Feature;
 import features.Test2_Feature;
 
 public class Globals {
-	public static List<Feature> Features = Arrays.asList(
-		new Test1_Feature()
-		, new Test2_Feature()
-	);
+	public static List<Feature> Features;
 	
-	public static Map<String, List<File>> DocFiles = new HashMap<String, List<File>>();
-	public static Map<String, List<DocumentsSimilarity>> TrainSimilarities = new HashMap<String, List<DocumentsSimilarity>>(); 
+	public static Map<String, List<File>> DocFiles;
+	public static Map<String, List<DocumentsSimilarity>> TrainSimilarities; 
 
-	public static Map<String, Double> FeaturesWeights = new HashMap<String, Double>();
+	public static Map<String, Double> FeaturesWeights;
+	
+	public static void init() {
+		DocFiles = new HashMap<String, List<File>>();
+		TrainSimilarities = new HashMap<String, List<DocumentsSimilarity>>(); 
+		FeaturesWeights = new HashMap<String, Double>();
+		
+		Features = Arrays.asList(
+				new Test1_Feature()
+				, new Test2_Feature()
+			);
+	}
 }
