@@ -154,8 +154,7 @@ public class Logistic {
 			trainFile.createNewFile();
 			FileUtils.write(trainFile, gson.toJson(Globals.FeaturesWeights));
 		} else {
-			Type mapType = new TypeToken<HashMap<String, Double>>() {
-			}.getType();
+			Type mapType = new TypeToken<HashMap<String, Double>>() {}.getType();
 			Globals.FeaturesWeights = gson.fromJson(FileUtils.readFileToString(trainFile), mapType);
 		}
 	}
