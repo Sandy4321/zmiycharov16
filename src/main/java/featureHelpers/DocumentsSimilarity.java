@@ -1,4 +1,4 @@
-package features;
+package featureHelpers;
 
 public class DocumentsSimilarity {
 	private String document1;

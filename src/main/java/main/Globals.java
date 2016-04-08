@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import features.DocumentsSimilarity;
-import features.Feature;
+import featureHelpers.DocumentsSimilarity;
+import featureHelpers.Feature;
 import features.Test1_Feature;
 import features.Test2_Feature;
 

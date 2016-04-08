@@ -16,9 +16,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import features.Document;
-import features.DocumentsSimilarity;
-import features.Feature;
+import featureHelpers.Document;
+import featureHelpers.DocumentsSimilarity;
+import featureHelpers.Feature;
 
 /**
  * Performs simple logistic regression.

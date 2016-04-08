@@ -2,6 +2,9 @@ package features;
 
 import java.util.Random;
 
+import featureHelpers.Document;
+import featureHelpers.Feature;
+
 public class Test1_Feature extends Feature {
 	
 	public Test1_Feature() {

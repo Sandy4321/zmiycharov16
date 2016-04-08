@@ -1,4 +1,4 @@
-package features;
+package featureHelpers;
 
 import java.util.HashMap;
 import java.util.List;
