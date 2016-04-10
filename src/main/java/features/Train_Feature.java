@@ -26,5 +26,4 @@ public class Train_Feature extends Feature {
 		
 		return 0;
 	}
-
 }

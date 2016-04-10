@@ -67,7 +67,7 @@ public class Logistic {
 		double logit = .0;
 
 		// Last feature is train
-		for (int i = 0; i < Globals.Features.size() - 1; i++) {
+		for (int i = 0; i < Globals.Features.size(); i++) {
 			Feature feature = Globals.Features.get(i);
 			logit += feature.getWeight() * instance.scores.get(feature.getName());
 		}

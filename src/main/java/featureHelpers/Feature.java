@@ -52,8 +52,6 @@ public abstract class Feature {
 				double score = similarity.getScore() / maxScore;
 				similarity.setScore(score);
 			}
-			
-			
 		}
 	}
 	
