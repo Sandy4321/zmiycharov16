@@ -46,6 +46,11 @@ public class Main {
 		// CLEAR OUTPUT FOLDER
 		System.out.println("Generate output");
 		File outputFolder = new File(Config.outputFolderPath);
+		
+		if(!outputFolder.exists()) {
+			outputFolder.mkdir();
+		}
+		
 		FileUtils.cleanDirectory(outputFolder);
 		
 		// GENERATE RESULTS

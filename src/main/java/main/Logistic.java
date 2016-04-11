@@ -19,6 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import featureHelpers.Document;
 import featureHelpers.DocumentsSimilarity;
 import featureHelpers.Feature;
+import features.Train_Feature;
 
 /**
  * Performs simple logistic regression. User: tpeng Date: 6/22/12 Time: 11:01 PM
@@ -148,6 +149,7 @@ public class Logistic {
 			logistic.train(instances);
 
 			trainFile.createNewFile();
+			Globals.FeaturesWeights.remove(new Train_Feature().getName());
 			FileUtils.write(trainFile, gson.toJson(Globals.FeaturesWeights));
 		} else {
 			Type mapType = new TypeToken<HashMap<String, Double>>() {}.getType();
