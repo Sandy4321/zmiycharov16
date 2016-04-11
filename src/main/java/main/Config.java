@@ -6,7 +6,7 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 
 public class Config {
-	public static final double MIN_SCORE_TO_RANK = 0.5;
+	public static final double MIN_SCORE_TO_RANK = 0.7;
 
 	public static final String TRAIN_FILE_PATH = "./train.json";
 	public static boolean isTrainMode;

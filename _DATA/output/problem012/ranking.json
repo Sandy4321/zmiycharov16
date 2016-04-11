@@ -1,1 +1,3987 @@
-[]
+[
+  {
+    "document1": "document0001.txt",
+    "document2": "document0003.txt",
+    "score": 0.7106953200961629
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0006.txt",
+    "score": 0.7007624755403479
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0007.txt",
+    "score": 0.7085634510742702
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0013.txt",
+    "score": 0.7134620732757452
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0019.txt",
+    "score": 0.7018617983957339
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0021.txt",
+    "score": 0.7138782423687142
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0023.txt",
+    "score": 0.7007596171334753
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0029.txt",
+    "score": 0.7015479432341013
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0035.txt",
+    "score": 0.7074009559331091
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0037.txt",
+    "score": 0.703584601844175
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0038.txt",
+    "score": 0.7007939169833566
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0041.txt",
+    "score": 0.707700142878049
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0046.txt",
+    "score": 0.7056754840143575
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0048.txt",
+    "score": 0.7047724007404177
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0057.txt",
+    "score": 0.7113076062479928
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0060.txt",
+    "score": 0.7094058355599333
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0062.txt",
+    "score": 0.7070190658853097
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0067.txt",
+    "score": 0.70449958433758
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0073.txt",
+    "score": 0.7053016300398727
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0074.txt",
+    "score": 0.7057689042997225
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0075.txt",
+    "score": 0.7008948791243312
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0082.txt",
+    "score": 0.7135146194416919
+  },
+  {
+    "document1": "document0001.txt",
+    "document2": "document0092.txt",
+    "score": 0.7032206016901215
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0009.txt",
+    "score": 0.7127099570894648
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0028.txt",
+    "score": 0.7049776384922861
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0058.txt",
+    "score": 0.7103066242730117
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0059.txt",
+    "score": 0.7009752884149132
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0063.txt",
+    "score": 0.7130812740145954
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0064.txt",
+    "score": 0.7098269498273705
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0071.txt",
+    "score": 0.7107882425065911
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0083.txt",
+    "score": 0.7123292438489138
+  },
+  {
+    "document1": "document0002.txt",
+    "document2": "document0093.txt",
+    "score": 0.7082544595124289
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0006.txt",
+    "score": 0.7044998521650371
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0007.txt",
+    "score": 0.7124048791466787
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0013.txt",
+    "score": 0.7117875403416863
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0018.txt",
+    "score": 0.7006930710606536
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0019.txt",
+    "score": 0.7056141295584214
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0021.txt",
+    "score": 0.7100179553070589
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0029.txt",
+    "score": 0.7052960145105469
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0035.txt",
+    "score": 0.7112271871431892
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0037.txt",
+    "score": 0.7073601786050664
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0038.txt",
+    "score": 0.7045317226261777
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0041.txt",
+    "score": 0.7115302957285105
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0046.txt",
+    "score": 0.709478957384159
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0048.txt",
+    "score": 0.7010313577032946
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0057.txt",
+    "score": 0.7074803338724579
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0060.txt",
+    "score": 0.7056033192079548
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0062.txt",
+    "score": 0.7032480123243946
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0067.txt",
+    "score": 0.7082874116123989
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0073.txt",
+    "score": 0.7091001410115457
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0074.txt",
+    "score": 0.7095736159487597
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0082.txt",
+    "score": 0.7117352928060685
+  },
+  {
+    "document1": "document0003.txt",
+    "document2": "document0084.txt",
+    "score": 0.7033831300872195
+  },
+  {
+    "document1": "document0004.txt",
+    "document2": "document0026.txt",
+    "score": 0.7055686968052788
+  },
+  {
+    "document1": "document0004.txt",
+    "document2": "document0030.txt",
+    "score": 0.7084885334770943
+  },
+  {
+    "document1": "document0004.txt",
+    "document2": "document0036.txt",
+    "score": 0.7030868626262025
+  },
+  {
+    "document1": "document0004.txt",
+    "document2": "document0042.txt",
+    "score": 0.7004087300124833
+  },
+  {
+    "document1": "document0004.txt",
+    "document2": "document0043.txt",
+    "score": 0.7108062939496264
+  },
+  {
+    "document1": "document0004.txt",
+    "document2": "document0061.txt",
+    "score": 0.7101440908186802
+  },
+  {
+    "document1": "document0004.txt",
+    "document2": "document0085.txt",
+    "score": 0.701174959985993
+  },
+  {
+    "document1": "document0004.txt",
+    "document2": "document0095.txt",
+    "score": 0.7076846177232629
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0010.txt",
+    "score": 0.7143066912839507
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0014.txt",
+    "score": 0.7099299487469516
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0015.txt",
+    "score": 0.7085081914096818
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0017.txt",
+    "score": 0.7075601947309142
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0020.txt",
+    "score": 0.7021475732111692
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0022.txt",
+    "score": 0.71376122208722
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0024.txt",
+    "score": 0.7127554356827841
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0034.txt",
+    "score": 0.7064338436180271
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0052.txt",
+    "score": 0.70279617882889
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0054.txt",
+    "score": 0.707965229313015
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0055.txt",
+    "score": 0.7100401072379329
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0076.txt",
+    "score": 0.7056521262415903
+  },
+  {
+    "document1": "document0005.txt",
+    "document2": "document0096.txt",
+    "score": 0.7093605933389524
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0007.txt",
+    "score": 0.706601825373538
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0012.txt",
+    "score": 0.7057187931619208
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0013.txt",
+    "score": 0.701817238815752
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0018.txt",
+    "score": 0.7106234425026221
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0019.txt",
+    "score": 0.7134156879805569
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0021.txt",
+    "score": 0.7001084566922963
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0029.txt",
+    "score": 0.7137427135239848
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0031.txt",
+    "score": 0.7047362076587175
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0035.txt",
+    "score": 0.7077611016223447
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0037.txt",
+    "score": 0.7116334210665509
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0038.txt",
+    "score": 0.7145313542155272
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0041.txt",
+    "score": 0.7074618515486102
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0046.txt",
+    "score": 0.7094991176793087
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0067.txt",
+    "score": 0.7106955937313857
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0069.txt",
+    "score": 0.70621453180539
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0073.txt",
+    "score": 0.7098784487327401
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0074.txt",
+    "score": 0.7094044830902464
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0081.txt",
+    "score": 0.7059582732841742
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0082.txt",
+    "score": 0.7017667777896155
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0084.txt",
+    "score": 0.713408595266154
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0086.txt",
+    "score": 0.7070860521267132
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0087.txt",
+    "score": 0.7057446249193857
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0089.txt",
+    "score": 0.7033885333266358
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0090.txt",
+    "score": 0.7005781891486035
+  },
+  {
+    "document1": "document0006.txt",
+    "document2": "document0091.txt",
+    "score": 0.7023754468021709
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0013.txt",
+    "score": 0.7096478177611598
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0018.txt",
+    "score": 0.7027663838848754
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0019.txt",
+    "score": 0.7077243729435517
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0021.txt",
+    "score": 0.7078909831020687
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0029.txt",
+    "score": 0.7074039023899759
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0035.txt",
+    "score": 0.7133782535335943
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0037.txt",
+    "score": 0.7094832713351752
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0038.txt",
+    "score": 0.7066339331318628
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0041.txt",
+    "score": 0.7136835262560701
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0046.txt",
+    "score": 0.711617460460214
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0057.txt",
+    "score": 0.7053718838101084
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0060.txt",
+    "score": 0.7035087475198073
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0062.txt",
+    "score": 0.7011710665770253
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0067.txt",
+    "score": 0.7104172729967845
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0073.txt",
+    "score": 0.7112359036228101
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0074.txt",
+    "score": 0.7117128028041394
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0082.txt",
+    "score": 0.7095959447145201
+  },
+  {
+    "document1": "document0007.txt",
+    "document2": "document0084.txt",
+    "score": 0.7054767606236007
+  },
+  {
+    "document1": "document0008.txt",
+    "document2": "document0039.txt",
+    "score": 0.7088589244348101
+  },
+  {
+    "document1": "document0008.txt",
+    "document2": "document0088.txt",
+    "score": 0.7135970539902606
+  },
+  {
+    "document1": "document0009.txt",
+    "document2": "document0028.txt",
+    "score": 0.7067838524616361
+  },
+  {
+    "document1": "document0009.txt",
+    "document2": "document0058.txt",
+    "score": 0.7121462753905471
+  },
+  {
+    "document1": "document0009.txt",
+    "document2": "document0063.txt",
+    "score": 0.7112359036228101
+  },
+  {
+    "document1": "document0009.txt",
+    "document2": "document0064.txt",
+    "score": 0.7080016287581932
+  },
+  {
+    "document1": "document0009.txt",
+    "document2": "document0071.txt",
+    "score": 0.7126308619413207
+  },
+  {
+    "document1": "document0009.txt",
+    "document2": "document0083.txt",
+    "score": 0.7104884709147065
+  },
+  {
+    "document1": "document0009.txt",
+    "document2": "document0093.txt",
+    "score": 0.7100813623723723
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0014.txt",
+    "score": 0.7101838781760597
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0015.txt",
+    "score": 0.7082557080210551
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0017.txt",
+    "score": 0.7078120730869016
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0020.txt",
+    "score": 0.7023946578404222
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0022.txt",
+    "score": 0.7135042552875678
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0024.txt",
+    "score": 0.7124993159516378
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0034.txt",
+    "score": 0.7066847368141795
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0052.txt",
+    "score": 0.7030438457777153
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0054.txt",
+    "score": 0.7082174603188752
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0055.txt",
+    "score": 0.7102941312932073
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0076.txt",
+    "score": 0.7059023318517018
+  },
+  {
+    "document1": "document0010.txt",
+    "document2": "document0096.txt",
+    "score": 0.7091073725269902
+  },
+  {
+    "document1": "document0011.txt",
+    "document2": "document0039.txt",
+    "score": 0.7008567941895641
+  },
+  {
+    "document1": "document0011.txt",
+    "document2": "document0077.txt",
+    "score": 0.7012815018380436
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0018.txt",
+    "score": 0.7095944512819411
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0019.txt",
+    "score": 0.704604103190984
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0025.txt",
+    "score": 0.7084976622685071
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0029.txt",
+    "score": 0.7049214386947339
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0031.txt",
+    "score": 0.7135518286816426
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0037.txt",
+    "score": 0.7028749734972475
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0038.txt",
+    "score": 0.7056867883477234
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0040.txt",
+    "score": 0.7054401030768566
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0044.txt",
+    "score": 0.7058629447961319
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0046.txt",
+    "score": 0.7008050240491406
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0067.txt",
+    "score": 0.7019653274982909
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0069.txt",
+    "score": 0.7140544123320255
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0073.txt",
+    "score": 0.7011728604510699
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0074.txt",
+    "score": 0.7007132609391352
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0081.txt",
+    "score": 0.7143177842148607
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0084.txt",
+    "score": 0.7068448158099384
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0086.txt",
+    "score": 0.7131621494640965
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0087.txt",
+    "score": 0.7145377170953019
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0089.txt",
+    "score": 0.7121628222032903
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0090.txt",
+    "score": 0.7092651817328263
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0091.txt",
+    "score": 0.7111184380758311
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0097.txt",
+    "score": 0.7042754651945814
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0099.txt",
+    "score": 0.7072698561970682
+  },
+  {
+    "document1": "document0012.txt",
+    "document2": "document0100.txt",
+    "score": 0.7032143890722671
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0019.txt",
+    "score": 0.7029208142235999
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0021.txt",
+    "score": 0.7127784486356847
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0029.txt",
+    "score": 0.7026057476287374
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0035.txt",
+    "score": 0.7084809967600404
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0037.txt",
+    "score": 0.7046502292822407
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0038.txt",
+    "score": 0.7018488022472388
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0041.txt",
+    "score": 0.7087812999417142
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0046.txt",
+    "score": 0.7067490481960854
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0048.txt",
+    "score": 0.7037063086792532
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0057.txt",
+    "score": 0.7102171385625801
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0060.txt",
+    "score": 0.7083223635015855
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0062.txt",
+    "score": 0.7059444876179558
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0067.txt",
+    "score": 0.7055686968052788
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0073.txt",
+    "score": 0.7063737822053489
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0074.txt",
+    "score": 0.70684282083802
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0082.txt",
+    "score": 0.7145116044783161
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0084.txt",
+    "score": 0.700711309382623
+  },
+  {
+    "document1": "document0013.txt",
+    "document2": "document0092.txt",
+    "score": 0.7021604351526014
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0015.txt",
+    "score": 0.7039677837918042
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0017.txt",
+    "score": 0.7121576401332806
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0020.txt",
+    "score": 0.706658607958869
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0022.txt",
+    "score": 0.7091391053232649
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0024.txt",
+    "score": 0.7081487649264462
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0034.txt",
+    "score": 0.7110135400821008
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0040.txt",
+    "score": 0.7011055276956751
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0044.txt",
+    "score": 0.7006898709571965
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0052.txt",
+    "score": 0.7073177162903577
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0054.txt",
+    "score": 0.7125690269403023
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0055.txt",
+    "score": 0.714452509056906
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0076.txt",
+    "score": 0.7102194320155896
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0096.txt",
+    "score": 0.7048067536759529
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0097.txt",
+    "score": 0.7022569040102974
+  },
+  {
+    "document1": "document0014.txt",
+    "document2": "document0100.txt",
+    "score": 0.7033143166317004
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0016.txt",
+    "score": 0.7045120288226565
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0017.txt",
+    "score": 0.7016470758990234
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0022.txt",
+    "score": 0.7092973331405263
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0024.txt",
+    "score": 0.7102915660525458
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0034.txt",
+    "score": 0.700544268172647
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0049.txt",
+    "score": 0.7038769723804916
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0054.txt",
+    "score": 0.7020436806376554
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0055.txt",
+    "score": 0.7040756785549549
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0056.txt",
+    "score": 0.7031502264032284
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0066.txt",
+    "score": 0.7044415060510464
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0068.txt",
+    "score": 0.7019670693713226
+  },
+  {
+    "document1": "document0015.txt",
+    "document2": "document0096.txt",
+    "score": 0.7136970266213999
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0024.txt",
+    "score": 0.7003846219826872
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0049.txt",
+    "score": 0.7139071502123452
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0051.txt",
+    "score": 0.7009612576089638
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0056.txt",
+    "score": 0.713154977814365
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0065.txt",
+    "score": 0.7064852062345275
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0066.txt",
+    "score": 0.7144913552919864
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0068.txt",
+    "score": 0.7119301800797138
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0070.txt",
+    "score": 0.7030461239532306
+  },
+  {
+    "document1": "document0016.txt",
+    "document2": "document0096.txt",
+    "score": 0.7036739405818727
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0020.txt",
+    "score": 0.7090209944616271
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0022.txt",
+    "score": 0.7067757592189383
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0024.txt",
+    "score": 0.7057934857114161
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0025.txt",
+    "score": 0.7004186584217862
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0034.txt",
+    "score": 0.7134111384116213
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0040.txt",
+    "score": 0.7034216590999282
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0044.txt",
+    "score": 0.7030024802524965
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0052.txt",
+    "score": 0.709685492800738
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0054.txt",
+    "score": 0.7141502468932668
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0055.txt",
+    "score": 0.7120466973781826
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0076.txt",
+    "score": 0.7126106805567098
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0096.txt",
+    "score": 0.7024790424217549
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0097.txt",
+    "score": 0.704582748592336
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0099.txt",
+    "score": 0.7016167661891152
+  },
+  {
+    "document1": "document0017.txt",
+    "document2": "document0100.txt",
+    "score": 0.7056490255710548
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0019.txt",
+    "score": 0.7094897006385559
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0025.txt",
+    "score": 0.7036288390097172
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0029.txt",
+    "score": 0.7098124730381768
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0031.txt",
+    "score": 0.7085985597401246
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0035.txt",
+    "score": 0.7039099986098971
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0037.txt",
+    "score": 0.7077307635815134
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0038.txt",
+    "score": 0.7105908924711278
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0040.txt",
+    "score": 0.7006235808648478
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0041.txt",
+    "score": 0.7036147813820324
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0044.txt",
+    "score": 0.7010391359741827
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0046.txt",
+    "score": 0.7056247299462451
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0067.txt",
+    "score": 0.706805313887183
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0069.txt",
+    "score": 0.7100968732636239
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0073.txt",
+    "score": 0.705999010373862
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0074.txt",
+    "score": 0.7055313571338009
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0081.txt",
+    "score": 0.7098371624825771
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0084.txt",
+    "score": 0.7117685795209031
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0086.txt",
+    "score": 0.7109800942252268
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0087.txt",
+    "score": 0.7096206317882447
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0089.txt",
+    "score": 0.7072325080528348
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0090.txt",
+    "score": 0.7043833721960888
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0091.txt",
+    "score": 0.7062055104161128
+  },
+  {
+    "document1": "document0018.txt",
+    "document2": "document0099.txt",
+    "score": 0.7024219265607978
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0021.txt",
+    "score": 0.7012051301455999
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0029.txt",
+    "score": 0.7142364291752031
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0031.txt",
+    "score": 0.7036254007584174
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0035.txt",
+    "score": 0.7088881664238366
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0037.txt",
+    "score": 0.7127753450449362
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0038.txt",
+    "score": 0.7134485446953903
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0041.txt",
+    "score": 0.7085877533014464
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0046.txt",
+    "score": 0.7106328957253563
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0067.txt",
+    "score": 0.711833951718342
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0069.txt",
+    "score": 0.7050978910472415
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0073.txt",
+    "score": 0.7110136824889874
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0074.txt",
+    "score": 0.7105378974374763
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0081.txt",
+    "score": 0.704842640233781
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0082.txt",
+    "score": 0.7028701503220087
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0084.txt",
+    "score": 0.7122642843681168
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0086.txt",
+    "score": 0.7059659954288097
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0087.txt",
+    "score": 0.7046298331595253
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0089.txt",
+    "score": 0.702283087721897
+  },
+  {
+    "document1": "document0019.txt",
+    "document2": "document0091.txt",
+    "score": 0.7012740582387321
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0022.txt",
+    "score": 0.7013781107580961
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0024.txt",
+    "score": 0.700414679579816
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0025.txt",
+    "score": 0.7057975425857136
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0031.txt",
+    "score": 0.7008766608770016
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0034.txt",
+    "score": 0.7101574333336396
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0040.txt",
+    "score": 0.7088589244348101
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0044.txt",
+    "score": 0.7084316582274579
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0052.txt",
+    "score": 0.7138889700930482
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0054.txt",
+    "score": 0.7086144873403426
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0055.txt",
+    "score": 0.7065497230763388
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0076.txt",
+    "score": 0.7109513754990876
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0089.txt",
+    "score": 0.7022121042323625
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0090.txt",
+    "score": 0.7050392093500506
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0091.txt",
+    "score": 0.7032245906595703
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0097.txt",
+    "score": 0.7100423095113457
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0099.txt",
+    "score": 0.7070190658853097
+  },
+  {
+    "document1": "document0020.txt",
+    "document2": "document0100.txt",
+    "score": 0.7111289238891418
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0023.txt",
+    "score": 0.701415211024804
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0029.txt",
+    "score": 0.700892029751484
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0035.txt",
+    "score": 0.706731184750882
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0037.txt",
+    "score": 0.7029238139312644
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0038.txt",
+    "score": 0.7001398221383791
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0041.txt",
+    "score": 0.707029675851277
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0046.txt",
+    "score": 0.7050097498675588
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0048.txt",
+    "score": 0.7054375750702869
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0057.txt",
+    "score": 0.7119879090416542
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0060.txt",
+    "score": 0.7100817976152847
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0062.txt",
+    "score": 0.707689508199237
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0067.txt",
+    "score": 0.7038366246512843
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0073.txt",
+    "score": 0.7046367759438874
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0074.txt",
+    "score": 0.7051029505388117
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0075.txt",
+    "score": 0.7015507994816254
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0082.txt",
+    "score": 0.7128308769665238
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0092.txt",
+    "score": 0.7038820969649536
+  },
+  {
+    "document1": "document0021.txt",
+    "document2": "document0098.txt",
+    "score": 0.7002025297056618
+  },
+  {
+    "document1": "document0022.txt",
+    "document2": "document0024.txt",
+    "score": 0.7135559057084842
+  },
+  {
+    "document1": "document0022.txt",
+    "document2": "document0034.txt",
+    "score": 0.705652485600124
+  },
+  {
+    "document1": "document0022.txt",
+    "document2": "document0052.txt",
+    "score": 0.7020248977590074
+  },
+  {
+    "document1": "document0022.txt",
+    "document2": "document0054.txt",
+    "score": 0.7071796921254009
+  },
+  {
+    "document1": "document0022.txt",
+    "document2": "document0055.txt",
+    "score": 0.7092489681633898
+  },
+  {
+    "document1": "document0022.txt",
+    "document2": "document0076.txt",
+    "score": 0.704872916022546
+  },
+  {
+    "document1": "document0022.txt",
+    "document2": "document0096.txt",
+    "score": 0.7101520326031295
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0027.txt",
+    "score": 0.7009514936575794
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0032.txt",
+    "score": 0.7091259924769631
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0033.txt",
+    "score": 0.7128751531994966
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0045.txt",
+    "score": 0.709977441486729
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0048.txt",
+    "score": 0.7104141695106979
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0057.txt",
+    "score": 0.7038989238755147
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0060.txt",
+    "score": 0.7057646582982295
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0062.txt",
+    "score": 0.7081410402087726
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0072.txt",
+    "score": 0.7071518595646346
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0075.txt",
+    "score": 0.7144225160948797
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0079.txt",
+    "score": 0.7084885334770943
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0080.txt",
+    "score": 0.7032356880141093
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0092.txt",
+    "score": 0.7120052133762692
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0094.txt",
+    "score": 0.7101819997882024
+  },
+  {
+    "document1": "document0023.txt",
+    "document2": "document0098.txt",
+    "score": 0.7132951446174849
+  },
+  {
+    "document1": "document0024.txt",
+    "document2": "document0034.txt",
+    "score": 0.7046740856603062
+  },
+  {
+    "document1": "document0024.txt",
+    "document2": "document0052.txt",
+    "score": 0.7010591785159836
+  },
+  {
+    "document1": "document0024.txt",
+    "document2": "document0054.txt",
+    "score": 0.7061960318603134
+  },
+  {
+    "document1": "document0024.txt",
+    "document2": "document0055.txt",
+    "score": 0.7082582555261207
+  },
+  {
+    "document1": "document0024.txt",
+    "document2": "document0066.txt",
+    "score": 0.700315148934011
+  },
+  {
+    "document1": "document0024.txt",
+    "document2": "document0076.txt",
+    "score": 0.7038972192137146
+  },
+  {
+    "document1": "document0024.txt",
+    "document2": "document0096.txt",
+    "score": 0.7111491443504458
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0031.txt",
+    "score": 0.7094932101173833
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0034.txt",
+    "score": 0.7015209554210015
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0040.txt",
+    "score": 0.7114436651631786
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0044.txt",
+    "score": 0.7118753059589943
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0052.txt",
+    "score": 0.7051419348487037
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0054.txt",
+    "score": 0.7000244168139205
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0069.txt",
+    "score": 0.7079979744942414
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0076.txt",
+    "score": 0.7022911751446124
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0081.txt",
+    "score": 0.70825605839082
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0084.txt",
+    "score": 0.7009363831929781
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0086.txt",
+    "score": 0.7071236895408303
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0087.txt",
+    "score": 0.7084715819716151
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0089.txt",
+    "score": 0.7108698743272144
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0090.txt",
+    "score": 0.7137831421887807
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0091.txt",
+    "score": 0.7119133913761264
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0097.txt",
+    "score": 0.7102546736112685
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0099.txt",
+    "score": 0.7133113286462932
+  },
+  {
+    "document1": "document0025.txt",
+    "document2": "document0100.txt",
+    "score": 0.709171259124309
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0030.txt",
+    "score": 0.7115841618908582
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0042.txt",
+    "score": 0.7092423530266481
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0043.txt",
+    "score": 0.7019245466413361
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0051.txt",
+    "score": 0.7055883030603648
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0053.txt",
+    "score": 0.7075666124272191
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0061.txt",
+    "score": 0.7099205414266957
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0065.txt",
+    "score": 0.7000820107608194
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0070.txt",
+    "score": 0.7034843136216605
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0085.txt",
+    "score": 0.7100329640953177
+  },
+  {
+    "document1": "document0026.txt",
+    "document2": "document0095.txt",
+    "score": 0.7123987686709946
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0028.txt",
+    "score": 0.7061905869019725
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0032.txt",
+    "score": 0.7062368201802757
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0033.txt",
+    "score": 0.7025722355441015
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0045.txt",
+    "score": 0.7053963027486643
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0058.txt",
+    "score": 0.7009377189734323
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0071.txt",
+    "score": 0.7004725355957424
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0072.txt",
+    "score": 0.7082046922078321
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0075.txt",
+    "score": 0.700816203441874
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0079.txt",
+    "score": 0.7068693272213737
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0080.txt",
+    "score": 0.7121892330933595
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0093.txt",
+    "score": 0.7029374044668806
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0094.txt",
+    "score": 0.7051951020746149
+  },
+  {
+    "document1": "document0027.txt",
+    "document2": "document0098.txt",
+    "score": 0.7021675250730544
+  },
+  {
+    "document1": "document0028.txt",
+    "document2": "document0058.txt",
+    "score": 0.7091585155150857
+  },
+  {
+    "document1": "document0028.txt",
+    "document2": "document0063.txt",
+    "score": 0.7035422453134919
+  },
+  {
+    "document1": "document0028.txt",
+    "document2": "document0064.txt",
+    "score": 0.7003939534811242
+  },
+  {
+    "document1": "document0028.txt",
+    "document2": "document0071.txt",
+    "score": 0.708679550946911
+  },
+  {
+    "document1": "document0028.txt",
+    "document2": "document0072.txt",
+    "score": 0.7000113763430628
+  },
+  {
+    "document1": "document0028.txt",
+    "document2": "document0080.txt",
+    "score": 0.7038820969649536
+  },
+  {
+    "document1": "document0028.txt",
+    "document2": "document0083.txt",
+    "score": 0.702814542496575
+  },
+  {
+    "document1": "document0028.txt",
+    "document2": "document0093.txt",
+    "score": 0.7112170068821384
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0031.txt",
+    "score": 0.7039416282840539
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0035.txt",
+    "score": 0.7085664093709366
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0037.txt",
+    "score": 0.7124493566250724
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0038.txt",
+    "score": 0.7137756053899426
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0041.txt",
+    "score": 0.7082663274761225
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0046.txt",
+    "score": 0.7103092268814245
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0067.txt",
+    "score": 0.7115089786944712
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0069.txt",
+    "score": 0.705415783197958
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0073.txt",
+    "score": 0.7106895991101736
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0074.txt",
+    "score": 0.7102143321633018
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0081.txt",
+    "score": 0.7051602448388228
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0082.txt",
+    "score": 0.702555141519462
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0084.txt",
+    "score": 0.7125900734282586
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0086.txt",
+    "score": 0.7062848623296338
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0087.txt",
+    "score": 0.7049471977079143
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0089.txt",
+    "score": 0.7025977855562403
+  },
+  {
+    "document1": "document0029.txt",
+    "document2": "document0091.txt",
+    "score": 0.7015875985711644
+  },
+  {
+    "document1": "document0030.txt",
+    "document2": "document0042.txt",
+    "score": 0.7063149104224976
+  },
+  {
+    "document1": "document0030.txt",
+    "document2": "document0043.txt",
+    "score": 0.7048067536759529
+  },
+  {
+    "document1": "document0030.txt",
+    "document2": "document0051.txt",
+    "score": 0.7026980419461907
+  },
+  {
+    "document1": "document0030.txt",
+    "document2": "document0053.txt",
+    "score": 0.7046561235730773
+  },
+  {
+    "document1": "document0030.txt",
+    "document2": "document0061.txt",
+    "score": 0.712884250746267
+  },
+  {
+    "document1": "document0030.txt",
+    "document2": "document0070.txt",
+    "score": 0.7006158151692479
+  },
+  {
+    "document1": "document0030.txt",
+    "document2": "document0085.txt",
+    "score": 0.7070975806953282
+  },
+  {
+    "document1": "document0030.txt",
+    "document2": "document0095.txt",
+    "score": 0.7137439139968519
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0037.txt",
+    "score": 0.7019023434473597
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0038.txt",
+    "score": 0.7047043139881706
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0040.txt",
+    "score": 0.7064251362746149
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0044.txt",
+    "score": 0.7068494435208954
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0052.txt",
+    "score": 0.7002325957433915
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0067.txt",
+    "score": 0.7009959156325863
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0069.txt",
+    "score": 0.7130435909059828
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0073.txt",
+    "score": 0.7002062654182885
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0081.txt",
+    "score": 0.7133060941587923
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0084.txt",
+    "score": 0.7058583330493712
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0086.txt",
+    "score": 0.7121542816897924
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0087.txt",
+    "score": 0.7135253027994709
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0089.txt",
+    "score": 0.7131707184229904
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0090.txt",
+    "score": 0.7102633387144252
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0091.txt",
+    "score": 0.712122844380385
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0097.txt",
+    "score": 0.7052564430946707
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0099.txt",
+    "score": 0.7082612048252578
+  },
+  {
+    "document1": "document0031.txt",
+    "document2": "document0100.txt",
+    "score": 0.7041916484218238
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0033.txt",
+    "score": 0.710794182461298
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0045.txt",
+    "score": 0.7136998134275011
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0048.txt",
+    "score": 0.7050511537250607
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0060.txt",
+    "score": 0.7004882289820231
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0062.txt",
+    "score": 0.7028200695052873
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0072.txt",
+    "score": 0.712553945425719
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0075.txt",
+    "score": 0.7089867207075801
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0079.txt",
+    "score": 0.7139152149649511
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0080.txt",
+    "score": 0.70856453371636
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0092.txt",
+    "score": 0.7066130993991783
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0094.txt",
+    "score": 0.7134928489069297
+  },
+  {
+    "document1": "document0032.txt",
+    "document2": "document0098.txt",
+    "score": 0.7103776672000512
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0045.txt",
+    "score": 0.7116504413081814
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0048.txt",
+    "score": 0.7087481222421291
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0057.txt",
+    "score": 0.702270373454638
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0060.txt",
+    "score": 0.704125224808634
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0062.txt",
+    "score": 0.7064879130375131
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0072.txt",
+    "score": 0.7088088004061833
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0075.txt",
+    "score": 0.7127341192123691
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0079.txt",
+    "score": 0.7101531058598203
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0080.txt",
+    "score": 0.7048699167461717
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0092.txt",
+    "score": 0.7103302281183134
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0094.txt",
+    "score": 0.7118561513700028
+  },
+  {
+    "document1": "document0033.txt",
+    "document2": "document0098.txt",
+    "score": 0.7141425960149151
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0040.txt",
+    "score": 0.7045360684435181
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0044.txt",
+    "score": 0.7041152111967678
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0052.txt",
+    "score": 0.7108244971405879
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0054.txt",
+    "score": 0.7129986092157592
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0055.txt",
+    "score": 0.7109030197819106
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0076.txt",
+    "score": 0.7137608527006362
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0090.txt",
+    "score": 0.7007742076434716
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0096.txt",
+    "score": 0.7013728745072981
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0097.txt",
+    "score": 0.7057017859019532
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0099.txt",
+    "score": 0.7027239201845595
+  },
+  {
+    "document1": "document0034.txt",
+    "document2": "document0100.txt",
+    "score": 0.7067722855304344
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0037.txt",
+    "score": 0.7106540813397109
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0038.txt",
+    "score": 0.707793339007107
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0041.txt",
+    "score": 0.7142581810828605
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0046.txt",
+    "score": 0.7127966823211541
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0057.txt",
+    "score": 0.7042222829883632
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0060.txt",
+    "score": 0.7023667845179836
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0062.txt",
+    "score": 0.7000388002459255
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0067.txt",
+    "score": 0.7115917781521132
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0073.txt",
+    "score": 0.712413629835761
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0074.txt",
+    "score": 0.7128923978299244
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0082.txt",
+    "score": 0.7084293300081527
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0084.txt",
+    "score": 0.7066314791082164
+  },
+  {
+    "document1": "document0035.txt",
+    "document2": "document0086.txt",
+    "score": 0.7004549706449258
+  },
+  {
+    "document1": "document0036.txt",
+    "document2": "document0043.txt",
+    "score": 0.7067462643244224
+  },
+  {
+    "document1": "document0036.txt",
+    "document2": "document0047.txt",
+    "score": 0.7066510219071775
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0038.txt",
+    "score": 0.7116660849181298
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0041.txt",
+    "score": 0.7103518618072109
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0046.txt",
+    "score": 0.7124092356422542
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0057.txt",
+    "score": 0.7004488663095797
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0067.txt",
+    "score": 0.7136174020291918
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0069.txt",
+    "score": 0.7033657103446733
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0073.txt",
+    "score": 0.7127922825679188
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0074.txt",
+    "score": 0.7123136726458514
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0081.txt",
+    "score": 0.7031120356040035
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0082.txt",
+    "score": 0.7045992499864514
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0084.txt",
+    "score": 0.7104888011403506
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0086.txt",
+    "score": 0.7042284716637162
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0087.txt",
+    "score": 0.7029005442748962
+  },
+  {
+    "document1": "document0037.txt",
+    "document2": "document0089.txt",
+    "score": 0.7005684129638413
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0041.txt",
+    "score": 0.7074940555576436
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0046.txt",
+    "score": 0.7095315477248143
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0067.txt",
+    "score": 0.7107281552271878
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0069.txt",
+    "score": 0.7061824711570232
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0073.txt",
+    "score": 0.7099109205579267
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0074.txt",
+    "score": 0.7094369026975558
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0081.txt",
+    "score": 0.7059262414775589
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0082.txt",
+    "score": 0.7017983354012618
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0084.txt",
+    "score": 0.7133757428499744
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0086.txt",
+    "score": 0.707053893713572
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0087.txt",
+    "score": 0.7057126171918106
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0089.txt",
+    "score": 0.7033567931209549
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0090.txt",
+    "score": 0.7005467727401611
+  },
+  {
+    "document1": "document0038.txt",
+    "document2": "document0091.txt",
+    "score": 0.7023438227355663
+  },
+  {
+    "document1": "document0039.txt",
+    "document2": "document0088.txt",
+    "score": 0.7098110364585617
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0044.txt",
+    "score": 0.7141288588432291
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0052.txt",
+    "score": 0.708196299004843
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0054.txt",
+    "score": 0.703023067119799
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0055.txt",
+    "score": 0.7009987896513264
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0069.txt",
+    "score": 0.7049457160302086
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0076.txt",
+    "score": 0.7053147065205753
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0081.txt",
+    "score": 0.7052010602220716
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0086.txt",
+    "score": 0.7040807426589458
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0087.txt",
+    "score": 0.7054142990592916
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0089.txt",
+    "score": 0.7077873625709742
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0090.txt",
+    "score": 0.7106704717446388
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0091.txt",
+    "score": 0.7088200150371456
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0097.txt",
+    "score": 0.7133630282886105
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0099.txt",
+    "score": 0.7126889796035428
+  },
+  {
+    "document1": "document0040.txt",
+    "document2": "document0100.txt",
+    "score": 0.7122683150553998
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0046.txt",
+    "score": 0.7124922973649875
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0057.txt",
+    "score": 0.70451814305356
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0060.txt",
+    "score": 0.702660674173731
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0062.txt",
+    "score": 0.70033018858724
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0067.txt",
+    "score": 0.7112886073651812
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0073.txt",
+    "score": 0.7121096298793967
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0074.txt",
+    "score": 0.7125879168173441
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0082.txt",
+    "score": 0.7087295799565535
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0084.txt",
+    "score": 0.7063334025835608
+  },
+  {
+    "document1": "document0041.txt",
+    "document2": "document0086.txt",
+    "score": 0.7001634475603707
+  },
+  {
+    "document1": "document0042.txt",
+    "document2": "document0051.txt",
+    "score": 0.7108443180567909
+  },
+  {
+    "document1": "document0042.txt",
+    "document2": "document0053.txt",
+    "score": 0.7128585268886614
+  },
+  {
+    "document1": "document0042.txt",
+    "document2": "document0061.txt",
+    "score": 0.704681134875041
+  },
+  {
+    "document1": "document0042.txt",
+    "document2": "document0065.txt",
+    "score": 0.7052358206875186
+  },
+  {
+    "document1": "document0042.txt",
+    "document2": "document0070.txt",
+    "score": 0.7087016690036628
+  },
+  {
+    "document1": "document0042.txt",
+    "document2": "document0085.txt",
+    "score": 0.7137617386582105
+  },
+  {
+    "document1": "document0042.txt",
+    "document2": "document0095.txt",
+    "score": 0.7071150104487666
+  },
+  {
+    "document1": "document0043.txt",
+    "document2": "document0061.txt",
+    "score": 0.7064412557629485
+  },
+  {
+    "document1": "document0043.txt",
+    "document2": "document0095.txt",
+    "score": 0.7040131357030752
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0052.txt",
+    "score": 0.7077700045971796
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0054.txt",
+    "score": 0.7026044911636722
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0055.txt",
+    "score": 0.7005832963202341
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0069.txt",
+    "score": 0.7053678190177584
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0076.txt",
+    "score": 0.7048926829031547
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0081.txt",
+    "score": 0.7056235450196774
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0086.txt",
+    "score": 0.7045015480747094
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0087.txt",
+    "score": 0.7058371022737826
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0089.txt",
+    "score": 0.7082136825224877
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0090.txt",
+    "score": 0.7111009973223573
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0091.txt",
+    "score": 0.7092478498349066
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0097.txt",
+    "score": 0.7129292599124936
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0099.txt",
+    "score": 0.7131224052230114
+  },
+  {
+    "document1": "document0044.txt",
+    "document2": "document0100.txt",
+    "score": 0.7118361102787631
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0048.txt",
+    "score": 0.705890647257035
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0060.txt",
+    "score": 0.7013139943021883
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0062.txt",
+    "score": 0.7036528948881365
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0072.txt",
+    "score": 0.7116951096816105
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0075.txt",
+    "score": 0.7098377659190245
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0079.txt",
+    "score": 0.7130525243034483
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0080.txt",
+    "score": 0.707717185158949
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0092.txt",
+    "score": 0.7074572100011416
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0094.txt",
+    "score": 0.7143567828635163
+  },
+  {
+    "document1": "document0045.txt",
+    "document2": "document0098.txt",
+    "score": 0.7112327297758937
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0057.txt",
+    "score": 0.7025161096867651
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0060.txt",
+    "score": 0.7006720380503804
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0067.txt",
+    "score": 0.7133524213505532
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0069.txt",
+    "score": 0.7012920690900972
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0073.txt",
+    "score": 0.714179056957952
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0074.txt",
+    "score": 0.7144680909028703
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0081.txt",
+    "score": 0.701040301488214
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0082.txt",
+    "score": 0.7066976903334301
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0084.txt",
+    "score": 0.708362720418559
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0086.txt",
+    "score": 0.7021483642511583
+  },
+  {
+    "document1": "document0046.txt",
+    "document2": "document0087.txt",
+    "score": 0.7008304022105083
+  },
+  {
+    "document1": "document0047.txt",
+    "document2": "document0050.txt",
+    "score": 0.7064085408426038
+  },
+  {
+    "document1": "document0047.txt",
+    "document2": "document0078.txt",
+    "score": 0.705981158811395
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0057.txt",
+    "score": 0.7079572549832692
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0060.txt",
+    "score": 0.7098496621504569
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0062.txt",
+    "score": 0.7122595822394365
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0072.txt",
+    "score": 0.7031049690784538
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0075.txt",
+    "score": 0.7105541173727814
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0079.txt",
+    "score": 0.7044226845398287
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0082.txt",
+    "score": 0.7037571254869135
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0092.txt",
+    "score": 0.712959809429462
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0094.txt",
+    "score": 0.7060923422047842
+  },
+  {
+    "document1": "document0048.txt",
+    "document2": "document0098.txt",
+    "score": 0.7091623401392687
+  },
+  {
+    "document1": "document0049.txt",
+    "document2": "document0051.txt",
+    "score": 0.7015896331194701
+  },
+  {
+    "document1": "document0049.txt",
+    "document2": "document0056.txt",
+    "score": 0.7138105463810446
+  },
+  {
+    "document1": "document0049.txt",
+    "document2": "document0065.txt",
+    "score": 0.7071261452322525
+  },
+  {
+    "document1": "document0049.txt",
+    "document2": "document0066.txt",
+    "score": 0.7139799870588005
+  },
+  {
+    "document1": "document0049.txt",
+    "document2": "document0068.txt",
+    "score": 0.712583107438981
+  },
+  {
+    "document1": "document0049.txt",
+    "document2": "document0070.txt",
+    "score": 0.7036792878287428
+  },
+  {
+    "document1": "document0049.txt",
+    "document2": "document0096.txt",
+    "score": 0.7030407888879283
+  },
+  {
+    "document1": "document0050.txt",
+    "document2": "document0078.txt",
+    "score": 0.7141250259463063
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0053.txt",
+    "score": 0.7125387965745733
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0056.txt",
+    "score": 0.702312276147769
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0061.txt",
+    "score": 0.7010852883379454
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0065.txt",
+    "score": 0.7088853703177026
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0066.txt",
+    "score": 0.701030896622191
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0068.txt",
+    "score": 0.7034969170953941
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0070.txt",
+    "score": 0.7123950521246346
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0085.txt",
+    "score": 0.7100515368495154
+  },
+  {
+    "document1": "document0051.txt",
+    "document2": "document0095.txt",
+    "score": 0.703487917599759
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0054.txt",
+    "score": 0.7092780636615622
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0055.txt",
+    "score": 0.7072085811344877
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0076.txt",
+    "score": 0.7116202209364145
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0089.txt",
+    "score": 0.7015648750967395
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0090.txt",
+    "score": 0.704385359474177
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0091.txt",
+    "score": 0.7025749782614158
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0097.txt",
+    "score": 0.7093770055635924
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0099.txt",
+    "score": 0.7063606428142412
+  },
+  {
+    "document1": "document0052.txt",
+    "document2": "document0100.txt",
+    "score": 0.7104611774321129
+  },
+  {
+    "document1": "document0053.txt",
+    "document2": "document0056.txt",
+    "score": 0.7003707281102136
+  },
+  {
+    "document1": "document0053.txt",
+    "document2": "document0061.txt",
+    "score": 0.7030319358189813
+  },
+  {
+    "document1": "document0053.txt",
+    "document2": "document0065.txt",
+    "score": 0.7068980076729903
+  },
+  {
+    "document1": "document0053.txt",
+    "document2": "document0068.txt",
+    "score": 0.7015469855817588
+  },
+  {
+    "document1": "document0053.txt",
+    "document2": "document0070.txt",
+    "score": 0.7103839413760564
+  },
+  {
+    "document1": "document0053.txt",
+    "document2": "document0085.txt",
+    "score": 0.712060405112637
+  },
+  {
+    "document1": "document0053.txt",
+    "document2": "document0095.txt",
+    "score": 0.7054515610224399
+  },
+  {
+    "document1": "document0054.txt",
+    "document2": "document0055.txt",
+    "score": 0.7124579330224438
+  },
+  {
+    "document1": "document0054.txt",
+    "document2": "document0076.txt",
+    "score": 0.7121992370999501
+  },
+  {
+    "document1": "document0054.txt",
+    "document2": "document0096.txt",
+    "score": 0.7028768505443446
+  },
+  {
+    "document1": "document0054.txt",
+    "document2": "document0097.txt",
+    "score": 0.7041824941101555
+  },
+  {
+    "document1": "document0054.txt",
+    "document2": "document0099.txt",
+    "score": 0.7012207802272612
+  },
+  {
+    "document1": "document0054.txt",
+    "document2": "document0100.txt",
+    "score": 0.7052472540470995
+  },
+  {
+    "document1": "document0055.txt",
+    "document2": "document0076.txt",
+    "score": 0.7101092067092369
+  },
+  {
+    "document1": "document0055.txt",
+    "document2": "document0096.txt",
+    "score": 0.7049149717915476
+  },
+  {
+    "document1": "document0055.txt",
+    "document2": "document0097.txt",
+    "score": 0.7021497152797094
+  },
+  {
+    "document1": "document0055.txt",
+    "document2": "document0100.txt",
+    "score": 0.7032067165400564
+  },
+  {
+    "document1": "document0056.txt",
+    "document2": "document0065.txt",
+    "score": 0.7078631795104109
+  },
+  {
+    "document1": "document0056.txt",
+    "document2": "document0066.txt",
+    "score": 0.7132276356896937
+  },
+  {
+    "document1": "document0056.txt",
+    "document2": "document0068.txt",
+    "score": 0.7133338682871636
+  },
+  {
+    "document1": "document0056.txt",
+    "document2": "document0070.txt",
+    "score": 0.7044074165428942
+  },
+  {
+    "document1": "document0056.txt",
+    "document2": "document0096.txt",
+    "score": 0.7023162310734172
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0060.txt",
+    "score": 0.7126419457078913
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0062.txt",
+    "score": 0.7102289543175575
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0067.txt",
+    "score": 0.701353470389941
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0073.txt",
+    "score": 0.7021464620951529
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0074.txt",
+    "score": 0.7026084802481147
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0075.txt",
+    "score": 0.7040357383629366
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0082.txt",
+    "score": 0.710269120858781
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0092.txt",
+    "score": 0.7063879678640373
+  },
+  {
+    "document1": "document0057.txt",
+    "document2": "document0098.txt",
+    "score": 0.7026752353062415
+  },
+  {
+    "document1": "document0058.txt",
+    "document2": "document0063.txt",
+    "score": 0.7088443953346284
+  },
+  {
+    "document1": "document0058.txt",
+    "document2": "document0064.txt",
+    "score": 0.7056364375787292
+  },
+  {
+    "document1": "document0058.txt",
+    "document2": "document0071.txt",
+    "score": 0.7140766662473513
+  },
+  {
+    "document1": "document0058.txt",
+    "document2": "document0083.txt",
+    "score": 0.7081029991878193
+  },
+  {
+    "document1": "document0058.txt",
+    "document2": "document0093.txt",
+    "score": 0.7124828806225062
+  },
+  {
+    "document1": "document0059.txt",
+    "document2": "document0063.txt",
+    "score": 0.7023973889062917
+  },
+  {
+    "document1": "document0059.txt",
+    "document2": "document0064.txt",
+    "score": 0.7055686968052789
+  },
+  {
+    "document1": "document0059.txt",
+    "document2": "document0083.txt",
+    "score": 0.7031239936782752
+  },
+  {
+    "document1": "document0060.txt",
+    "document2": "document0062.txt",
+    "score": 0.7121360082950041
+  },
+  {
+    "document1": "document0060.txt",
+    "document2": "document0073.txt",
+    "score": 0.7003048803835747
+  },
+  {
+    "document1": "document0060.txt",
+    "document2": "document0074.txt",
+    "score": 0.7007637871997666
+  },
+  {
+    "document1": "document0060.txt",
+    "document2": "document0075.txt",
+    "score": 0.7059023824240653
+  },
+  {
+    "document1": "document0060.txt",
+    "document2": "document0082.txt",
+    "score": 0.7083740112653863
+  },
+  {
+    "document1": "document0060.txt",
+    "document2": "document0092.txt",
+    "score": 0.70827013756094
+  },
+  {
+    "document1": "document0060.txt",
+    "document2": "document0094.txt",
+    "score": 0.7015124005008054
+  },
+  {
+    "document1": "document0060.txt",
+    "document2": "document0098.txt",
+    "score": 0.7045328017264978
+  },
+  {
+    "document1": "document0061.txt",
+    "document2": "document0085.txt",
+    "score": 0.7054593130148004
+  },
+  {
+    "document1": "document0061.txt",
+    "document2": "document0095.txt",
+    "score": 0.7120683345640381
+  },
+  {
+    "document1": "document0062.txt",
+    "document2": "document0072.txt",
+    "score": 0.7008894653803849
+  },
+  {
+    "document1": "document0062.txt",
+    "document2": "document0075.txt",
+    "score": 0.708279908653037
+  },
+  {
+    "document1": "document0062.txt",
+    "document2": "document0079.txt",
+    "score": 0.7021966130833601
+  },
+  {
+    "document1": "document0062.txt",
+    "document2": "document0082.txt",
+    "score": 0.7059957101326612
+  },
+  {
+    "document1": "document0062.txt",
+    "document2": "document0092.txt",
+    "score": 0.7106671890720933
+  },
+  {
+    "document1": "document0062.txt",
+    "document2": "document0094.txt",
+    "score": 0.7038529925102003
+  },
+  {
+    "document1": "document0062.txt",
+    "document2": "document0098.txt",
+    "score": 0.7068989066924082
+  },
+  {
+    "document1": "document0063.txt",
+    "document2": "document0064.txt",
+    "score": 0.7112940581985898
+  },
+  {
+    "document1": "document0063.txt",
+    "document2": "document0071.txt",
+    "score": 0.7093236299579436
+  },
+  {
+    "document1": "document0063.txt",
+    "document2": "document0083.txt",
+    "score": 0.71380864425881
+  },
+  {
+    "document1": "document0063.txt",
+    "document2": "document0093.txt",
+    "score": 0.7068024651432716
+  },
+  {
+    "document1": "document0064.txt",
+    "document2": "document0071.txt",
+    "score": 0.7061103685241359
+  },
+  {
+    "document1": "document0064.txt",
+    "document2": "document0083.txt",
+    "score": 0.7120435094674461
+  },
+  {
+    "document1": "document0064.txt",
+    "document2": "document0093.txt",
+    "score": 0.7036172722948251
+  },
+  {
+    "document1": "document0065.txt",
+    "document2": "document0066.txt",
+    "score": 0.7065562398472989
+  },
+  {
+    "document1": "document0065.txt",
+    "document2": "document0068.txt",
+    "score": 0.7090712797159353
+  },
+  {
+    "document1": "document0065.txt",
+    "document2": "document0070.txt",
+    "score": 0.7110293584762767
+  },
+  {
+    "document1": "document0065.txt",
+    "document2": "document0085.txt",
+    "score": 0.7044582586791293
+  },
+  {
+    "document1": "document0066.txt",
+    "document2": "document0068.txt",
+    "score": 0.7120025446848569
+  },
+  {
+    "document1": "document0066.txt",
+    "document2": "document0070.txt",
+    "score": 0.7031162944671343
+  },
+  {
+    "document1": "document0066.txt",
+    "document2": "document0096.txt",
+    "score": 0.7036036289927204
+  },
+  {
+    "document1": "document0067.txt",
+    "document2": "document0069.txt",
+    "score": 0.7024544472323885
+  },
+  {
+    "document1": "document0067.txt",
+    "document2": "document0073.txt",
+    "score": 0.713736658073646
+  },
+  {
+    "document1": "document0067.txt",
+    "document2": "document0074.txt",
+    "score": 0.7132565610679175
+  },
+  {
+    "document1": "document0067.txt",
+    "document2": "document0081.txt",
+    "score": 0.7022016078651059
+  },
+  {
+    "document1": "document0067.txt",
+    "document2": "document0082.txt",
+    "score": 0.7055175512750047
+  },
+  {
+    "document1": "document0067.txt",
+    "document2": "document0084.txt",
+    "score": 0.7095545736778441
+  },
+  {
+    "document1": "document0067.txt",
+    "document2": "document0086.txt",
+    "score": 0.7033143763148408
+  },
+  {
+    "document1": "document0067.txt",
+    "document2": "document0087.txt",
+    "score": 0.7019908139034673
+  },
+  {
+    "document1": "document0068.txt",
+    "document2": "document0070.txt",
+    "score": 0.7056010013676466
+  },
+  {
+    "document1": "document0068.txt",
+    "document2": "document0096.txt",
+    "score": 0.701136655507374
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0073.txt",
+    "score": 0.7016605646542631
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0074.txt",
+    "score": 0.7012001413317422
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0081.txt",
+    "score": 0.7143007478368507
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0084.txt",
+    "score": 0.7073425121877459
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0086.txt",
+    "score": 0.7136705849037068
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0087.txt",
+    "score": 0.7140809840509262
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0089.txt",
+    "score": 0.7116569074653382
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0090.txt",
+    "score": 0.7087641784076767
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0091.txt",
+    "score": 0.7106142834179133
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0097.txt",
+    "score": 0.7037831221786274
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0099.txt",
+    "score": 0.7067722855304344
+  },
+  {
+    "document1": "document0069.txt",
+    "document2": "document0100.txt",
+    "score": 0.7027239201845595
+  },
+  {
+    "document1": "document0070.txt",
+    "document2": "document0085.txt",
+    "score": 0.7079146420535152
+  },
+  {
+    "document1": "document0070.txt",
+    "document2": "document0095.txt",
+    "score": 0.7013997083710622
+  },
+  {
+    "document1": "document0071.txt",
+    "document2": "document0083.txt",
+    "score": 0.708581017100139
+  },
+  {
+    "document1": "document0071.txt",
+    "document2": "document0093.txt",
+    "score": 0.7119985311954354
+  },
+  {
+    "document1": "document0072.txt",
+    "document2": "document0075.txt",
+    "score": 0.7070135320501296
+  },
+  {
+    "document1": "document0072.txt",
+    "document2": "document0079.txt",
+    "score": 0.713200174351162
+  },
+  {
+    "document1": "document0072.txt",
+    "document2": "document0080.txt",
+    "score": 0.7105482645776414
+  },
+  {
+    "document1": "document0072.txt",
+    "document2": "document0092.txt",
+    "score": 0.7046561235730773
+  },
+  {
+    "document1": "document0072.txt",
+    "document2": "document0094.txt",
+    "score": 0.7114895098902764
+  },
+  {
+    "document1": "document0072.txt",
+    "document2": "document0098.txt",
+    "score": 0.7083950832478696
+  },
+  {
+    "document1": "document0073.txt",
+    "document2": "document0074.txt",
+    "score": 0.7140829375944535
+  },
+  {
+    "document1": "document0073.txt",
+    "document2": "document0081.txt",
+    "score": 0.7014084565341764
+  },
+  {
+    "document1": "document0073.txt",
+    "document2": "document0082.txt",
+    "score": 0.706322491689765
+  },
+  {
+    "document1": "document0073.txt",
+    "document2": "document0084.txt",
+    "score": 0.7087405822213426
+  },
+  {
+    "document1": "document0073.txt",
+    "document2": "document0086.txt",
+    "score": 0.7025180144014292
+  },
+  {
+    "document1": "document0073.txt",
+    "document2": "document0087.txt",
+    "score": 0.701198273002843
+  },
+  {
+    "document1": "document0074.txt",
+    "document2": "document0081.txt",
+    "score": 0.7009484587861889
+  },
+  {
+    "document1": "document0074.txt",
+    "document2": "document0082.txt",
+    "score": 0.7067914461697049
+  },
+  {
+    "document1": "document0074.txt",
+    "document2": "document0084.txt",
+    "score": 0.7082684528997969
+  },
+  {
+    "document1": "document0074.txt",
+    "document2": "document0086.txt",
+    "score": 0.7020561480906379
+  },
+  {
+    "document1": "document0074.txt",
+    "document2": "document0087.txt",
+    "score": 0.7007386305103691
+  },
+  {
+    "document1": "document0075.txt",
+    "document2": "document0079.txt",
+    "score": 0.7083495653909281
+  },
+  {
+    "document1": "document0075.txt",
+    "document2": "document0080.txt",
+    "score": 0.7030992663885935
+  },
+  {
+    "document1": "document0075.txt",
+    "document2": "document0092.txt",
+    "score": 0.7121459078165513
+  },
+  {
+    "document1": "document0075.txt",
+    "document2": "document0094.txt",
+    "score": 0.7100422275217891
+  },
+  {
+    "document1": "document0075.txt",
+    "document2": "document0098.txt",
+    "score": 0.7131539157883161
+  },
+  {
+    "document1": "document0076.txt",
+    "document2": "document0090.txt",
+    "score": 0.7015423202173339
+  },
+  {
+    "document1": "document0076.txt",
+    "document2": "document0096.txt",
+    "score": 0.700605239933556
+  },
+  {
+    "document1": "document0076.txt",
+    "document2": "document0097.txt",
+    "score": 0.7064836398276985
+  },
+  {
+    "document1": "document0076.txt",
+    "document2": "document0099.txt",
+    "score": 0.7034975159391255
+  },
+  {
+    "document1": "document0076.txt",
+    "document2": "document0100.txt",
+    "score": 0.7075570733153038
+  },
+  {
+    "document1": "document0079.txt",
+    "document2": "document0080.txt",
+    "score": 0.709202158689325
+  },
+  {
+    "document1": "document0079.txt",
+    "document2": "document0092.txt",
+    "score": 0.705981158811395
+  },
+  {
+    "document1": "document0079.txt",
+    "document2": "document0094.txt",
+    "score": 0.7128459985375664
+  },
+  {
+    "document1": "document0079.txt",
+    "document2": "document0098.txt",
+    "score": 0.7097374903940858
+  },
+  {
+    "document1": "document0080.txt",
+    "document2": "document0092.txt",
+    "score": 0.7007745686270803
+  },
+  {
+    "document1": "document0080.txt",
+    "document2": "document0093.txt",
+    "score": 0.7006556850251575
+  },
+  {
+    "document1": "document0080.txt",
+    "document2": "document0094.txt",
+    "score": 0.707514344195148
+  },
+  {
+    "document1": "document0080.txt",
+    "document2": "document0098.txt",
+    "score": 0.704461850160834
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0084.txt",
+    "score": 0.7070852423852964
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0086.txt",
+    "score": 0.7134077680516239
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0087.txt",
+    "score": 0.7143443786913971
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0089.txt",
+    "score": 0.7119182099458193
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0090.txt",
+    "score": 0.7090229422704065
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0091.txt",
+    "score": 0.7108746761336904
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0097.txt",
+    "score": 0.704037409933768
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0099.txt",
+    "score": 0.7070292751768923
+  },
+  {
+    "document1": "document0081.txt",
+    "document2": "document0100.txt",
+    "score": 0.7029772393293365
+  },
+  {
+    "document1": "document0082.txt",
+    "document2": "document0084.txt",
+    "score": 0.7006610529173181
+  },
+  {
+    "document1": "document0082.txt",
+    "document2": "document0092.txt",
+    "score": 0.7022109687036754
+  },
+  {
+    "document1": "document0083.txt",
+    "document2": "document0093.txt",
+    "score": 0.7060662923854316
+  },
+  {
+    "document1": "document0084.txt",
+    "document2": "document0086.txt",
+    "score": 0.7082174603188751
+  },
+  {
+    "document1": "document0084.txt",
+    "document2": "document0087.txt",
+    "score": 0.7068707497218149
+  },
+  {
+    "document1": "document0084.txt",
+    "document2": "document0089.txt",
+    "score": 0.7045052770653197
+  },
+  {
+    "document1": "document0084.txt",
+    "document2": "document0090.txt",
+    "score": 0.7016835766127989
+  },
+  {
+    "document1": "document0084.txt",
+    "document2": "document0091.txt",
+    "score": 0.7034881175157355
+  },
+  {
+    "document1": "document0085.txt",
+    "document2": "document0095.txt",
+    "score": 0.707899864900346
+  },
+  {
+    "document1": "document0086.txt",
+    "document2": "document0087.txt",
+    "score": 0.713188643796087
+  },
+  {
+    "document1": "document0086.txt",
+    "document2": "document0089.txt",
+    "score": 0.7107716809618856
+  },
+  {
+    "document1": "document0086.txt",
+    "document2": "document0090.txt",
+    "score": 0.7078875821345338
+  },
+  {
+    "document1": "document0086.txt",
+    "document2": "document0091.txt",
+    "score": 0.7097321499232151
+  },
+  {
+    "document1": "document0086.txt",
+    "document2": "document0097.txt",
+    "score": 0.7029217389059922
+  },
+  {
+    "document1": "document0086.txt",
+    "document2": "document0099.txt",
+    "score": 0.7059017198793032
+  },
+  {
+    "document1": "document0086.txt",
+    "document2": "document0100.txt",
+    "score": 0.7018658283278847
+  },
+  {
+    "document1": "document0087.txt",
+    "document2": "document0089.txt",
+    "score": 0.7121364173804129
+  },
+  {
+    "document1": "document0087.txt",
+    "document2": "document0090.txt",
+    "score": 0.7092390328716097
+  },
+  {
+    "document1": "document0087.txt",
+    "document2": "document0091.txt",
+    "score": 0.7110921249783327
+  },
+  {
+    "document1": "document0087.txt",
+    "document2": "document0097.txt",
+    "score": 0.7042497677198568
+  },
+  {
+    "document1": "document0087.txt",
+    "document2": "document0099.txt",
+    "score": 0.7072438862432903
+  },
+  {
+    "document1": "document0087.txt",
+    "document2": "document0100.txt",
+    "score": 0.703188789287177
+  },
+  {
+    "document1": "document0089.txt",
+    "document2": "document0090.txt",
+    "score": 0.7116435846443042
+  },
+  {
+    "document1": "document0089.txt",
+    "document2": "document0091.txt",
+    "score": 0.7135116675627964
+  },
+  {
+    "document1": "document0089.txt",
+    "document2": "document0097.txt",
+    "score": 0.7066130993991783
+  },
+  {
+    "document1": "document0089.txt",
+    "document2": "document0099.txt",
+    "score": 0.7096321037055359
+  },
+  {
+    "document1": "document0089.txt",
+    "document2": "document0100.txt",
+    "score": 0.7055431965207598
+  },
+  {
+    "document1": "document0090.txt",
+    "document2": "document0091.txt",
+    "score": 0.7126897962148998
+  },
+  {
+    "document1": "document0090.txt",
+    "document2": "document0097.txt",
+    "score": 0.7094845675962086
+  },
+  {
+    "document1": "document0090.txt",
+    "document2": "document0099.txt",
+    "score": 0.7125333314237124
+  },
+  {
+    "document1": "document0090.txt",
+    "document2": "document0100.txt",
+    "score": 0.7084039859826794
+  },
+  {
+    "document1": "document0091.txt",
+    "document2": "document0097.txt",
+    "score": 0.707641559200302
+  },
+  {
+    "document1": "document0091.txt",
+    "document2": "document0099.txt",
+    "score": 0.7106712828846914
+  },
+  {
+    "document1": "document0091.txt",
+    "document2": "document0100.txt",
+    "score": 0.7065678106763787
+  },
+  {
+    "document1": "document0092.txt",
+    "document2": "document0094.txt",
+    "score": 0.7076600108261779
+  },
+  {
+    "document1": "document0092.txt",
+    "document2": "document0098.txt",
+    "score": 0.7107466768238869
+  },
+  {
+    "document1": "document0094.txt",
+    "document2": "document0098.txt",
+    "score": 0.7114381533907328
+  },
+  {
+    "document1": "document0097.txt",
+    "document2": "document0099.txt",
+    "score": 0.7114950464109462
+  },
+  {
+    "document1": "document0097.txt",
+    "document2": "document0100.txt",
+    "score": 0.7134653094232791
+  },
+  {
+    "document1": "document0099.txt",
+    "document2": "document0100.txt",
+    "score": 0.7104070970697584
+  }
+]
