@@ -46,7 +46,9 @@ public class Logistic {
 	public void train(List<Instance> instances) {
 		for (int n = 0; n < ITERATIONS; n++) {
 
-			System.out.println("Train iteration: " + (n + 1));
+			if (n % 500 == 0) {
+				System.out.println("Train iterations: " + n + " - " + (n + 500));
+			}
 
 			for (Instance instance : instances) {
 				double predicted = classify(instance);
@@ -56,8 +58,7 @@ public class Logistic {
 					double currentWeight = feature.getWeight();
 					double featureScore = instance.scores.get(feature.getName());
 
-					feature.setWeight(
-							currentWeight + rate * (instance.actualScore - predicted) * featureScore);
+					feature.setWeight(currentWeight + rate * (instance.actualScore - predicted) * featureScore);
 				}
 			}
 		}
@@ -140,16 +141,16 @@ public class Logistic {
 	public static List<Instance> matchEvaluatedCouplesCountToMatchNotEvaluated(List<Instance> instances) {
 		List<Instance> result = new ArrayList<Instance>();
 		result.addAll(instances);
-		
-		for(Instance instance: instances) {
-			if(instance.actualScore > 0) {
+
+		for (Instance instance : instances) {
+			if (instance.actualScore > 0) {
 				int multiplyTimes = Globals.FolderEvaluations.get(instance.folderName).multiplyNumberForDocument;
-				for(int i = 0;i< multiplyTimes;i++) {
+				for (int i = 0; i < multiplyTimes; i++) {
 					result.add(instance);
 				}
 			}
 		}
-		
+
 		return result;
 	}
 
@@ -162,7 +163,7 @@ public class Logistic {
 
 			List<Instance> instances = readDataSet();
 			instances = matchEvaluatedCouplesCountToMatchNotEvaluated(instances);
-			
+
 			Logistic logistic = new Logistic();
 			logistic.train(instances);
 
@@ -170,7 +171,8 @@ public class Logistic {
 			Globals.FeaturesWeights.remove(new Train_Feature().getName());
 			FileUtils.write(trainFile, gson.toJson(Globals.FeaturesWeights));
 		} else {
-			Type mapType = new TypeToken<HashMap<String, Double>>() {}.getType();
+			Type mapType = new TypeToken<HashMap<String, Double>>() {
+			}.getType();
 			Globals.FeaturesWeights = gson.fromJson(FileUtils.readFileToString(trainFile), mapType);
 		}
 	}
