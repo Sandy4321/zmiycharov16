@@ -8,7 +8,6 @@ public class MeanSentenceLength extends Feature {
 
 	public MeanSentenceLength() {
 		super("MeanSentenceLengthFeature");
-		setWeight(1);
 	}
 
 	@Override
