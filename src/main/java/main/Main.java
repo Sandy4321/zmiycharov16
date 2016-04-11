@@ -31,6 +31,8 @@ public class Main {
 		
 		for(JsonProblem problem : jsonProblems) {
 			String folderName = problem.getFolder();
+
+			FeaturesGenerator.generateDocFiles(inputFolder, folderName);
 			
 			if(Config.isTrainMode) {
 				FeaturesGenerator.setActualSimilarities(folderName);
@@ -66,6 +68,8 @@ public class Main {
 		if(Config.isTrainMode) {
 			Results.calculateError();
 		}
+
+		System.out.println("Finished!");
 	}
 
 }

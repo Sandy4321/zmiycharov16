@@ -14,14 +14,10 @@ import com.google.gson.reflect.TypeToken;
 import featureHelpers.*;
 
 public class FeaturesGenerator {
-	
-	// GENERATE FEATURES SIMILARITY
-	public static void generateFeaturesSimilarities(File parentFolder, String folderName) throws Exception {
+
+	// GENERATE DOC FILES
+	public static void generateDocFiles(File parentFolder, String folderName) throws Exception {
 		Globals.DocFiles.put(folderName, getDocFiles(new File(parentFolder, folderName)));
-		
-		setFeaturesSimilarities(folderName);
-		
-		normalizeFeaturesSimilarities();
 	}
 
 	private static List<File> getDocFiles(File docsDir) {
@@ -35,6 +31,13 @@ public class FeaturesGenerator {
 		return result;
 	}
 	
+	// GENERATE FEATURES SIMILARITY
+	public static void generateFeaturesSimilarities(File parentFolder, String folderName) throws Exception {
+		setFeaturesSimilarities(folderName);
+		
+		normalizeFeaturesSimilarities();
+	}
+
 	private static void setFeaturesSimilarities(String folderName) throws Exception {
 		List<File> docFiles = Globals.DocFiles.get(folderName);
 		for (Feature feature : Globals.Features) {
@@ -76,5 +79,13 @@ public class FeaturesGenerator {
 		List<DocumentsSimilarity> result = new Gson().fromJson(FileUtils.readFileToString(truthFile), listType);
 
 		Globals.TrainSimilarities.put(folderName, result);
+		
+		FolderEvaluationData evaluations = new FolderEvaluationData();
+		evaluations.trainEvaluatedCouplesCount = result.size();
+		evaluations.totalDocCouplesCount = Utils.calculateCouplesCountFromTotal(Globals.DocFiles.get(folderName).size());
+		
+		evaluations.multiplyNumberForDocument = evaluations.totalDocCouplesCount / evaluations.trainEvaluatedCouplesCount; 
+
+		Globals.FolderEvaluations.put(folderName, evaluations);
 	}
 }

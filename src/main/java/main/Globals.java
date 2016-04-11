@@ -21,11 +21,14 @@ public class Globals {
 	public static Map<String, List<DocumentsSimilarity>> TrainSimilarities; 
 
 	public static Map<String, Double> FeaturesWeights;
+
+	public static Map<String, FolderEvaluationData> FolderEvaluations;
 	
 	public static void init() {
 		DocFiles = new HashMap<String, List<File>>();
 		TrainSimilarities = new HashMap<String, List<DocumentsSimilarity>>(); 
 		FeaturesWeights = new HashMap<String, Double>();
+		FolderEvaluations = new HashMap<String, FolderEvaluationData>();
 		
 		Features = new ArrayList<Feature>();
 //		Features.add(new Test1_Feature());

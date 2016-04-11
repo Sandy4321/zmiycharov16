@@ -137,6 +137,22 @@ public class Logistic {
 		return dataset;
 	}
 
+	public static List<Instance> matchEvaluatedCouplesCountToMatchNotEvaluated(List<Instance> instances) {
+		List<Instance> result = new ArrayList<Instance>();
+		result.addAll(instances);
+		
+		for(Instance instance: instances) {
+			if(instance.actualScore > 0) {
+				int multiplyTimes = Globals.FolderEvaluations.get(instance.folderName).multiplyNumberForDocument;
+				for(int i = 0;i< multiplyTimes;i++) {
+					result.add(instance);
+				}
+			}
+		}
+		
+		return result;
+	}
+
 	// LEARN
 	public static void trainResults() throws Exception {
 		File trainFile = new File(Config.TRAIN_FILE_PATH);
@@ -145,6 +161,8 @@ public class Logistic {
 		if (Config.isTrainMode) {
 
 			List<Instance> instances = readDataSet();
+			instances = matchEvaluatedCouplesCountToMatchNotEvaluated(instances);
+			
 			Logistic logistic = new Logistic();
 			logistic.train(instances);
 
