@@ -50,8 +50,7 @@ public class Logistic {
 			for (Instance instance : instances) {
 				double predicted = classify(instance);
 
-				// Last feature is train
-				for (int i = 0; i < Globals.Features.size() - 1; i++) {
+				for (int i = 0; i < Globals.getCustomFeaturesCount(); i++) {
 					Feature feature = Globals.Features.get(i);
 					double currentWeight = feature.getWeight();
 					double featureScore = instance.scores.get(feature.getName());
@@ -66,8 +65,7 @@ public class Logistic {
 	public static double classify(Instance instance) {
 		double logit = .0;
 
-		// Last feature is train
-		for (int i = 0; i < Globals.Features.size(); i++) {
+		for (int i = 0; i < Globals.getCustomFeaturesCount(); i++) {
 			Feature feature = Globals.Features.get(i);
 			logit += feature.getWeight() * instance.scores.get(feature.getName());
 		}
@@ -78,8 +76,7 @@ public class Logistic {
 	public static double classify(String folderName, int similarityIndex) {
 		double logit = .0;
 
-		// Last feature is train
-		for (int i = 0; i < Globals.Features.size() - 1; i++) {
+		for (int i = 0; i < Globals.getCustomFeaturesCount(); i++) {
 			Feature feature = Globals.Features.get(i);
 			logit += feature.getWeight() * feature.getSimilaritiesForFolder(folderName).get(similarityIndex).getScore();
 		}
@@ -103,9 +100,8 @@ public class Logistic {
 			this.document1 = document2;
 			this.scores = new HashMap<String, Double>();
 
-			// Last feature is train
 			int i = 0;
-			for (; i < Globals.Features.size() - 1; i++) {
+			for (; i < Globals.getCustomFeaturesCount(); i++) {
 				Feature feature = Globals.Features.get(i);
 
 				this.scores.put(feature.getName(),

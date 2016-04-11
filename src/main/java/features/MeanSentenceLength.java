@@ -6,8 +6,8 @@ import org.apache.lucene.wordnet.AnalyzerUtil;
 
 public class MeanSentenceLength extends Feature {
 
-	public MeanSentenceLength(String name) {
-		super(name);
+	public MeanSentenceLength() {
+		super("MeanSentenceLengthFeature");
 		setWeight(1);
 	}
 

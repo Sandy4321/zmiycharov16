@@ -30,7 +30,6 @@ public class Config {
 		else {
 			inputFolderPath = "./_DATA/dataset";
 			outputFolderPath = "./_DATA/output";
-			isTrainMode = true;
 		}
 		
 		truthFolderPath = inputFolderPath + "/truth";

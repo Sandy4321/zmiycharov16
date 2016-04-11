@@ -30,9 +30,20 @@ public class Globals {
 		Features = new ArrayList<Feature>();
 //		Features.add(new Test1_Feature());
 //		Features.add(new Test2_Feature());
-		Features.add(new MeanSentenceLength("MeanSentenceLengthFeature"));
+		Features.add(new MeanSentenceLength());
 		if(Config.isTrainMode) {
-//			Features.add(new Train_Feature());
+			Features.add(new Train_Feature());
 		}
+	}
+	
+	public static int getCustomFeaturesCount() {
+		int result = Globals.Features.size();
+		
+		// In train mode last feature is TrainFeature
+		if(Config.isTrainMode) {
+			result = result -1;
+		}
+
+		return result;
 	}
 }
