@@ -50,7 +50,29 @@ public class Errors {
 		RankingsMAP = result / Globals.JsonProblems.size();
 	}
 	
+	// Calculate BCubed F Score for clusters
 	private static void calculateClustersFScore() {
+		double totalRelevantDocPairs = 0;
+		double totalRetrievedDocPairs = 0;
+		double totalJoinedDocPairs = 0;
 		
+		// TODO: Calculate
+		
+		double precision = 0;
+		double recall = 0;
+		
+		if(totalRetrievedDocPairs > 0) {
+			precision = totalJoinedDocPairs / totalRetrievedDocPairs;
+		}
+
+		if(totalRelevantDocPairs > 0) {
+			recall = totalJoinedDocPairs / totalRelevantDocPairs;
+		}
+		
+		ClustersFScore = 0;
+		
+		if(precision + recall > 0) {
+			ClustersFScore = (2.0 * precision * recall) / (precision + recall);
+		}
 	}
 }
