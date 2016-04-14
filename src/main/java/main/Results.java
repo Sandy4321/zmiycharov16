@@ -138,8 +138,4 @@ public class Results {
 		clustering.createNewFile();
 		FileUtils.write(clustering, gson.toJson(JsonClusters.get(outputDir.getName())));
 	}
-	
-	public static void calculateError() {
-		// TODO: Implement
-	}
 }

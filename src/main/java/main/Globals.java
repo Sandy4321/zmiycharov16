@@ -23,6 +23,8 @@ public class Globals {
 	public static Map<String, Double> FeaturesWeights;
 
 	public static Map<String, FolderEvaluationData> FolderEvaluations;
+
+	public static List<JsonProblem> JsonProblems;
 	
 	public static void init() {
 		DocFiles = new HashMap<String, List<File>>();
@@ -48,5 +50,18 @@ public class Globals {
 		}
 
 		return result;
+	}
+	
+	public static boolean existsTrainSimilarity(String folderName, String doc1, String doc2) {
+		for (DocumentsSimilarity similarity : Globals.TrainSimilarities.get(folderName)) {
+			if ((similarity.getDocument1().equals(doc1)
+					&& similarity.getDocument2().equals(doc2))
+					|| (similarity.getDocument1().equals(doc2)
+							&& similarity.getDocument2().equals(doc1))) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 }

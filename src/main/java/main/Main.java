@@ -27,9 +27,9 @@ public class Main {
 		File inputInfoJson = new File(inputFolder, "info.json");
 		
 		Type jsonProblemListType = new TypeToken<ArrayList<JsonProblem>>() {}.getType();
-		List<JsonProblem> jsonProblems = new Gson().fromJson(FileUtils.readFileToString(inputInfoJson), jsonProblemListType);
+		Globals.JsonProblems = new Gson().fromJson(FileUtils.readFileToString(inputInfoJson), jsonProblemListType);
 		
-		for(JsonProblem problem : jsonProblems) {
+		for(JsonProblem problem : Globals.JsonProblems) {
 			String folderName = problem.getFolder();
 
 			FeaturesGenerator.generateDocFiles(inputFolder, folderName);
@@ -56,7 +56,7 @@ public class Main {
 		FileUtils.cleanDirectory(outputFolder);
 		
 		// GENERATE RESULTS
-		for(JsonProblem problem : jsonProblems) {
+		for(JsonProblem problem : Globals.JsonProblems) {
 			String folderName = problem.getFolder();
 			
 			Results.generateResults(folderName);
@@ -66,7 +66,10 @@ public class Main {
 		
 		// CALCULATE ERROR ONLY IF TRAIN MODE
 		if(Config.isTrainMode) {
-			Results.calculateError();
+			Errors.calculateError();
+			
+			System.out.println("Rankings MAP: " + Errors.RankingsMAP);
+			System.out.println("Clusters F-score: " + Errors.ClustersFScore);
 		}
 
 		System.out.println("Finished!");
