@@ -2,6 +2,7 @@ package main;
 import java.io.File;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -37,9 +38,18 @@ public class Main {
 			if(Config.isTrainMode) {
 				FeaturesGenerator.setActualSimilarities(folderName);
 			}
-			
-			System.out.println("Generate features: " + folderName);
+
+			Date start = new Date();
 			FeaturesGenerator.generateFeaturesSimilarities(inputFolder, folderName);
+			
+			Date now = new Date();
+			
+			long total = now.getTime() - start.getTime();
+			
+			long seconds = total/1000;
+			long millis = total%1000;
+			
+			System.out.println("Generated features: " + folderName + " (" + seconds + "." + millis + " sec)");
 		}
 		
 		// TRAIN
