@@ -49,7 +49,7 @@ public class Main {
 			long seconds = total/1000;
 			long millis = total%1000;
 			
-			System.out.println("Generated features: " + folderName + " (" + seconds + "." + millis + " sec)");
+			System.out.println("Generated features: " + folderName + " (" + seconds + "." + String.format("%03d", millis) + " sec)");
 		}
 		
 		// TRAIN
