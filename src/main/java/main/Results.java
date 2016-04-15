@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -68,7 +69,7 @@ public class Results {
 			}
 
 			// Create new cluster
-			Set<ClusterDocument> cluster = new HashSet<ClusterDocument>();
+			Set<ClusterDocument> cluster = new LinkedHashSet<ClusterDocument>();
 			cluster.add(new ClusterDocument(ranking.getDocument1()));
 			cluster.add(new ClusterDocument(ranking.getDocument2()));
 
