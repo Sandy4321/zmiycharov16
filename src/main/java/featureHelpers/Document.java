@@ -3,8 +3,10 @@ package featureHelpers;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.lucene.wordnet.AnalyzerUtil;
 
 public class Document {
+	// COMMON PROPERTIES
 	private String content;
 	private String fileName;
 	private String folderName;
@@ -33,8 +35,18 @@ public class Document {
 		this.folderName = folderName;
 	}
 
-	// TODO: Add other properties such as annotations, etc ...
+	// FEATURES
+	private double meanSentenceLength;
+
+	public double getMeanSentenceLength() {
+		return meanSentenceLength;
+	}
 	
+	private void setMeanSentenceLength() {
+		String[] sentences = AnalyzerUtil.getSentences(this.getContent(), 0);
+		this.meanSentenceLength = DocumentFeaturesHelpers.getMeanSentenceLength(sentences);
+	}
+
 	public Document() {}
 	
 	public Document(File file) throws Exception {
@@ -46,6 +58,6 @@ public class Document {
 	}
 	
 	private void setFeatures() {
-		// TODO: Set additional features here such as annotations, etc
+		setMeanSentenceLength();
 	}
 }

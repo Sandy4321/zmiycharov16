@@ -120,8 +120,6 @@ public class Logistic {
 		List<Instance> dataset = new ArrayList<Instance>();
 
 		for (String folderName : Globals.DocFiles.keySet()) {
-			System.out.println("Add to train folder: " + folderName);
-
 			int similarityIndex = 0;
 
 			List<File> docFiles = Globals.DocFiles.get(folderName);
