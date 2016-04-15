@@ -1,4 +1,5 @@
 package main;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class Results {
 
 	private static void calculateRankings(String folderName) {
 		List<DocumentsSimilarity> rankings = new ArrayList<DocumentsSimilarity>();
-		
+
 		for (int i = 0; i < Globals.Features.get(0).getSimilaritiesForFolder(folderName).size(); i++) {
 			DocumentsSimilarity configSimilarity = Globals.Features.get(0).getSimilaritiesForFolder(folderName).get(i);
 
@@ -45,7 +46,7 @@ public class Results {
 
 	private static void generateRankings(String folderName) {
 		List<DocumentsSimilarity> rankings = new ArrayList<DocumentsSimilarity>();
-		
+
 		for (DocumentsSimilarity similarity : CalculatedRankings.get(folderName)) {
 			if (similarity.getScore() >= Config.MIN_SCORE_TO_RANK) {
 				rankings.add(similarity);
@@ -57,7 +58,7 @@ public class Results {
 
 	private static void generateClusters(String folderName) {
 		List<Set<ClusterDocument>> clusters = new ArrayList<Set<ClusterDocument>>();
-		
+
 		for (int i = 0; i < JsonRankings.get(folderName).size(); i++) {
 			DocumentsSimilarity ranking = JsonRankings.get(folderName).get(i);
 
@@ -124,16 +125,16 @@ public class Results {
 
 		return false;
 	}
-	
+
 	public static void generateOutput(File outputDir) throws Exception {
 		outputDir.mkdir();
-		
+
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		
+
 		File ranking = new File(outputDir, "ranking.json");
 		ranking.createNewFile();
 		FileUtils.write(ranking, gson.toJson(JsonRankings.get(outputDir.getName())));
-		
+
 		File clustering = new File(outputDir, "clustering.json");
 		clustering.createNewFile();
 		FileUtils.write(clustering, gson.toJson(JsonClusters.get(outputDir.getName())));
