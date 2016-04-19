@@ -4,11 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
 
@@ -17,7 +15,6 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import featureHelpers.Document;
-import featureHelpers.DocumentsSimilarity;
 import featureHelpers.Feature;
 import features.Train_Feature;
 
@@ -122,13 +119,13 @@ public class Logistic {
 		for (String folderName : Globals.DocFiles.keySet()) {
 			int similarityIndex = 0;
 
-			List<File> docFiles = Globals.DocFiles.get(folderName).getFiles();
-			for (int i = 0; i < docFiles.size() - 1; i++) {
-				File file1 = docFiles.get(i);
-				for (int j = i + 1; j < docFiles.size(); j++, similarityIndex++) {
-					File file2 = docFiles.get(j);
+			List<Document> docs = Globals.DocFiles.get(folderName).getDocuments();
+			for (int i = 0; i < docs.size() - 1; i++) {
+				Document doc1 = docs.get(i);
+				for (int j = i + 1; j < docs.size(); j++, similarityIndex++) {
+					Document doc2 = docs.get(j);
 
-					dataset.add(new Instance(folderName, file1.getName(), file2.getName(), similarityIndex));
+					dataset.add(new Instance(folderName, doc1.getFileName(), doc2.getFileName(), similarityIndex));
 				}
 			}
 		}

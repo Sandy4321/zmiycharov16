@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import main.Config;
 import main.Globals;
 
 public abstract class Feature {

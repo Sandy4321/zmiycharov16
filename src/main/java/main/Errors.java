@@ -1,11 +1,9 @@
 package main;
 
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,8 +11,6 @@ import java.util.Set;
 import org.apache.commons.io.FileUtils;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 
 import featureHelpers.*;

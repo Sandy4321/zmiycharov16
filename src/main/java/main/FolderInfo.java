@@ -1,18 +1,19 @@
 package main;
 
-import java.io.File;
 import java.util.List;
 
+import featureHelpers.Document;
+
 public class FolderInfo {
-	private List<File> files;
+	private List<Document> documents;
 	private String language;
 	private String genre;
 	
-	public List<File> getFiles() {
-		return files;
+	public List<Document> getDocuments() {
+		return documents;
 	}
-	public void setFiles(List<File> files) {
-		this.files = files;
+	public void setDocuments(List<Document> documents) {
+		this.documents = documents;
 	}
 	public String getLanguage() {
 		return language;

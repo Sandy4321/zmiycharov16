@@ -2,7 +2,6 @@ package features;
 
 import featureHelpers.Document;
 import featureHelpers.Feature;
-import org.apache.lucene.wordnet.AnalyzerUtil;
 
 public class MeanSentenceLength extends Feature {
 

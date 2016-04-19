@@ -1,7 +1,5 @@
 package features;
 
-import java.util.Random;
-
 import featureHelpers.Document;
 import featureHelpers.DocumentsSimilarity;
 import featureHelpers.Feature;
