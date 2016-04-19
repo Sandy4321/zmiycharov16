@@ -14,18 +14,18 @@ import featureHelpers.*;
 public class FeaturesGenerator {
 
 	// GENERATE DOC FILES
-	public static void generateDocFiles(File parentFolder, JsonProblem problem) throws Exception {
+	public static void generateIdentificationDocs(File parentFolder, JsonProblem problem) throws Exception {
 		String folderName = problem.getFolder();
 		
 		FolderInfo folderInfo = new FolderInfo();
 		folderInfo.setLanguage(problem.getLanguage());
 		folderInfo.setGenre(problem.getGenre());
-		folderInfo.setDocuments(getDocFiles(new File(parentFolder, folderName), problem.getLanguage(), problem.getGenre()));
+		folderInfo.setDocuments(getIdentificationDocs(new File(parentFolder, folderName), problem.getLanguage(), problem.getGenre()));
 		
-		Globals.DocFiles.put(folderName, folderInfo);
+		Globals.IdentificationDocs.put(folderName, folderInfo);
 	}
 
-	private static List<IdentificationDocument> getDocFiles(File docsDir, String language, String genre) throws Exception {
+	private static List<IdentificationDocument> getIdentificationDocs(File docsDir, String language, String genre) throws Exception {
 		
 		List<IdentificationDocument> result = new ArrayList<IdentificationDocument>();
 		
@@ -44,7 +44,7 @@ public class FeaturesGenerator {
 	}
 
 	private static void setFeaturesSimilarities(String folderName) throws Exception {
-		FolderInfo folderInfo = Globals.DocFiles.get(folderName);
+		FolderInfo folderInfo = Globals.IdentificationDocs.get(folderName);
 		List<IdentificationDocument> docs = folderInfo.getDocuments();
 		for (Feature feature : Globals.Features) {
 		    List<DocumentsSimilarity> similarities = new ArrayList<DocumentsSimilarity>();
@@ -85,7 +85,7 @@ public class FeaturesGenerator {
 		
 		FolderEvaluationData evaluations = new FolderEvaluationData();
 		evaluations.trainEvaluatedCouplesCount = result.size();
-		evaluations.totalDocCouplesCount = Utils.calculateCouplesCountFromTotal(Globals.DocFiles.get(folderName).getDocuments().size());
+		evaluations.totalDocCouplesCount = Utils.calculateCouplesCountFromTotal(Globals.IdentificationDocs.get(folderName).getDocuments().size());
 		
 		evaluations.multiplyNumberForDocument = evaluations.totalDocCouplesCount / evaluations.trainEvaluatedCouplesCount; 
 

@@ -32,7 +32,7 @@ public class Main {
 		for(JsonProblem problem : Globals.JsonProblems) {
 			String folderName = problem.getFolder();
 
-			FeaturesGenerator.generateDocFiles(inputFolder, problem);
+			FeaturesGenerator.generateIdentificationDocs(inputFolder, problem);
 			
 			if(Config.isTrainMode) {
 				FeaturesGenerator.setActualSimilarities(folderName);

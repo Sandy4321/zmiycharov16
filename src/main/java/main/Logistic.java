@@ -116,10 +116,10 @@ public class Logistic {
 	public static List<Instance> readDataSet() throws FileNotFoundException {
 		List<Instance> dataset = new ArrayList<Instance>();
 
-		for (String folderName : Globals.DocFiles.keySet()) {
+		for (String folderName : Globals.IdentificationDocs.keySet()) {
 			int similarityIndex = 0;
 
-			List<IdentificationDocument> docs = Globals.DocFiles.get(folderName).getDocuments();
+			List<IdentificationDocument> docs = Globals.IdentificationDocs.get(folderName).getDocuments();
 			for (int i = 0; i < docs.size() - 1; i++) {
 				IdentificationDocument doc1 = docs.get(i);
 				for (int j = i + 1; j < docs.size(); j++, similarityIndex++) {
