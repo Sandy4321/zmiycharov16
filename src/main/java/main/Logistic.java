@@ -122,7 +122,7 @@ public class Logistic {
 		for (String folderName : Globals.DocFiles.keySet()) {
 			int similarityIndex = 0;
 
-			List<File> docFiles = Globals.DocFiles.get(folderName);
+			List<File> docFiles = Globals.DocFiles.get(folderName).getFiles();
 			for (int i = 0; i < docFiles.size() - 1; i++) {
 				File file1 = docFiles.get(i);
 				for (int j = i + 1; j < docFiles.size(); j++, similarityIndex++) {

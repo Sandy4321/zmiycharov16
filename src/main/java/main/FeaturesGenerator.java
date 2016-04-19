@@ -16,8 +16,15 @@ import featureHelpers.*;
 public class FeaturesGenerator {
 
 	// GENERATE DOC FILES
-	public static void generateDocFiles(File parentFolder, String folderName) throws Exception {
-		Globals.DocFiles.put(folderName, getDocFiles(new File(parentFolder, folderName)));
+	public static void generateDocFiles(File parentFolder, JsonProblem problem) throws Exception {
+		String folderName = problem.getFolder();
+		
+		FolderInfo folderInfo = new FolderInfo();
+		folderInfo.setLanguage(problem.getLanguage());
+		folderInfo.setGenre(problem.getGenre());
+		folderInfo.setFiles(getDocFiles(new File(parentFolder, folderName)));
+		
+		Globals.DocFiles.put(folderName, folderInfo);
 	}
 
 	private static List<File> getDocFiles(File docsDir) {
@@ -39,7 +46,8 @@ public class FeaturesGenerator {
 	}
 
 	private static void setFeaturesSimilarities(String folderName) throws Exception {
-		List<File> docFiles = Globals.DocFiles.get(folderName);
+		FolderInfo folderInfo = Globals.DocFiles.get(folderName);
+		List<File> docFiles = folderInfo.getFiles();
 		for (Feature feature : Globals.Features) {
 		    List<DocumentsSimilarity> similarities = new ArrayList<DocumentsSimilarity>();
 		    for(int i = 0; i < docFiles.size()-1;i++) {
@@ -47,8 +55,8 @@ public class FeaturesGenerator {
 		    	for(int j = i+1; j < docFiles.size();j++) {
 			    	File file2 = docFiles.get(j);
 			    	
-			    	Document doc1 = new Document(file1);
-			    	Document doc2 = new Document(file2);
+			    	Document doc1 = new Document(file1, folderInfo.getLanguage(), folderInfo.getGenre());
+			    	Document doc2 = new Document(file2, folderInfo.getLanguage(), folderInfo.getGenre());
 			    	
 			    	DocumentsSimilarity similarity = new DocumentsSimilarity();
 			    	similarity.setDocument1(doc1.getFileName());
@@ -82,7 +90,7 @@ public class FeaturesGenerator {
 		
 		FolderEvaluationData evaluations = new FolderEvaluationData();
 		evaluations.trainEvaluatedCouplesCount = result.size();
-		evaluations.totalDocCouplesCount = Utils.calculateCouplesCountFromTotal(Globals.DocFiles.get(folderName).size());
+		evaluations.totalDocCouplesCount = Utils.calculateCouplesCountFromTotal(Globals.DocFiles.get(folderName).getFiles().size());
 		
 		evaluations.multiplyNumberForDocument = evaluations.totalDocCouplesCount / evaluations.trainEvaluatedCouplesCount; 
 

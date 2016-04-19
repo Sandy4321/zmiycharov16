@@ -33,7 +33,7 @@ public class Main {
 		for(JsonProblem problem : Globals.JsonProblems) {
 			String folderName = problem.getFolder();
 
-			FeaturesGenerator.generateDocFiles(inputFolder, folderName);
+			FeaturesGenerator.generateDocFiles(inputFolder, problem);
 			
 			if(Config.isTrainMode) {
 				FeaturesGenerator.setActualSimilarities(folderName);
