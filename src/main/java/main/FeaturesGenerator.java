@@ -25,12 +25,12 @@ public class FeaturesGenerator {
 		Globals.DocFiles.put(folderName, folderInfo);
 	}
 
-	private static List<Document> getDocFiles(File docsDir, String language, String genre) throws Exception {
+	private static List<IdentificationDocument> getDocFiles(File docsDir, String language, String genre) throws Exception {
 		
-		List<Document> result = new ArrayList<Document>();
+		List<IdentificationDocument> result = new ArrayList<IdentificationDocument>();
 		
 		for(File file : docsDir.listFiles()) {
-			result.add(new Document(file, language, genre));
+			result.add(new IdentificationDocument(file, language, genre));
 		}
 		
 		return result;
@@ -45,13 +45,13 @@ public class FeaturesGenerator {
 
 	private static void setFeaturesSimilarities(String folderName) throws Exception {
 		FolderInfo folderInfo = Globals.DocFiles.get(folderName);
-		List<Document> docs = folderInfo.getDocuments();
+		List<IdentificationDocument> docs = folderInfo.getDocuments();
 		for (Feature feature : Globals.Features) {
 		    List<DocumentsSimilarity> similarities = new ArrayList<DocumentsSimilarity>();
 		    for(int i = 0; i < docs.size()-1;i++) {
-		    	Document doc1 = docs.get(i);
+		    	IdentificationDocument doc1 = docs.get(i);
 		    	for(int j = i+1; j < docs.size();j++) {
-		    		Document doc2 = docs.get(j);
+		    		IdentificationDocument doc2 = docs.get(j);
 			    	
 			    	DocumentsSimilarity similarity = new DocumentsSimilarity();
 			    	similarity.setDocument1(doc1.getFileName());

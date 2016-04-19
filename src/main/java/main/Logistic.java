@@ -14,7 +14,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import featureHelpers.Document;
+import featureHelpers.IdentificationDocument;
 import featureHelpers.Feature;
 import features.Train_Feature;
 
@@ -119,11 +119,11 @@ public class Logistic {
 		for (String folderName : Globals.DocFiles.keySet()) {
 			int similarityIndex = 0;
 
-			List<Document> docs = Globals.DocFiles.get(folderName).getDocuments();
+			List<IdentificationDocument> docs = Globals.DocFiles.get(folderName).getDocuments();
 			for (int i = 0; i < docs.size() - 1; i++) {
-				Document doc1 = docs.get(i);
+				IdentificationDocument doc1 = docs.get(i);
 				for (int j = i + 1; j < docs.size(); j++, similarityIndex++) {
-					Document doc2 = docs.get(j);
+					IdentificationDocument doc2 = docs.get(j);
 
 					dataset.add(new Instance(folderName, doc1.getFileName(), doc2.getFileName(), similarityIndex));
 				}

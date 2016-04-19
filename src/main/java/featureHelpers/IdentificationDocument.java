@@ -5,7 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.wordnet.AnalyzerUtil;
 
-public class Document {
+public class IdentificationDocument {
 	// COMMON PROPERTIES
 	private String content;
 	private String fileName;
@@ -65,9 +65,9 @@ public class Document {
 		this.meanSentenceLength = DocumentFeaturesHelpers.getMeanSentenceLength(sentences);
 	}
 
-	public Document() {}
+	public IdentificationDocument() {}
 	
-	public Document(File file, String language, String genre) throws Exception {
+	public IdentificationDocument(File file, String language, String genre) throws Exception {
 		this.content = FileUtils.readFileToString(file);
 		this.fileName = file.getName();
 		this.folderName = file.getParentFile().getName();

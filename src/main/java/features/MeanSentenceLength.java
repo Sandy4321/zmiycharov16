@@ -1,6 +1,6 @@
 package features;
 
-import featureHelpers.Document;
+import featureHelpers.IdentificationDocument;
 import featureHelpers.Feature;
 
 public class MeanSentenceLength extends Feature {
@@ -10,7 +10,7 @@ public class MeanSentenceLength extends Feature {
 	}
 
 	@Override
-	public double getSimilarity(Document doc1, Document doc2) {
+	public double getSimilarity(IdentificationDocument doc1, IdentificationDocument doc2) {
 		double mslDoc1 = doc1.getMeanSentenceLength();
 		double mslDoc2 = doc2.getMeanSentenceLength();
 

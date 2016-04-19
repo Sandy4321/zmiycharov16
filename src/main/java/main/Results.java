@@ -93,7 +93,7 @@ public class Results {
 		}
 
 		// Add single docs
-		for (Document doc : Globals.DocFiles.get(folderName).getDocuments()) {
+		for (IdentificationDocument doc : Globals.DocFiles.get(folderName).getDocuments()) {
 			String document = doc.getFileName();
 			if (!isDocumentClustered(document, clusters)) {
 				Set<ClusterDocument> cluster = new HashSet<ClusterDocument>();

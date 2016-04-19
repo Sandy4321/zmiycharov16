@@ -1,6 +1,6 @@
 package features;
 
-import featureHelpers.Document;
+import featureHelpers.IdentificationDocument;
 import featureHelpers.DocumentsSimilarity;
 import featureHelpers.Feature;
 import main.Globals;
@@ -12,7 +12,7 @@ public class Train_Feature extends Feature {
 	}
 
 	@Override
-	public double getSimilarity(Document doc1, Document doc2) {
+	public double getSimilarity(IdentificationDocument doc1, IdentificationDocument doc2) {
 		for (DocumentsSimilarity similarity : Globals.TrainSimilarities.get(doc1.getFolderName())) {
 			if ((similarity.getDocument1().equals(doc1.getFileName())
 					&& similarity.getDocument2().equals(doc2.getFileName()))

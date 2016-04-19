@@ -2,17 +2,17 @@ package main;
 
 import java.util.List;
 
-import featureHelpers.Document;
+import featureHelpers.IdentificationDocument;
 
 public class FolderInfo {
-	private List<Document> documents;
+	private List<IdentificationDocument> documents;
 	private String language;
 	private String genre;
 	
-	public List<Document> getDocuments() {
+	public List<IdentificationDocument> getDocuments() {
 		return documents;
 	}
-	public void setDocuments(List<Document> documents) {
+	public void setDocuments(List<IdentificationDocument> documents) {
 		this.documents = documents;
 	}
 	public String getLanguage() {

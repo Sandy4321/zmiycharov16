@@ -33,7 +33,7 @@ public abstract class Feature {
 		this.similarities = new HashMap<String, List<DocumentsSimilarity>>();
 	}
 	
-	public abstract double getSimilarity(Document doc1, Document doc2);
+	public abstract double getSimilarity(IdentificationDocument doc1, IdentificationDocument doc2);
 	
 	public void normalizeSimilarities() {
 		for(String key : this.similarities.keySet()) {
