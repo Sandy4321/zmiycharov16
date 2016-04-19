@@ -10,6 +10,8 @@ public class Document {
 	private String content;
 	private String fileName;
 	private String folderName;
+	private String language;
+	private String genre;
 
 	public String getContent() {
 		return content;
@@ -35,6 +37,22 @@ public class Document {
 		this.folderName = folderName;
 	}
 
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
 	// FEATURES
 	private double meanSentenceLength;
 
@@ -49,10 +67,13 @@ public class Document {
 
 	public Document() {}
 	
-	public Document(File file) throws Exception {
+	public Document(File file, String language, String genre) throws Exception {
 		this.content = FileUtils.readFileToString(file);
 		this.fileName = file.getName();
 		this.folderName = file.getParentFile().getName();
+		
+		this.language = language;
+		this.genre = genre;
 		
 		setFeatures();
 	}

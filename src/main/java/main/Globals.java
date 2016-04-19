@@ -14,7 +14,7 @@ import features.Train_Feature;
 public class Globals {
 	public static List<Feature> Features;
 	
-	public static Map<String, List<File>> DocFiles;
+	public static Map<String, FolderInfo> DocFiles;
 	public static Map<String, List<DocumentsSimilarity>> TrainSimilarities; 
 
 	public static Map<String, Double> FeaturesWeights;
@@ -24,7 +24,7 @@ public class Globals {
 	public static List<JsonProblem> JsonProblems;
 	
 	public static void init() {
-		DocFiles = new HashMap<String, List<File>>();
+		DocFiles = new HashMap<String, FolderInfo>();
 		TrainSimilarities = new HashMap<String, List<DocumentsSimilarity>>(); 
 		FeaturesWeights = new HashMap<String, Double>();
 		FolderEvaluations = new HashMap<String, FolderEvaluationData>();
