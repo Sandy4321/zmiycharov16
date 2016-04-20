@@ -10,6 +10,7 @@ import features.helpers.DocumentFeaturesHelpers;
 public class IdentificationDocument {
 	// COMMON PROPERTIES
 	private String content;
+	private String fullPath;
 	private String fileName;
 	private String folderName;
 	private String language;
@@ -21,6 +22,14 @@ public class IdentificationDocument {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getFullPath() {
+		return fullPath;
+	}
+
+	public void setFullPath(String fullPath) {
+		this.fullPath = fullPath;
 	}
 
 	public String getFileName() {
@@ -55,8 +64,23 @@ public class IdentificationDocument {
 		this.genre = genre;
 	}
 
-	// FEATURES
+	public IdentificationDocument() {}
+	
+	public IdentificationDocument(File file, String language, String genre) throws Exception {
+		this.content = FileUtils.readFileToString(file);
+		this.fullPath = file.getAbsolutePath();
+		this.fileName = file.getName();
+		this.folderName = file.getParentFile().getName();
+		
+		this.language = language;
+		this.genre = genre;
+		
+		setProperties();
+	}
+	
+	// PROPERTIES
 	private double meanSentenceLength;
+	private double[] stopWordsPercentages;
 
 	public double getMeanSentenceLength() {
 		return meanSentenceLength;
@@ -67,20 +91,16 @@ public class IdentificationDocument {
 		this.meanSentenceLength = DocumentFeaturesHelpers.getMeanSentenceLength(sentences);
 	}
 
-	public IdentificationDocument() {}
-	
-	public IdentificationDocument(File file, String language, String genre) throws Exception {
-		this.content = FileUtils.readFileToString(file);
-		this.fileName = file.getName();
-		this.folderName = file.getParentFile().getName();
-		
-		this.language = language;
-		this.genre = genre;
-		
-		setFeatures();
+	public double[] getStopWordsPercentages() {
+		return stopWordsPercentages;
 	}
-	
-	private void setFeatures() {
+
+	private void setStopWordsPercentages() throws Exception {
+		this.stopWordsPercentages = DocumentFeaturesHelpers.getStopWordsPercentages(this.getContent(), this.getLanguage());
+	}
+
+	private void setProperties() throws Exception {
 		setMeanSentenceLength();
+		setStopWordsPercentages();
 	}
 }

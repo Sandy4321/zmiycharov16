@@ -9,6 +9,15 @@ public class Config {
 	public static final double MIN_SCORE_TO_RANK = 0.7;
 
 	public static final String TRAIN_FILE_PATH = "./train.json";
+
+	public static final String LANG_EN = "en";
+	public static final String LANG_NL = "nl";
+	public static final String LANG_GR = "gr";
+
+	public static final String STOP_WORDS_PATH_EN = "./_DATA/dictionaries/stopWords/english.csv";
+	public static final String STOP_WORDS_PATH_NL = "./_DATA/dictionaries/stopWords/dutch.csv";
+	public static final String STOP_WORDS_PATH_GR = "./_DATA/dictionaries/stopWords/greek.csv";
+	
 	public static boolean isTrainMode;
 	
 	public static String inputFolderPath;

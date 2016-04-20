@@ -35,13 +35,14 @@ public class Main {
 		for(JsonProblem problem : Globals.JsonProblems) {
 			String folderName = problem.getFolder();
 
+			Date start = new Date();
+			
 			FeaturesGenerator.generateIdentificationDocs(inputFolder, problem);
 			
 			if(Config.isTrainMode) {
 				FeaturesGenerator.setActualSimilarities(folderName);
 			}
 
-			Date start = new Date();
 			FeaturesGenerator.generateFeaturesSimilarities(inputFolder, folderName);
 			
 			Date now = new Date();

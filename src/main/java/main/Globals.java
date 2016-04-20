@@ -10,8 +10,7 @@ import entities.FolderEvaluationData;
 import entities.FolderInfo;
 import entities.JsonProblem;
 import features.core.Feature;
-import features.list.MeanSentenceLength;
-import features.list.Train_Feature;
+import features.list.*;
 
 public class Globals {
 	public static List<Feature> Features;
@@ -33,6 +32,7 @@ public class Globals {
 		
 		Features = new ArrayList<Feature>();
 		Features.add(new MeanSentenceLength());
+		Features.add(new StopWordsPercentages());
 		if(Config.isTrainMode) {
 			Features.add(new Train_Feature());
 		}
