@@ -9,6 +9,9 @@ import org.apache.commons.io.FileUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import entities.JsonProblem;
+import features.core.FeaturesGenerator;
+
 public class Main {
 
 	// To run from console: mvn exec:java -Dexec.args="-i $inputDataset -o $outputDir"

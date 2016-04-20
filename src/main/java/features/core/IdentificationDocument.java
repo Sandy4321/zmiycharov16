@@ -1,9 +1,11 @@
-package featureHelpers;
+package features.core;
 
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.wordnet.AnalyzerUtil;
+
+import features.helpers.DocumentFeaturesHelpers;
 
 public class IdentificationDocument {
 	// COMMON PROPERTIES

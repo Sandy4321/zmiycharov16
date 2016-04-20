@@ -1,4 +1,4 @@
-package featureHelpers;
+package entities;
 
 public class ClusterDocument {
 	private String document;

@@ -1,4 +1,4 @@
-package featureHelpers.lucene;
+package features.helpers.lucene;
 
 import java.io.IOException;
 

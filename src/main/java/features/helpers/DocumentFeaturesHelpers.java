@@ -1,4 +1,4 @@
-package featureHelpers;
+package features.helpers;
 
 public class DocumentFeaturesHelpers {
 	/**

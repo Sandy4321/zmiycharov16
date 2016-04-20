@@ -14,7 +14,9 @@ import org.apache.commons.io.FileUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import featureHelpers.*;
+import entities.ClusterDocument;
+import entities.DocumentsSimilarity;
+import features.core.IdentificationDocument;
 
 public class Results {
 	public static Map<String, List<DocumentsSimilarity>> CalculatedRankings = new HashMap<String, List<DocumentsSimilarity>>();

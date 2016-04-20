@@ -1,7 +1,7 @@
-package features;
+package features.list;
 
-import featureHelpers.IdentificationDocument;
-import featureHelpers.Feature;
+import features.core.Feature;
+import features.core.IdentificationDocument;
 
 public class MeanSentenceLength extends Feature {
 

@@ -14,9 +14,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
-import featureHelpers.IdentificationDocument;
-import featureHelpers.Feature;
-import features.Train_Feature;
+import features.core.Feature;
+import features.core.IdentificationDocument;
+import features.list.Train_Feature;
 
 /**
  * Performs simple logistic regression. User: tpeng Date: 6/22/12 Time: 11:01 PM

@@ -5,10 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import featureHelpers.DocumentsSimilarity;
-import featureHelpers.Feature;
-import features.MeanSentenceLength;
-import features.Train_Feature;
+import entities.DocumentsSimilarity;
+import entities.FolderEvaluationData;
+import entities.FolderInfo;
+import entities.JsonProblem;
+import features.core.Feature;
+import features.list.MeanSentenceLength;
+import features.list.Train_Feature;
 
 public class Globals {
 	public static List<Feature> Features;

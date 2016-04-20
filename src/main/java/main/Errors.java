@@ -13,7 +13,9 @@ import org.apache.commons.io.FileUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import featureHelpers.*;
+import entities.ClusterDocument;
+import entities.DocumentsSimilarity;
+import entities.JsonProblem;
 
 public class Errors {
 	public static double RankingsMAP = 0;

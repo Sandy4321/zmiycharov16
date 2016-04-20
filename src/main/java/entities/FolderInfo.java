@@ -1,8 +1,8 @@
-package main;
+package entities;
 
 import java.util.List;
 
-import featureHelpers.IdentificationDocument;
+import features.core.IdentificationDocument;
 
 public class FolderInfo {
 	private List<IdentificationDocument> documents;

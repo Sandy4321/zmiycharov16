@@ -1,4 +1,4 @@
-package main;
+package entities;
 
 public class FolderEvaluationData {
 	public int trainEvaluatedCouplesCount;

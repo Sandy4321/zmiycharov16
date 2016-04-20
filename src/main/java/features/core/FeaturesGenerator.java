@@ -1,4 +1,4 @@
-package main;
+package features.core;
 import java.io.File;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -9,7 +9,14 @@ import org.apache.commons.io.FileUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import featureHelpers.*;
+import entities.DocumentsSimilarity;
+import entities.FolderEvaluationData;
+import entities.FolderInfo;
+import entities.JsonProblem;
+import features.helpers.*;
+import main.Config;
+import main.Globals;
+import main.Utils;
 
 public class FeaturesGenerator {
 

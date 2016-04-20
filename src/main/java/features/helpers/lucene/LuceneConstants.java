@@ -1,4 +1,4 @@
-package featureHelpers.lucene;
+package features.helpers.lucene;
 
 public class LuceneConstants {
 	public static final String CONTENTS="contents";

@@ -1,8 +1,8 @@
-package features;
+package features.list;
 
-import featureHelpers.IdentificationDocument;
-import featureHelpers.DocumentsSimilarity;
-import featureHelpers.Feature;
+import entities.DocumentsSimilarity;
+import features.core.Feature;
+import features.core.IdentificationDocument;
 import main.Globals;
 
 public class Train_Feature extends Feature {
