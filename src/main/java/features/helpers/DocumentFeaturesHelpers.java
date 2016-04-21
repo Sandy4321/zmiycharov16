@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
 
 import main.Config;
 
@@ -57,12 +58,32 @@ public class DocumentFeaturesHelpers {
 			}
 
 			for (int i = 0; i < result.length; i++) {
-				result[i] /= result.length;
+				result[i] /= tokens.length;
 			}
 
 			return result;
 		}
 
 		return new double[0];
+	}
+	
+
+	public static double[] getPunctuationMarksPercentages(String content, String language) throws Exception {
+		String line = FileUtils.readFileToString(new File(Config.PUNCTUATION_PATH));
+		
+		String[] punctuationMarks = line.split(" ");
+		double[] result = new double[punctuationMarks.length];
+
+		for (int i = 0; i < result.length; i++) {
+			result[i] = StringUtils.countMatches(content, punctuationMarks[i]);
+		}
+
+		int spacesCount = StringUtils.countMatches(content, " ");
+		
+		for (int i = 0; i < result.length; i++) {
+			result[i] /= spacesCount;
+		}
+
+		return result;
 	}
 }

@@ -81,6 +81,7 @@ public class IdentificationDocument {
 	// PROPERTIES
 	private double meanSentenceLength;
 	private double[] stopWordsPercentages;
+	private double[] punctuationMarksPercentages;
 
 	public double getMeanSentenceLength() {
 		return meanSentenceLength;
@@ -99,8 +100,18 @@ public class IdentificationDocument {
 		this.stopWordsPercentages = DocumentFeaturesHelpers.getStopWordsPercentages(this.getContent(), this.getLanguage());
 	}
 
+	public double[] getPunctuationMarksPercentages() {
+		return punctuationMarksPercentages;
+	}
+
+	public void setPunctuationMarksPercentages() throws Exception {
+		this.punctuationMarksPercentages = DocumentFeaturesHelpers.getPunctuationMarksPercentages(this.getContent(), this.getLanguage());
+	}
+
 	private void setProperties() throws Exception {
 		setMeanSentenceLength();
 		setStopWordsPercentages();
+		setPunctuationMarksPercentages();
 	}
+
 }

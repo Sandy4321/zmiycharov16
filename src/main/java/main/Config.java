@@ -17,6 +17,8 @@ public class Config {
 	public static final String STOP_WORDS_PATH_EN = "./_DATA/dictionaries/stopWords/english.csv";
 	public static final String STOP_WORDS_PATH_NL = "./_DATA/dictionaries/stopWords/dutch.csv";
 	public static final String STOP_WORDS_PATH_GR = "./_DATA/dictionaries/stopWords/greek.csv";
+
+	public static final String PUNCTUATION_PATH = "./_DATA/dictionaries/punctuationMarks.txt";
 	
 	public static boolean isTrainMode;
 	
