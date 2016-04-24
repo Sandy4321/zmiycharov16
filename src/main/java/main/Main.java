@@ -47,6 +47,7 @@ public class Main {
 			
 			Date now = new Date();
 			
+			
 			long total = now.getTime() - start.getTime();
 			
 			long seconds = total/1000;

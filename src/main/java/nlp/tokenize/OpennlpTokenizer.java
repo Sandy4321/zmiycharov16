@@ -1,16 +1,27 @@
-package opennlp;
+package nlp.tokenize;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import nlp.tokenize.AbstractTokenizer;
+import main.Config;
 import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 
-public class MyTokenizer{
+public class OpennlpTokenizer extends AbstractTokenizer {
 	private Tokenizer tokenizer;
-	public MyTokenizer(String fileName) throws IOException {
+	public OpennlpTokenizer(String language) throws IOException {
+		String fileName = "";
+		
+		if(language == Config.LANG_EN){
+			fileName = Config.TOKENIZR_PATH_EN;
+		}
+		
+		if(language == Config.LANG_NL){
+			fileName = Config.TOKENIZR_PATH_NL;
+		}
+		
 		InputStream is = new FileInputStream(fileName);
 		TokenizerModel model = new TokenizerModel(is);
 		this.tokenizer = new TokenizerME(model);

@@ -1,30 +1,34 @@
 package nlp.pos;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 
+import nlp.tokenize.AbstractTokenizer;
 import opennlp.MyTokenizer;
 import opennlp.tools.cmdline.postag.POSModelLoader;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
+import opennlp.tools.tokenize.TokenizerME;
+import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
 
-public class opennlpPOSTagger extends AbstractPOSTagger{
+public class OpennlpPOSTagger extends AbstractPOSTagger{
 	private POSTaggerME tagger;
-	private MyTokenizer tokenizer;
+	private AbstractTokenizer tokenizer;
 	
 	private HashMap<String, String> mapping;
 	
-	public opennlpPOSTagger(String fileName, MyTokenizer tokenizer){
+	public OpennlpPOSTagger(String fileName, AbstractTokenizer tokenizer){
 		POSModel model = new POSModelLoader().load(new File(fileName));
 		this.tagger = new POSTaggerME(model);
 		this.tokenizer = tokenizer;
-		
-		
 		// init mapping
 		mapping = new HashMap<String, String>();
 		mapping.put("CC",   "conjunction");
@@ -65,20 +69,16 @@ public class opennlpPOSTagger extends AbstractPOSTagger{
 		mapping.put("WRB",  "adverb");
 	}
 	
-	public String[] tag(String input) {
-		ObjectStream<String> lineStream = new PlainTextByLineStream(
-				new StringReader(input));
-		
+	public LinkedList<String>  tag(String input) {
 		String parts[] = tokenizer.tokenize(input);
-		
 		String tags[]  = this.tagger.tag(parts);
 		LinkedList<String> result = new LinkedList<String>();
-		
 		for (int i = 0; i < tags.length; i++) {
-			result.add(this.mapping.get(tags[i].toString())); 
+			String tag = tags[i].toString();
+			if(mapping.containsKey(tag)){
+				result.add(this.mapping.get(tag)); 
+			}
 		}
-		
-		
-		return  (String[] )result.toArray();
+		return result;
 	}
 }

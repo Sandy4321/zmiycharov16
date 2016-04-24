@@ -2,6 +2,7 @@ package nlp.pos;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.LinkedList;
 
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
@@ -28,5 +29,5 @@ abstract public class AbstractPOSTagger {
 	 * 
 	 * 
 	 */
-	public abstract String[] tag(String input);
+	public abstract LinkedList<String> tag(String input);
 }

@@ -1,36 +1,34 @@
 package nlp.pos;
 
+import main.Config;
+import nlp.tokenize.AbstractTokenizer;
+import nlp.tokenize.OpennlpTokenizer;
+import nlp.tokenize.TokenizerFactory;
 import opennlp.MyTokenizer;
 import opennlp.POStagger;
 
 public class POSTaggerFactory {
 	
-	public AbstractPOSTagger getTagger(String language){
+	public static AbstractPOSTagger get(String language){
 		try{
-			if(language.equals("English")){
-				MyTokenizer tokenizer = new MyTokenizer("./opennlp/en-token.bin");
-				return new opennlpPOSTagger("./opennlp/en-pos-maxent.bin", tokenizer);
+			if(language.equals(Config.LANG_EN)){
+				return new OpennlpPOSTagger(Config.POSTAGGER_PATH_EN, 
+						TokenizerFactory.get(Config.LANG_EN));
 			}
 			
-			if(language.equals("Dannish")){
-				MyTokenizer tokenizer = new MyTokenizer("./opennlp/da-token.bin");
-				return new opennlpPOSTagger("./opennlp/da-pos-maxent.bin", tokenizer);
+			if(language.equals(Config.LANG_NL)){
+				return new OpennlpPOSTagger(Config.TOKENIZR_PATH_NL, 
+						TokenizerFactory.get(Config.LANG_NL));
 			}
 			
-			if(language.equals("Dutsch")){
-				MyTokenizer tokenizer = new MyTokenizer("./opennlp/nl-token.bin");
-				return new opennlpPOSTagger("./opennlp/nl-pos-maxent.bin", tokenizer);
+			if(language.equals(Config.LANG_GR)){
+				// TODO: implement here
 			}
+			
+			return null;
 		}catch ( Exception e ){
 			return null;
 		}
-		
-		
-		if(language.equals("Greek")){
-			// Bind the Greek tagger here
-		}
-		
-		return null;
 	}
 	
 	

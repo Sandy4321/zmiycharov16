@@ -20,6 +20,12 @@ public class Config {
 
 	public static final String PUNCTUATION_PATH = "./_DATA/dictionaries/punctuationMarks.txt";
 	
+	public static final String TOKENIZR_PATH_EN = "./_DATA/opennlp/en-token.bin";
+	public static final String TOKENIZR_PATH_NL = "./_DATA/opennlp/nl-token.bin";
+	
+	public static final String POSTAGGER_PATH_EN = "./_DATA/opennlp/en-pos-maxent.bin";
+	public static final String POSTAGGER_PATH_NL = "./_DATA/opennlp/nl-pos-maxent.bin";
+	
 	public static boolean isTrainMode;
 	
 	public static String inputFolderPath;

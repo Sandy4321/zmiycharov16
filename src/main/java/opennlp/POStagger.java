@@ -21,8 +21,6 @@ public class POStagger {
 	}
 	
 	public String[] tag(String input) throws IOException {
-		ObjectStream<String> lineStream = new PlainTextByLineStream(
-				new StringReader(input));
 		String parts[] = tokenizer.tokenize(input);
 		return this.tagger.tag(parts);
 	}
