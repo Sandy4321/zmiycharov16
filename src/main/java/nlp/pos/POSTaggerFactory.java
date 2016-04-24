@@ -22,7 +22,7 @@ public class POSTaggerFactory {
 			}
 			
 			if(language.equals(Config.LANG_GR)){
-				// TODO: implement here
+				return new GreekPOSTagger();
 			}
 			
 			return null;

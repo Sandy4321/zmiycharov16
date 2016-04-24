@@ -2,6 +2,7 @@ package nlp.pos;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 import opennlp.tools.util.ObjectStream;
@@ -11,7 +12,7 @@ abstract public class AbstractPOSTagger {
 	/**
 	 * Implement this feature to receive POS tag the input
 	 * @param input
-	 * @return String[]
+	 * @return LinkedHashMap<String, String>
 
 	    article
 	    verb
@@ -29,5 +30,5 @@ abstract public class AbstractPOSTagger {
 	 * 
 	 * 
 	 */
-	public abstract LinkedList<String> tag(String input);
+	public abstract LinkedHashMap<String, String> tag(String input);
 }

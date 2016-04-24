@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 import nlp.tokenize.AbstractTokenizer;
@@ -69,15 +70,15 @@ public class OpennlpPOSTagger extends AbstractPOSTagger{
 		mapping.put("WRB",  "adverb");
 	}
 	
-	public LinkedList<String>  tag(String input) {
+	public LinkedHashMap<String, String>  tag(String input) {
 		String parts[] = tokenizer.tokenize(input);
 		String tags[]  = this.tagger.tag(parts);
-		LinkedList<String> result = new LinkedList<String>();
+		LinkedHashMap<String, String> result = new LinkedHashMap<String, String>();
 		for (int i = 0; i < tags.length; i++) {
-			String tag = tags[i].toString();
-			if(mapping.containsKey(tag)){
-				result.add(this.mapping.get(tag)); 
+			if (parts[i] == null || parts[i].isEmpty()) {
+				continue;
 			}
+			result.put(parts[i], tags[i]);
 		}
 		return result;
 	}
