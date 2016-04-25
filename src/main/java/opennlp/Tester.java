@@ -1,5 +1,6 @@
 package opennlp;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 import java.util.Map;
@@ -7,12 +8,23 @@ import java.util.Map;
 import main.Config;
 import nlp.pos.AbstractPOSTagger;
 import nlp.pos.POSTaggerFactory;
+import nlp.stopwords.StopWordItem;
+import nlp.stopwords.StopWords;
 
 public class Tester {
 
 	public static void main(String[] args) {
 		try {
 			String input = "and the hell comes near Hi. How are you? This is Mike.";
+			
+			StopWords ws = new StopWords(Config.LANG_EN);
+			
+			
+			HashMap<String, StopWordItem> ls = ws.count(input);
+			for (String key : ls.keySet()) {
+				System.out.println(ls.get(key));
+			}
+			
 			AbstractPOSTagger tagger = POSTaggerFactory.get(Config.LANG_EN);
 			LinkedHashMap<String, String> tags = tagger.tag(input);
 			for (Map.Entry<String, String> entry : tags.entrySet()) {

@@ -74,6 +74,12 @@ public class StopWords {
 			}
 		}
 		
+		for (String key : result.keySet()) {
+			StopWordItem item = (StopWordItem) result.get(key);
+			item.setDocumentWordCount(tokens.length);
+			result.put(key, item);
+		}
+		
 		return result;
 	}
 }
