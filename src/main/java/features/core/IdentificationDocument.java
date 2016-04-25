@@ -1,11 +1,14 @@
 package features.core;
 
 import java.io.File;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.wordnet.AnalyzerUtil;
 
 import features.helpers.DocumentFeaturesHelpers;
+import nlp.stopwords.StopWordItem;
+import nlp.stopwords.StopWords;
 
 public class IdentificationDocument {
 	// COMMON PROPERTIES
@@ -80,7 +83,7 @@ public class IdentificationDocument {
 	
 	// PROPERTIES
 	private double meanSentenceLength;
-	private double[] stopWordsPercentages;
+	private Map<String, StopWordItem> stopWordsMap;
 	private double[] punctuationMarksPercentages;
 
 	public double getMeanSentenceLength() {
@@ -92,12 +95,13 @@ public class IdentificationDocument {
 		this.meanSentenceLength = DocumentFeaturesHelpers.getMeanSentenceLength(sentences);
 	}
 
-	public double[] getStopWordsPercentages() {
-		return stopWordsPercentages;
+	public Map<String, StopWordItem> getStopWordsMap() {
+		return stopWordsMap;
 	}
 
-	private void setStopWordsPercentages() throws Exception {
-		this.stopWordsPercentages = DocumentFeaturesHelpers.getStopWordsPercentages(this.getContent(), this.getLanguage());
+	private void setStopWordsMap() throws Exception {
+		StopWords sw = new StopWords(this.getLanguage());
+		this.stopWordsMap = sw.count(this.content);
 	}
 
 	public double[] getPunctuationMarksPercentages() {
@@ -110,7 +114,7 @@ public class IdentificationDocument {
 
 	private void setProperties() throws Exception {
 		setMeanSentenceLength();
-		setStopWordsPercentages();
+		setStopWordsMap();
 		setPunctuationMarksPercentages();
 	}
 

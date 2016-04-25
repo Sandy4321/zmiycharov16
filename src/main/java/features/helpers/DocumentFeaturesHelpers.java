@@ -32,44 +32,7 @@ public class DocumentFeaturesHelpers {
 		}
 		return result / sentences.length;
 	}
-
-	public static double[] getStopWordsPercentages(String content, String language) throws Exception {
-		String line = null;
-
-		if (language.equals(Config.LANG_EN)) {
-			line = FileUtils.readFileToString(new File(Config.STOP_WORDS_PATH_EN));
-		}
-		else if (language.equals(Config.LANG_GR)) {
-			line = FileUtils.readFileToString(new File(Config.STOP_WORDS_PATH_GR));
-		}
-		else if (language.equals(Config.LANG_NL)) {
-			line = FileUtils.readFileToString(new File(Config.STOP_WORDS_PATH_NL));
-		}
-
-		if (line != null) {
-			List<String> stopWords = Arrays.asList(line.split(","));
-			double[] result = new double[stopWords.size()];
-
-			AbstractTokenizer tokenizer = TokenizerFactory.get(language);
-			String[] tokens = tokenizer.tokenize(content);
-
-			for (int i = 0; i < tokens.length; i++) {
-				if (stopWords.contains(tokens[i])) {
-					result[stopWords.indexOf(tokens[i])]++;
-				}
-			}
-
-			for (int i = 0; i < result.length; i++) {
-				result[i] /= tokens.length;
-			}
-
-			return result;
-		}
-
-		return new double[0];
-	}
 	
-
 	public static double[] getPunctuationMarksPercentages(String content, String language) throws Exception {
 		String line = FileUtils.readFileToString(new File(Config.PUNCTUATION_PATH));
 		

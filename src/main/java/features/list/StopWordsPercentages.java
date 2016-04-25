@@ -1,7 +1,10 @@
 package features.list;
 
+import java.util.Map;
+
 import features.core.Feature;
 import features.core.IdentificationDocument;
+import nlp.stopwords.StopWordItem;
 
 public class StopWordsPercentages extends Feature {
 
@@ -11,16 +14,16 @@ public class StopWordsPercentages extends Feature {
 
 	@Override
 	public double getSimilarity(IdentificationDocument doc1, IdentificationDocument doc2) {
-		double[] doc1Percentages = doc1.getStopWordsPercentages();
-		double[] doc2Percentages = doc2.getStopWordsPercentages();
+		Map<String, StopWordItem> doc1Map = doc1.getStopWordsMap();
+		Map<String, StopWordItem> doc2Map = doc2.getStopWordsMap();
 
 		double result = 0.0;
 
-		for(int i =0;i<doc1Percentages.length;i++) {
-			result += 1- Math.abs(doc1Percentages[i] - doc2Percentages[i]);
+		for(String key : doc1Map.keySet()) {
+			result += 1- Math.abs(doc1Map.get(key).getPercent() - doc2Map.get(key).getPercent());
 		}
 
-		result /= doc1Percentages.length;
+		result /= doc1Map.keySet().size();
 		
 		return result;
 	}
