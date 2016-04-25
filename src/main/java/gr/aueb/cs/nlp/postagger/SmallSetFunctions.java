@@ -349,11 +349,7 @@ public class SmallSetFunctions {
             LinearClassifier c = null;
         try
         {
-<<<<<<< HEAD
-             c = (LinearClassifier)edu.stanford.nlp.io.IOUtils.readObjectFromFile("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
-=======
-             c = (LinearClassifier)edu.stanford.nlp.CLio.IOUtils.readObjectFromFile("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
->>>>>>> 0e558d59ee818a7faed21216712ebe1a333e9fbf
+             c = (LinearClassifier)edu.stanford.nlp.io.IOUtils.readObjectFromFile("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
         }
         catch(java.io.IOException e)
         {
@@ -751,11 +747,7 @@ public class SmallSetFunctions {
 
         try
         {
-<<<<<<< HEAD
-            edu.stanford.nlp.io.IOUtils.writeObjectToFile(c, "./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
-=======
-            edu.stanford.nlp.CLio.IOUtils.writeObjectToFile(c, "./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
->>>>>>> 0e558d59ee818a7faed21216712ebe1a333e9fbf
+            edu.stanford.nlp.io.IOUtils.writeObjectToFile(c, "./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
         }
         catch(java.io.IOException e)
         {
