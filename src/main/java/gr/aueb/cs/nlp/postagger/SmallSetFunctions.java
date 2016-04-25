@@ -81,10 +81,10 @@ public class SmallSetFunctions {
         testSet.endings2.clear();
         testSet.endings3.clear();
 
-        words = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetWordInstance.txt");
-        endings1 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings1Instance.txt");
-        endings2 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings2Instance.txt");
-        endings3 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings3Instance.txt");
+        words = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetWordInstance.txt");
+        endings1 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings1Instance.txt");
+        endings2 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings2Instance.txt");
+        endings3 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings3Instance.txt");
 
         smallSetMakeInstances(testSet, test);
 
@@ -145,10 +145,10 @@ public class SmallSetFunctions {
         testSet.endings2.clear();
         testSet.endings3.clear();
 
-        words = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetWordInstance.txt");
-        endings1 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings1Instance.txt");
-        endings2 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings2Instance.txt");
-        endings3 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings3Instance.txt");
+        words = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetWordInstance.txt");
+        endings1 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings1Instance.txt");
+        endings2 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings2Instance.txt");
+        endings3 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings3Instance.txt");
 
         smallSetMakeInstances(testSet, test);
 
@@ -349,7 +349,7 @@ public class SmallSetFunctions {
             LinearClassifier c = null;
         try
         {
-             c = (LinearClassifier)edu.stanford.nlp.CLio.IOUtils.readObjectFromFile("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
+             c = (LinearClassifier)edu.stanford.nlp.CLio.IOUtils.readObjectFromFile("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
         }
         catch(java.io.IOException e)
         {
@@ -546,7 +546,7 @@ public class SmallSetFunctions {
     //load list
     protected static void smallSetMakeList() {
         try {
-            FileInputStream fstream = new FileInputStream("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetList.txt");
+            FileInputStream fstream = new FileInputStream("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetList.txt");
             DataInputStream in = new DataInputStream(fstream);
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String line;
@@ -672,14 +672,14 @@ public class SmallSetFunctions {
         }
         PrintStream ps;
 		try {
-			ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetWordInstance.txt"));
+			ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetWordInstance.txt"));
                         Iterator listIterator = trainSet.words.keySet().iterator();
                         while (listIterator.hasNext()) {
                             String w = listIterator.next().toString();
                             ps.println(w+" "+trainSet.words.get(w));
                         }
 			ps.close();
-                        ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings1Instance.txt"));
+                        ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings1Instance.txt"));
                         listIterator = trainSet.endings1.keySet().iterator();
                         while (listIterator.hasNext()) {
                             String w = listIterator.next().toString();
@@ -687,14 +687,14 @@ public class SmallSetFunctions {
                         }
 
 			ps.close();
-                        ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings2Instance.txt"));
+                        ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings2Instance.txt"));
                         listIterator = trainSet.endings2.keySet().iterator();
                         while (listIterator.hasNext()) {
                             String w = listIterator.next().toString();
                             ps.println(w+" "+trainSet.endings2.get(w));
                         }
 			ps.close();
-                        ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings3Instance.txt"));
+                        ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings3Instance.txt"));
                         listIterator = trainSet.endings3.keySet().iterator();
                         while (listIterator.hasNext()) {
                             String w = listIterator.next().toString();
@@ -704,10 +704,10 @@ public class SmallSetFunctions {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-        words = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetWordInstance.txt");
-        endings1 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings1Instance.txt");
-        endings2 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings2Instance.txt");
-        endings3 = smallSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings3Instance.txt");
+        words = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetWordInstance.txt");
+        endings1 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings1Instance.txt");
+        endings2 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings2Instance.txt");
+        endings3 = smallSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetEndings3Instance.txt");
        smallSetMakeInstances(trainSet, train);
        smallSetWriteFileWithProperties("properties_train.txt", train);
 
@@ -724,7 +724,7 @@ public class SmallSetFunctions {
         
 
         try {
-            ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetList.txt"));
+            ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetList.txt"));
             Iterator listIterator = list.keySet().iterator();
             while (listIterator.hasNext()) {
                 String w = listIterator.next().toString();
@@ -747,7 +747,7 @@ public class SmallSetFunctions {
 
         try
         {
-            edu.stanford.nlp.CLio.IOUtils.writeObjectToFile(c, "./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
+            edu.stanford.nlp.CLio.IOUtils.writeObjectToFile(c, "./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
         }
         catch(java.io.IOException e)
         {

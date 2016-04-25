@@ -14,17 +14,17 @@ public class Config {
 	public static final String LANG_NL = "nl";
 	public static final String LANG_GR = "gr";
 
-	public static final String STOP_WORDS_PATH_EN = "./_DATA/dictionaries/stopWords/english.csv";
-	public static final String STOP_WORDS_PATH_NL = "./_DATA/dictionaries/stopWords/dutch.csv";
-	public static final String STOP_WORDS_PATH_GR = "./_DATA/dictionaries/stopWords/greek.csv";
+	public static final String STOP_WORDS_PATH_EN = "./dependencies/dictionaries/stopWords/english.csv";
+	public static final String STOP_WORDS_PATH_NL = "./dependencies/dictionaries/stopWords/dutch.csv";
+	public static final String STOP_WORDS_PATH_GR = "./dependencies/dictionaries/stopWords/greek.csv";
 
-	public static final String PUNCTUATION_PATH = "./_DATA/dictionaries/punctuationMarks.txt";
+	public static final String PUNCTUATION_PATH = "./dependencies/dictionaries/punctuationMarks.txt";
 	
-	public static final String TOKENIZR_PATH_EN = "./_DATA/opennlp/en-token.bin";
-	public static final String TOKENIZR_PATH_NL = "./_DATA/opennlp/nl-token.bin";
+	public static final String TOKENIZR_PATH_EN = "./dependencies/opennlp/en-token.bin";
+	public static final String TOKENIZR_PATH_NL = "./dependencies/opennlp/nl-token.bin";
 	
-	public static final String POSTAGGER_PATH_EN = "./_DATA/opennlp/en-pos-maxent.bin";
-	public static final String POSTAGGER_PATH_NL = "./_DATA/opennlp/nl-pos-maxent.bin";
+	public static final String POSTAGGER_PATH_EN = "./dependencies/opennlp/en-pos-maxent.bin";
+	public static final String POSTAGGER_PATH_NL = "./dependencies/opennlp/nl-pos-maxent.bin";
 	
 	public static boolean isTrainMode;
 	
