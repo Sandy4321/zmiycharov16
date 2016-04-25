@@ -9,6 +9,9 @@ import org.apache.commons.lang.StringUtils;
 
 import main.Config;
 
+import nlp.tokenize.AbstractTokenizer;
+import nlp.tokenize.TokenizerFactory;
+
 import opennlp.MyTokenizer;
 
 public class DocumentFeaturesHelpers {
@@ -47,8 +50,7 @@ public class DocumentFeaturesHelpers {
 			List<String> stopWords = Arrays.asList(line.split(","));
 			double[] result = new double[stopWords.size()];
 
-			// TODO: Get tokens for language
-			MyTokenizer tokenizer = new MyTokenizer("./opennlp/en-token.bin");
+			AbstractTokenizer tokenizer = TokenizerFactory.get(language);
 			String[] tokens = tokenizer.tokenize(content);
 
 			for (int i = 0; i < tokens.length; i++) {
