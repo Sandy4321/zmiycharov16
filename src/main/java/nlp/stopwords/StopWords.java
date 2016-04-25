@@ -55,6 +55,10 @@ public class StopWords {
 		HashMap<String, StopWordItem> result 
 			= new HashMap<String, StopWordItem>();
 		
+		for(String word : stopWords.keySet()) {
+			result.put(word, new StopWordItem(word, 0, stopWords.get(word)));
+		}
+		
 		input = input.replaceAll("[,.;!?(){}\\[\\]<>%]", "");
 		input = input.toUpperCase(locale);
 		
@@ -63,12 +67,7 @@ public class StopWords {
 		for (int i = 0; i < tokens.length; i++) {
 			String token = tokens[i];
 			if(stopWords.containsKey(token)){
-				StopWordItem item;
-				if(result.containsKey(token)) {
-					item = result.get(token);
-				}else{
-					item = new StopWordItem(token, 0, stopWords.get(token));
-				}
+				StopWordItem item = result.get(token);
 				item.increment();
 				result.put(token, item);
 			}
