@@ -84,10 +84,10 @@ public class BigSetFunctions {
         testSet.endings2.clear();
         testSet.endings3.clear();
 
-        words = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetWordInstance.txt");
-        endings1 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings1Instance.txt");
-        endings2 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings2Instance.txt");
-        endings3 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings3Instance.txt");
+        words = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetWordInstance.txt");
+        endings1 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings1Instance.txt");
+        endings2 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings2Instance.txt");
+        endings3 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings3Instance.txt");
 
         bigSetMakeInstances(testSet, test);
 
@@ -132,10 +132,10 @@ public class BigSetFunctions {
         testSet.endings2.clear();
         testSet.endings3.clear();
 
-        words = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetWordInstance.txt");
-        endings1 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings1Instance.txt");
-        endings2 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings2Instance.txt");
-        endings3 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings3Instance.txt");
+        words = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetWordInstance.txt");
+        endings1 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings1Instance.txt");
+        endings2 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings2Instance.txt");
+        endings3 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings3Instance.txt");
 
         bigSetMakeInstances(testSet, test);
 
@@ -344,7 +344,11 @@ public class BigSetFunctions {
     protected static void bigSetClassify(RVFDataset ds) {
         LinearClassifier c = null;
         try {
+<<<<<<< HEAD
             c = (LinearClassifier) edu.stanford.nlp.io.IOUtils.readObjectFromFile("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetTempClassifier");
+=======
+            c = (LinearClassifier) edu.stanford.nlp.CLio.IOUtils.readObjectFromFile("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetTempClassifier");
+>>>>>>> 0e558d59ee818a7faed21216712ebe1a333e9fbf
         } catch (java.io.IOException e) {
             System.out.println("Error: " + e);
         } catch (java.lang.ClassNotFoundException e) {
@@ -2121,7 +2125,7 @@ public class BigSetFunctions {
     //load list
     protected static void bigSetMakeList() {
         try {
-            FileInputStream fstream = new FileInputStream("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetList.txt");
+            FileInputStream fstream = new FileInputStream("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetList.txt");
             DataInputStream in = new DataInputStream(fstream);
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String line;
@@ -2886,14 +2890,14 @@ public class BigSetFunctions {
         }
         PrintStream ps;
         try {
-            ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetWordInstance.txt"));
+            ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetWordInstance.txt"));
             Iterator listIterator = trainSet.words.keySet().iterator();
             while (listIterator.hasNext()) {
                 String w = listIterator.next().toString();
                 ps.println(w + " " + trainSet.words.get(w));
             }
             ps.close();
-            ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings1Instance.txt"));
+            ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings1Instance.txt"));
             listIterator = trainSet.endings1.keySet().iterator();
             while (listIterator.hasNext()) {
                 String w = listIterator.next().toString();
@@ -2901,14 +2905,14 @@ public class BigSetFunctions {
             }
 
             ps.close();
-            ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings2Instance.txt"));
+            ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings2Instance.txt"));
             listIterator = trainSet.endings2.keySet().iterator();
             while (listIterator.hasNext()) {
                 String w = listIterator.next().toString();
                 ps.println(w + " " + trainSet.endings2.get(w));
             }
             ps.close();
-            ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings3Instance.txt"));
+            ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings3Instance.txt"));
             listIterator = trainSet.endings3.keySet().iterator();
             while (listIterator.hasNext()) {
                 String w = listIterator.next().toString();
@@ -2918,10 +2922,10 @@ public class BigSetFunctions {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        words = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetWordInstance.txt");
-        endings1 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings1Instance.txt");
-        endings2 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings2Instance.txt");
-        endings3 = bigSetLoadTrainInstances("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings3Instance.txt");
+        words = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetWordInstance.txt");
+        endings1 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings1Instance.txt");
+        endings2 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings2Instance.txt");
+        endings3 = bigSetLoadTrainInstances("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetEndings3Instance.txt");
         bigSetMakeInstances(trainSet, train);
         bigSetWriteFileWithProperties("properties_train.txt", train);
 
@@ -2938,7 +2942,7 @@ public class BigSetFunctions {
 
 
         try {
-            ps = new PrintStream(new File("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetList.txt"));
+            ps = new PrintStream(new File("./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetList.txt"));
             Iterator listIterator = list.keySet().iterator();
             while (listIterator.hasNext()) {
                 String w = listIterator.next().toString();
@@ -2960,7 +2964,11 @@ public class BigSetFunctions {
         LinearClassifier c = (LinearClassifier) lcFactory.trainClassifier(dataSetTrain);
 
         try {
+<<<<<<< HEAD
             edu.stanford.nlp.io.IOUtils.writeObjectToFile(c, "./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetTempClassifier");
+=======
+            edu.stanford.nlp.CLio.IOUtils.writeObjectToFile(c, "./dependencies/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetTempClassifier");
+>>>>>>> 0e558d59ee818a7faed21216712ebe1a333e9fbf
         } catch (java.io.IOException e) {
             System.out.println("Error: " + e);
         }
