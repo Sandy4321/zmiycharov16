@@ -6,11 +6,11 @@
  */
 package gr.aueb.cs.nlp.postagger;
 
-import edu.stanford.nlp.CLclassify.*;
-import edu.stanford.nlp.CLling.BasicDatum;
-import edu.stanford.nlp.CLling.Datum;
-import edu.stanford.nlp.CLling.RVFDatum;
-import edu.stanford.nlp.CLstats.ClassicCounter;
+import edu.stanford.nlp.classify.*;
+import edu.stanford.nlp.ling.BasicDatum;
+import edu.stanford.nlp.ling.Datum;
+import edu.stanford.nlp.ling.RVFDatum;
+import edu.stanford.nlp.stats.ClassicCounter;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
@@ -344,7 +344,7 @@ public class BigSetFunctions {
     protected static void bigSetClassify(RVFDataset ds) {
         LinearClassifier c = null;
         try {
-            c = (LinearClassifier) edu.stanford.nlp.CLio.IOUtils.readObjectFromFile("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetTempClassifier");
+            c = (LinearClassifier) edu.stanford.nlp.io.IOUtils.readObjectFromFile("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetTempClassifier");
         } catch (java.io.IOException e) {
             System.out.println("Error: " + e);
         } catch (java.lang.ClassNotFoundException e) {
@@ -2960,7 +2960,7 @@ public class BigSetFunctions {
         LinearClassifier c = (LinearClassifier) lcFactory.trainClassifier(dataSetTrain);
 
         try {
-            edu.stanford.nlp.CLio.IOUtils.writeObjectToFile(c, "./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetTempClassifier");
+            edu.stanford.nlp.io.IOUtils.writeObjectToFile(c, "./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/bigTagSetFiles/bigSetTempClassifier");
         } catch (java.io.IOException e) {
             System.out.println("Error: " + e);
         }

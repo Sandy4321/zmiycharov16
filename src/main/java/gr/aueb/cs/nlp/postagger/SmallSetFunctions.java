@@ -6,9 +6,9 @@
  */
 package gr.aueb.cs.nlp.postagger;
 
-import edu.stanford.nlp.CLclassify.*;
-import edu.stanford.nlp.CLling.RVFDatum;
-import edu.stanford.nlp.CLstats.ClassicCounter;
+import edu.stanford.nlp.classify.*;
+import edu.stanford.nlp.ling.RVFDatum;
+import edu.stanford.nlp.stats.ClassicCounter;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
@@ -349,7 +349,7 @@ public class SmallSetFunctions {
             LinearClassifier c = null;
         try
         {
-             c = (LinearClassifier)edu.stanford.nlp.CLio.IOUtils.readObjectFromFile("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
+             c = (LinearClassifier)edu.stanford.nlp.io.IOUtils.readObjectFromFile("./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
         }
         catch(java.io.IOException e)
         {
@@ -747,7 +747,7 @@ public class SmallSetFunctions {
 
         try
         {
-            edu.stanford.nlp.CLio.IOUtils.writeObjectToFile(c, "./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
+            edu.stanford.nlp.io.IOUtils.writeObjectToFile(c, "./_DATA/dictionaries/postags/gr/aueb_pos_tagger_2_2_alpha_gr/bin/smallTagSetFiles/smallSetTempClassifier");
         }
         catch(java.io.IOException e)
         {

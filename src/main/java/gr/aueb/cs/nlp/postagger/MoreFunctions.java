@@ -6,9 +6,9 @@
  */
 package gr.aueb.cs.nlp.postagger;
 
-import edu.stanford.nlp.CLclassify.*;
-import edu.stanford.nlp.CLling.RVFDatum;
-import edu.stanford.nlp.CLstats.ClassicCounter;
+import edu.stanford.nlp.classify.*;
+import edu.stanford.nlp.ling.RVFDatum;
+import edu.stanford.nlp.stats.ClassicCounter;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
@@ -36,7 +36,8 @@ public class MoreFunctions {
 
     //returns the 3 possible endings of a word
     protected static String getEnding(int numOfLetters, String word) {
-        char[] array = word.toCharArray();
+    	
+    	char[] array = word.toCharArray();
 
         if (numOfLetters == 1) {
             return Character.toString(array[array.length - 1]);
