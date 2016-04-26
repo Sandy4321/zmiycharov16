@@ -2,6 +2,7 @@ package features.helpers;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -56,7 +57,7 @@ public class DocumentFeaturesHelpers {
 		AbstractTokenizer tokenizer = TokenizerFactory.get(language);
 		String[] tokens = tokenizer.tokenize(content);
 
-		Object[] unique = Arrays.stream(tokens).distinct().toArray();
+		String[] unique = new HashSet<String>(Arrays.asList(tokens)).toArray(new String[0]);
 		
 		double result = (1.0 * unique.length) / tokens.length;
 
