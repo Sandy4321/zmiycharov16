@@ -34,6 +34,7 @@ public class Globals {
 		Features.add(new MeanSentenceLength());
 		Features.add(new StopWordsPercentages());
 		Features.add(new PunctuationMarksPercentages());
+		Features.add(new UniqueWordsPercentages());
 		if(Config.isTrainMode) {
 			Features.add(new Train_Feature());
 		}

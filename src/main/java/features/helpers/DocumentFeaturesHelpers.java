@@ -51,4 +51,15 @@ public class DocumentFeaturesHelpers {
 
 		return result;
 	}
+
+	public static double getUniqueWordsPercentage(String content, String language) throws Exception {
+		AbstractTokenizer tokenizer = TokenizerFactory.get(language);
+		String[] tokens = tokenizer.tokenize(content);
+
+		Object[] unique = Arrays.stream(tokens).distinct().toArray();
+		
+		double result = (1.0 * unique.length) / tokens.length;
+
+		return result;
+	}
 }
