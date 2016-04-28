@@ -67,12 +67,7 @@ public class Main {
 			outputFolder.mkdir();
 		}
 		
-		try {
-			FileUtils.cleanDirectory(outputFolder);
-		}
-		catch (Exception ex){
-			System.out.println("Cannot clean output directory");
-		}
+		FileUtils.cleanDirectory(outputFolder);
 		
 		// GENERATE RESULTS
 		for(JsonProblem problem : Globals.JsonProblems) {
