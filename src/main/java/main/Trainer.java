@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -212,6 +213,8 @@ public class Trainer {
 			trainClassifiersMap.put(language, new HashMap<String, Classifier>());
 			
 			for(String genre : foldersTree.get(language)) {
+				Date start = new Date();
+				
 				if (Config.isTrainMode) {
 					generateTrainFolder(language, genre);
 					generateDataSet(language, genre);
@@ -226,6 +229,15 @@ public class Trainer {
 				
 				trainClassifiersMap.put(language, newMap);
 				ois.close();
+
+				Date now = new Date();
+				
+				long total = now.getTime() - start.getTime();
+				
+				long seconds = total/1000;
+				long millis = total%1000;
+				
+				System.out.println("Train: " + language + " / " + genre + " (" + seconds + "." + String.format("%03d", millis) + " sec)");
 			}
 		}
 		

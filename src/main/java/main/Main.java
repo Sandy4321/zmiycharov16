@@ -47,7 +47,6 @@ public class Main {
 			
 			Date now = new Date();
 			
-			
 			long total = now.getTime() - start.getTime();
 			
 			long seconds = total/1000;
@@ -72,11 +71,23 @@ public class Main {
 		
 		// GENERATE RESULTS
 		for(JsonProblem problem : Globals.JsonProblems) {
+
+			Date start = new Date();
+			
 			String folderName = problem.getFolder();
 			
 			Results.generateResults(folderName);
 			
 			Results.generateOutput(new File(outputFolder, folderName));
+
+			Date now = new Date();
+			
+			long total = now.getTime() - start.getTime();
+			
+			long seconds = total/1000;
+			long millis = total%1000;
+			
+			System.out.println("Generated output: " + folderName + " (" + seconds + "." + String.format("%03d", millis) + " sec)");
 		}
 		
 		// CALCULATE ERROR ONLY IF TRAIN MODE
