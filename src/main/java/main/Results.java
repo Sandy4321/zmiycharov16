@@ -23,13 +23,13 @@ public class Results {
 	public static Map<String, List<DocumentsSimilarity>> JsonRankings = new HashMap<String, List<DocumentsSimilarity>>();
 	public static Map<String, List<Set<ClusterDocument>>> JsonClusters = new HashMap<String, List<Set<ClusterDocument>>>();
 
-	public static void generateResults(String folderName) {
+	public static void generateResults(String folderName) throws Exception {
 		calculateRankings(folderName);
 		generateRankings(folderName);
 		generateClusters(folderName);
 	}
 
-	private static void calculateRankings(String folderName) {
+	private static void calculateRankings(String folderName) throws Exception {
 		List<DocumentsSimilarity> rankings = new ArrayList<DocumentsSimilarity>();
 
 		for (int i = 0; i < Globals.Features.get(0).getSimilaritiesForFolder(folderName).size(); i++) {

@@ -18,7 +18,7 @@ public class Globals {
 	public static Map<String, FolderInfo> IdentificationDocs;
 	public static Map<String, List<DocumentsSimilarity>> TrainSimilarities; 
 
-	public static Map<String, Double> FeaturesWeights;
+	public static TrainWrapper TrainWrapper;
 
 	public static Map<String, FolderEvaluationData> FolderEvaluations;
 
@@ -27,7 +27,7 @@ public class Globals {
 	public static void init() {
 		IdentificationDocs = new HashMap<String, FolderInfo>();
 		TrainSimilarities = new HashMap<String, List<DocumentsSimilarity>>(); 
-		FeaturesWeights = new HashMap<String, Double>();
+		TrainWrapper = new TrainWrapper();
 		FolderEvaluations = new HashMap<String, FolderEvaluationData>();
 		
 		Features = new ArrayList<Feature>();

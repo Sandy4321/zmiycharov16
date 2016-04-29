@@ -17,12 +17,6 @@ public abstract class Feature {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getWeight() {
-		return Globals.FeaturesWeights.get(this.getName());
-	}
-	public void setWeight(double weight) {
-		Globals.FeaturesWeights.put(this.getName(), weight);
-	}
 	public List<DocumentsSimilarity> getSimilaritiesForFolder(String folderName) {
 		return similarities.get(folderName);
 	}
@@ -57,7 +51,6 @@ public abstract class Feature {
 	
 	public Feature(String name) {
 		this.setName(name);
-		this.setWeight(0);
 		this.similarities = new HashMap<String, List<DocumentsSimilarity>>();
 	}
 	

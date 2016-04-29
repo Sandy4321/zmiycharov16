@@ -57,6 +57,7 @@ public class Main {
 		}
 		
 		// TRAIN
+		Logistic.setWekaAttributes();
 		Logistic.trainResults();
 
 		// CLEAR OUTPUT FOLDER
