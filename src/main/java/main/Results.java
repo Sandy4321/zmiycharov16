@@ -39,7 +39,7 @@ public class Results {
 			similarity.setDocument1(configSimilarity.getDocument1());
 			similarity.setDocument2(configSimilarity.getDocument2());
 
-			similarity.setScore(Logistic.classify(folderName, i));
+			similarity.setScore(Trainer.classify(folderName, i));
 
 			rankings.add(similarity);
 		}

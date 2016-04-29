@@ -8,8 +8,6 @@ import org.apache.commons.cli.Options;
 public class Config {
 	public static final double MIN_SCORE_TO_RANK = 0.7;
 
-	public static final String TRAIN_FILE_PATH = "./train.arff";
-
 	public static final String LANG_EN = "en";
 	public static final String LANG_NL = "nl";
 	public static final String LANG_GR = "gr";

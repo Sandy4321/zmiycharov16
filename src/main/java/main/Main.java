@@ -17,7 +17,7 @@ public class Main {
 	// To run from console: mvn exec:java -Dexec.args="-i $inputDataset -o $outputDir"
 	public static void main(String[] args) throws Exception {
 		// SET IsTrainMode
-		Config.isTrainMode = !(new File(Config.TRAIN_FILE_PATH).exists());
+		Config.isTrainMode = !(new File(Trainer.TRAIN_FOLDER_PATH).exists());
 		
 		// INIT
 		Globals.init();
@@ -57,8 +57,8 @@ public class Main {
 		}
 		
 		// TRAIN
-		Logistic.setWekaAttributes();
-		Logistic.trainResults();
+		Trainer.setWekaAttributes();
+		Trainer.trainResults();
 
 		// CLEAR OUTPUT FOLDER
 		System.out.println("Generate output");

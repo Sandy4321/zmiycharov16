@@ -2,9 +2,11 @@ package main;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,19 +32,24 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.SelectedTag;
 
-/**
- * Performs simple logistic regression. User: tpeng Date: 6/22/12 Time: 11:01 PM
- * 
- * @author tpeng
- * @author Matthieu Labas
- */
-public class Logistic {
+public class Trainer {
+	public static final String TRAIN_FOLDER_PATH = "./train/";
+	public static final String TRAIN_DATA_FILE = "train.arff";
+	public static final String TRAIN_CLASSIFIER_FILE = "classifier.model";
+
+	private static String getTrainDataPath() {
+		return TRAIN_FOLDER_PATH + TRAIN_DATA_FILE;
+	}
+	
+	private static String getClassifierPath() {
+		return TRAIN_FOLDER_PATH + TRAIN_CLASSIFIER_FILE;
+	}
 	
 	private static FastVector wekaAttributes;
 	private static Classifier trainClassifier;
 	
 	private static Instances getTrainInstances() throws Exception {
-		BufferedReader reader = new BufferedReader(new FileReader(Config.TRAIN_FILE_PATH));
+		BufferedReader reader = new BufferedReader(new FileReader(getTrainDataPath()));
 		Instances result = new Instances(reader);
 		result.setClassIndex(Globals.Features.size() - 1);
 		
@@ -62,7 +69,7 @@ public class Logistic {
 		}
 	}
 
-	public static Instances readDataSet() {
+	public static void generateDataSet() throws Exception {
 		Feature lastFeature = Globals.Features.get(Globals.Features.size() - 1);
 		int totalCount = 0;
 		for (String folder : Globals.IdentificationDocs.keySet()) {
@@ -107,7 +114,7 @@ public class Logistic {
 			}
 		}
 
-		return trainingSet;
+		FileUtils.write(new File(getTrainDataPath()), trainingSet.toString());
 	}
 
 	private static void generateClassifier() throws Exception {
@@ -115,8 +122,8 @@ public class Logistic {
 		LibSVM classifier = new LibSVM();
 		classifier.setSVMType(new SelectedTag(LibSVM.SVMTYPE_EPSILON_SVR, LibSVM.TAGS_SVMTYPE));
 		classifier.buildClassifier(trainingSet);
-
-		trainClassifier = classifier;
+		
+		weka.core.SerializationHelper.write(getClassifierPath(), classifier);
 	}
 
 	public static double classify(String folderName, int similarityIndex) throws Exception {
@@ -143,19 +150,29 @@ public class Logistic {
 
 	// LEARN
 	public static void trainResults() throws Exception {
-		File trainFile = new File(Config.TRAIN_FILE_PATH);
-
-		Instances trainingSet = null;
 		if (Config.isTrainMode) {
-			trainingSet = readDataSet();
-
-			trainFile.createNewFile();
-			FileUtils.write(trainFile, trainingSet.toString());
+			generateTrainFolder();
+			generateDataSet();
+			generateClassifier();
 		} else {
 			
 		}
 		
-		generateClassifier();
+		// deserialize model
+		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(getClassifierPath()));
+		trainClassifier = (Classifier) ois.readObject();
+		ois.close();
+	}
+	
+	private static void generateTrainFolder() throws Exception {
+		File trainFolder = new File(TRAIN_FOLDER_PATH);
+		trainFolder.mkdir();
+		
+		File trainFile = new File(trainFolder, TRAIN_DATA_FILE);
+		trainFile.createNewFile();
+
+		File classifierFile = new File(trainFolder, TRAIN_CLASSIFIER_FILE);
+		classifierFile.createNewFile();
 	}
 
 }
