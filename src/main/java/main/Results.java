@@ -16,7 +16,9 @@ import com.google.gson.GsonBuilder;
 
 import entities.ClusterDocument;
 import entities.DocumentsSimilarity;
+import entities.FolderInfo;
 import features.core.IdentificationDocument;
+import weka.core.Instances;
 
 public class Results {
 	public static Map<String, List<DocumentsSimilarity>> CalculatedRankings = new HashMap<String, List<DocumentsSimilarity>>();
@@ -32,6 +34,9 @@ public class Results {
 	private static void calculateRankings(String folderName) throws Exception {
 		List<DocumentsSimilarity> rankings = new ArrayList<DocumentsSimilarity>();
 
+		FolderInfo folderInfo = Globals.IdentificationDocs.get(folderName);
+		Instances instances = Trainer.getTrainInstances(folderInfo.getLanguage(), folderInfo.getGenre());
+
 		for (int i = 0; i < Globals.Features.get(0).getSimilaritiesForFolder(folderName).size(); i++) {
 			DocumentsSimilarity configSimilarity = Globals.Features.get(0).getSimilaritiesForFolder(folderName).get(i);
 
@@ -39,7 +44,7 @@ public class Results {
 			similarity.setDocument1(configSimilarity.getDocument1());
 			similarity.setDocument2(configSimilarity.getDocument2());
 
-			similarity.setScore(Trainer.classify(folderName, i));
+			similarity.setScore(Trainer.classify(folderName, i, instances));
 
 			rankings.add(similarity);
 		}

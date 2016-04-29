@@ -99,7 +99,7 @@ public class Trainer {
 	private static FastVector wekaAttributes;
 	private static Map<String, Map<String, Classifier>> trainClassifiersMap;
 	
-	private static Instances getTrainInstances(String language, String genre) throws Exception {
+	public static Instances getTrainInstances(String language, String genre) throws Exception {
 		BufferedReader reader = new BufferedReader(new FileReader(getTrainDataPath(language, genre)));
 		Instances result = new Instances(reader);
 		result.setClassIndex(Globals.Features.size() - 1);
@@ -179,11 +179,10 @@ public class Trainer {
 		weka.core.SerializationHelper.write(getClassifierPath(language, genre), classifier);
 	}
 
-	public static double classify(String folderName, int similarityIndex) throws Exception {
+	public static double classify(String folderName, int similarityIndex, Instances instances) throws Exception {
 
 		FolderInfo folderInfo = Globals.IdentificationDocs.get(folderName);
 		
-		Instances instances = getTrainInstances(folderInfo.getLanguage(), folderInfo.getGenre());
 
 		// Create the instance
 		Instance instance = new Instance(Globals.Features.size());
