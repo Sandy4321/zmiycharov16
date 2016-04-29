@@ -10,14 +10,19 @@ import nlp.pos.AbstractPOSTagger;
 import nlp.pos.POSTaggerFactory;
 import nlp.stopwords.StopWordItem;
 import nlp.stopwords.StopWords;
+import nlp.tokenize.AbstractTokenizer;
+import nlp.tokenize.TokenizerFactory;
 
 public class Tester {
 
 	public static void main(String[] args) {
 		try {
 			String input = "and the hell comes near Hi. How are you? This is Mike.";
+
+			AbstractTokenizer tokenizer = TokenizerFactory.get(Config.LANG_EN);
+			String[] tokens = tokenizer.tokenize(input);
 			
-			StopWords ws = new StopWords(Config.LANG_EN);
+			StopWords ws = new StopWords(Config.LANG_EN, tokens);
 			
 			
 			HashMap<String, StopWordItem> ls = ws.count(input);

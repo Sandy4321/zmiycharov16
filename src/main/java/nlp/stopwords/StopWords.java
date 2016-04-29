@@ -18,11 +18,11 @@ import opennlp.MyTokenizer;
 
 public class StopWords {
 	private HashMap<String, Integer> stopWords;
-	private AbstractTokenizer tokenizer;
+	private String[] tokens;
 	private Locale locale;
 	
-	public StopWords(String language){
-		tokenizer = TokenizerFactory.get(language);
+	public StopWords(String language, String[] tokens){
+		this.tokens = tokens;
 		
 		String line = "";
 		try {
@@ -61,8 +61,6 @@ public class StopWords {
 		
 		input = input.replaceAll("[,.;!?(){}\\[\\]<>%]", "");
 		input = input.toUpperCase(locale);
-		
-		String[] tokens = tokenizer.tokenize(input);
 		
 		for (int i = 0; i < tokens.length; i++) {
 			String token = tokens[i];

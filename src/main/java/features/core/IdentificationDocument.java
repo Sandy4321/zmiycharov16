@@ -9,6 +9,8 @@ import org.apache.lucene.wordnet.AnalyzerUtil;
 import features.helpers.DocumentFeaturesHelpers;
 import nlp.stopwords.StopWordItem;
 import nlp.stopwords.StopWords;
+import nlp.tokenize.AbstractTokenizer;
+import nlp.tokenize.TokenizerFactory;
 
 public class IdentificationDocument {
 	// COMMON PROPERTIES
@@ -100,8 +102,8 @@ public class IdentificationDocument {
 		return stopWordsMap;
 	}
 
-	private void setStopWordsMap() throws Exception {
-		StopWords sw = new StopWords(this.getLanguage());
+	private void setStopWordsMap(String[] tokens) throws Exception {
+		StopWords sw = new StopWords(this.getLanguage(), tokens);
 		this.stopWordsMap = sw.count(this.content);
 	}
 
@@ -117,14 +119,17 @@ public class IdentificationDocument {
 		return uniqueWordsPercentage;
 	}
 
-	public void setUniqueWordsPercentage() throws Exception {
-		this.uniqueWordsPercentage = DocumentFeaturesHelpers.getUniqueWordsPercentage(this.getContent(), this.getLanguage());
+	public void setUniqueWordsPercentage(String[] tokens) throws Exception {
+		this.uniqueWordsPercentage = DocumentFeaturesHelpers.getUniqueWordsPercentage(this.getContent(), this.getLanguage(), tokens);
 	}
 
 	private void setProperties() throws Exception {
+		AbstractTokenizer tokenizer = TokenizerFactory.get(this.language);
+		String[] tokens = tokenizer.tokenize(this.content);
+		
 		setMeanSentenceLength();
-		setStopWordsMap();
+		setStopWordsMap(tokens);
 		setPunctuationMarksPercentages();
-		setUniqueWordsPercentage();
+		setUniqueWordsPercentage(tokens);
 	}
 }
