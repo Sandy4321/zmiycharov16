@@ -19,6 +19,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import entities.FolderInfo;
 import features.core.Feature;
 import features.core.IdentificationDocument;
 import features.list.Train_Feature;
@@ -37,19 +38,68 @@ public class Trainer {
 	public static final String TRAIN_DATA_FILE = "train.arff";
 	public static final String TRAIN_CLASSIFIER_FILE = "classifier.model";
 
-	private static String getTrainDataPath() {
-		return TRAIN_FOLDER_PATH + TRAIN_DATA_FILE;
+	private static String getTrainDataPath(String language, String genre) {
+		return TRAIN_FOLDER_PATH + language + "/" + genre + "/" + TRAIN_DATA_FILE;
 	}
 	
-	private static String getClassifierPath() {
-		return TRAIN_FOLDER_PATH + TRAIN_CLASSIFIER_FILE;
+	private static String getClassifierPath(String language, String genre) {
+		return TRAIN_FOLDER_PATH + language + "/" + genre + "/" + TRAIN_CLASSIFIER_FILE;
+	}
+	
+	private static Map<String, List<String>> getFoldersTree() {
+		Map<String, List<String>> result = new HashMap<String, List<String>>();
+		
+		for(String key : Globals.IdentificationDocs.keySet()) {
+			FolderInfo folderInfo = Globals.IdentificationDocs.get(key);
+			
+			if(!result.containsKey(folderInfo.getLanguage())) {
+				result.put(folderInfo.getLanguage(), new ArrayList<String>());
+			}
+			if(!result.get(folderInfo.getLanguage()).contains(folderInfo.getGenre())) {
+				List<String> newList = result.get(folderInfo.getLanguage());
+				newList.add(folderInfo.getGenre());
+				result.put(folderInfo.getLanguage(), newList);
+			}
+		}
+		
+		return result;
+	}
+
+	private static void generateTrainFolder(String language, String genre) throws Exception {
+		File trainFolder = new File(TRAIN_FOLDER_PATH);
+		trainFolder.mkdir();
+		
+		File langFolder = new File(trainFolder, language);
+		langFolder.mkdir();
+		
+		File genreFolder = new File(langFolder, genre);
+		genreFolder.mkdir();
+
+		File trainFile = new File(genreFolder, TRAIN_DATA_FILE);
+		trainFile.createNewFile();
+
+		File classifierFile = new File(genreFolder, TRAIN_CLASSIFIER_FILE);
+		classifierFile.createNewFile();
+	}
+	
+	private static List<String> getFoldersForCriteria(String language, String genre) {
+		List<String> result = new ArrayList<String>();
+		
+		for (String folder : Globals.IdentificationDocs.keySet()) {
+			if(language.equals(Globals.IdentificationDocs.get(folder).getLanguage())
+					&& genre.equals(Globals.IdentificationDocs.get(folder).getGenre())) {
+				result.add(folder);
+			}
+		}
+		
+		return result;
 	}
 	
 	private static FastVector wekaAttributes;
-	private static Classifier trainClassifier;
+	private static Map<String, Map<String, Classifier>> trainClassifiersMap;
 	
-	private static Instances getTrainInstances() throws Exception {
-		BufferedReader reader = new BufferedReader(new FileReader(getTrainDataPath()));
+	private static Instances getTrainInstances(String language, String genre) throws Exception {
+		BufferedReader reader = new BufferedReader(new FileReader(getTrainDataPath(language, genre)));
 		Instances result = new Instances(reader);
 		result.setClassIndex(Globals.Features.size() - 1);
 		
@@ -69,7 +119,7 @@ public class Trainer {
 		}
 	}
 
-	public static void generateDataSet() throws Exception {
+	public static void generateDataSet(String language, String genre) throws Exception {
 		Feature lastFeature = Globals.Features.get(Globals.Features.size() - 1);
 		int totalCount = 0;
 		for (String folder : Globals.IdentificationDocs.keySet()) {
@@ -80,8 +130,10 @@ public class Trainer {
 		Instances trainingSet = new Instances("Train", wekaAttributes, totalCount);
 		// Set class index
 		trainingSet.setClassIndex(Globals.Features.size() - 1);
+		
+		List<String> folders = getFoldersForCriteria(language, genre);
 
-		for (String folder : Globals.IdentificationDocs.keySet()) {
+		for (String folder : folders) {
 			for (int siimilarityIndex = 0; siimilarityIndex < lastFeature.getSimilaritiesForFolder(folder)
 					.size(); siimilarityIndex++) {
 
@@ -114,21 +166,23 @@ public class Trainer {
 			}
 		}
 
-		FileUtils.write(new File(getTrainDataPath()), trainingSet.toString());
+		FileUtils.write(new File(getTrainDataPath(language, genre)), trainingSet.toString());
 	}
 
-	private static void generateClassifier() throws Exception {
-		Instances trainingSet = getTrainInstances();
+	private static void generateClassifier(String language, String genre) throws Exception {
+		Instances trainingSet = getTrainInstances(language, genre);
 		LibSVM classifier = new LibSVM();
 		classifier.setSVMType(new SelectedTag(LibSVM.SVMTYPE_EPSILON_SVR, LibSVM.TAGS_SVMTYPE));
 		classifier.buildClassifier(trainingSet);
 		
-		weka.core.SerializationHelper.write(getClassifierPath(), classifier);
+		weka.core.SerializationHelper.write(getClassifierPath(language, genre), classifier);
 	}
 
 	public static double classify(String folderName, int similarityIndex) throws Exception {
 
-		Instances instances = getTrainInstances();
+		FolderInfo folderInfo = Globals.IdentificationDocs.get(folderName);
+		
+		Instances instances = getTrainInstances(folderInfo.getLanguage(), folderInfo.getGenre());
 
 		// Create the instance
 		Instance instance = new Instance(Globals.Features.size());
@@ -144,35 +198,36 @@ public class Trainer {
 
 		instance.setDataset(instances);
 		instance.setClassMissing();
-
-		return trainClassifier.classifyInstance(instance);
+		
+		return trainClassifiersMap.get(folderInfo.getLanguage()).get(folderInfo.getGenre()).classifyInstance(instance);
 	}
 
 	// LEARN
 	public static void trainResults() throws Exception {
-		if (Config.isTrainMode) {
-			generateTrainFolder();
-			generateDataSet();
-			generateClassifier();
-		} else {
+		Map<String, List<String>> foldersTree = getFoldersTree();
+		
+		trainClassifiersMap = new HashMap<String, Map<String, Classifier>>();
+
+		for(String language : foldersTree.keySet()) {
+			trainClassifiersMap.put(language, new HashMap<String, Classifier>());
 			
+			for(String genre : foldersTree.get(language)) {
+				if (Config.isTrainMode) {
+					generateTrainFolder(language, genre);
+					generateDataSet(language, genre);
+					generateClassifier(language, genre);
+				}
+				
+				// Always deserialize model
+				ObjectInputStream ois = new ObjectInputStream(new FileInputStream(getClassifierPath(language, genre)));
+				
+				Map<String, Classifier> newMap = trainClassifiersMap.get(language);
+				newMap.put(genre, (Classifier) ois.readObject());
+				
+				trainClassifiersMap.put(language, newMap);
+				ois.close();
+			}
 		}
 		
-		// deserialize model
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(getClassifierPath()));
-		trainClassifier = (Classifier) ois.readObject();
-		ois.close();
 	}
-	
-	private static void generateTrainFolder() throws Exception {
-		File trainFolder = new File(TRAIN_FOLDER_PATH);
-		trainFolder.mkdir();
-		
-		File trainFile = new File(trainFolder, TRAIN_DATA_FILE);
-		trainFile.createNewFile();
-
-		File classifierFile = new File(trainFolder, TRAIN_CLASSIFIER_FILE);
-		classifierFile.createNewFile();
-	}
-
 }
