@@ -6,10 +6,10 @@
  */
 package gr.aueb.cs.nlp.postagger;
 
-import edu.stanford.nlp.classify.*;
-import edu.stanford.nlp.ling.BasicDatum;
-import edu.stanford.nlp.ling.Datum;
-import edu.stanford.nlp.ling.RVFDatum;
+import edu.stanford.nlp.CLclassify.*;
+import edu.stanford.nlp.CLling.BasicDatum;
+import edu.stanford.nlp.CLling.Datum;
+import edu.stanford.nlp.CLling.RVFDatum;
 import edu.stanford.nlp.stats.ClassicCounter;
 import java.io.BufferedReader;
 import java.io.DataInputStream;

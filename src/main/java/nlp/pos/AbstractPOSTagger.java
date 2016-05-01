@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
+import features.helpers.POSTagEntry;
 import opennlp.tools.util.ObjectStream;
 import opennlp.tools.util.PlainTextByLineStream;
 
@@ -30,5 +32,5 @@ abstract public class AbstractPOSTagger {
 	 * 
 	 * 
 	 */
-	public abstract LinkedHashMap<String, String> tag(String input);
+	public abstract LinkedList<POSTagEntry> tag(String input);
 }

@@ -37,7 +37,9 @@ public class FeaturesGenerator {
 		List<IdentificationDocument> result = new ArrayList<IdentificationDocument>();
 		
 		for(File file : docsDir.listFiles()) {
-			result.add(new IdentificationDocument(file, language, genre));
+			if (file.isFile()) {
+				result.add(new IdentificationDocument(file, language, genre));
+			}
 		}
 		
 		return result;

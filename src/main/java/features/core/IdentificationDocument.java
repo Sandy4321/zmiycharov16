@@ -1,12 +1,15 @@
 package features.core;
 
 import java.io.File;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.lucene.wordnet.AnalyzerUtil;
 
 import features.helpers.DocumentFeaturesHelpers;
+import features.helpers.DocumentPOSDistribution;
 import nlp.stopwords.StopWordItem;
 import nlp.stopwords.StopWords;
 import nlp.tokenize.AbstractTokenizer;
@@ -20,13 +23,18 @@ public class IdentificationDocument {
 	private String folderName;
 	private String language;
 	private String genre;
-
+	private TreeMap<String, LinkedList<Integer>> postagDistributions;
+	
 	public String getContent() {
 		return content;
 	}
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public TreeMap<String, LinkedList<Integer>> getPostagDistributions() {
+		return postagDistributions;
 	}
 
 	public String getFullPath() {
@@ -79,7 +87,10 @@ public class IdentificationDocument {
 		
 		this.language = language;
 		this.genre = genre;
-		
+		this.postagDistributions = new DocumentPOSDistribution(file, language).getPOStagDistributions();
+		for(Map.Entry<String, LinkedList<Integer>> entry: this.postagDistributions.entrySet()) {
+			System.out.println(entry.getKey() + "  -> " + entry.getValue().toString());
+		}
 		setProperties();
 	}
 	
