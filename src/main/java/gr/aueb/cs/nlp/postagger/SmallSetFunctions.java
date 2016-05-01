@@ -8,7 +8,7 @@ package gr.aueb.cs.nlp.postagger;
 
 import edu.stanford.nlp.CLclassify.*;
 import edu.stanford.nlp.CLling.RVFDatum;
-import edu.stanford.nlp.stats.ClassicCounter;
+import edu.stanford.nlp.CLstats.ClassicCounter;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;

@@ -39,7 +39,7 @@ public class DocumentPOSDistribution extends Distribution {
 		this.postagDistributions = new TreeMap<String, LinkedList<Integer>>();
 		this.document = document;
 		File postagDir = new File(document.getParent() + "/postag/");
-		if (!postagDir.exists()){
+		if (!postagDir.exists()) {
 			postagDir.mkdir();
 		}
 		this.postagCountDocument = new File(document.getParent() + "/postag/" + document.getName());
@@ -53,7 +53,7 @@ public class DocumentPOSDistribution extends Distribution {
 			}
 			// If the distribution is already generated
 		} else {
-			//TODO implement !
+			// TODO implement !
 		}
 	}
 
@@ -69,22 +69,23 @@ public class DocumentPOSDistribution extends Distribution {
 			// get all entries in order to retrieve the number of
 			// occurrences of all postags
 			for (POSTagEntry entry : tags) {
+				LinkedList<Integer> list = null;
 				if (entry.getWord() == null || entry.getWord().trim().isEmpty()) {
 					continue;
 				}
 				// check if this is the first occurrence of the postag
-				LinkedList<Integer> list = null;
+
 				if (entry.getPostag() == null) {
 					continue;
 				}
 				if (!this.postagDistributions.containsKey(entry.getPostag())) {
-					list = new LinkedList<Integer>();
+					list = new LinkedList<Integer>(Collections.nCopies(sentences.length, 0));
 					// put zero number of occurrences for all previous
 					// sentences
-					while (list.size() < sentenceIndex) {
-						list.add(0);
-					}
-					list.add(new Integer(1));
+//					while (list.size() < sentenceIndex) {
+//						list.add(0);
+//					}
+					list.set(sentenceIndex, 1);
 					this.postagDistributions.put(entry.getPostag(), list);
 				} else {
 					list = this.postagDistributions.get(entry.getPostag());
@@ -92,10 +93,10 @@ public class DocumentPOSDistribution extends Distribution {
 					// list.set(list.get(index),
 					// Integer.sum(list.get(list.size() - 1), 1));
 					// System.out.println(entry.getPostag());
-					while (list.size() < sentenceIndex) {
-						list.add(0);
-					}
-					list.set(list.size() - 1, Integer.sum(list.getLast(), 1));
+//					while (list.size() < sentenceIndex) {
+//						list.add(0);
+//					}
+					list.set(sentenceIndex, Integer.sum(list.get(sentenceIndex), 1));
 				}
 			}
 		}
@@ -171,7 +172,7 @@ public class DocumentPOSDistribution extends Distribution {
 	// TODO return copy of the object in order to avoid external and possibly
 	// malicious changes
 	public TreeMap<String, LinkedList<Integer>> getPOStagDistributions() {
-		
+
 		return postagDistributions;
 	}
 }

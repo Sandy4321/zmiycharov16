@@ -6,21 +6,17 @@
  */
 package gr.aueb.cs.nlp.postagger;
 
-import edu.stanford.nlp.classify.*;
-import edu.stanford.nlp.ling.RVFDatum;
-import edu.stanford.nlp.stats.ClassicCounter;
+import edu.stanford.nlp.CLclassify.*;
+import edu.stanford.nlp.CLling.RVFDatum;
+import edu.stanford.nlp.CLstats.ClassicCounter;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintStream;
 import java.util.Vector;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;

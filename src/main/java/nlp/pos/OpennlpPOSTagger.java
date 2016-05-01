@@ -81,8 +81,7 @@ public class OpennlpPOSTagger extends AbstractPOSTagger {
 				continue;
 			}
 			if (!result.contains(parts[i])) {
-				POSTagEntry newEntry = new POSTagEntry(parts[i],
-						(mapping.get(tags[i]) != null) ? (mapping.get(tags[i])) : tags[i], 1);
+				POSTagEntry newEntry = new POSTagEntry(parts[i], (mapping.get(tags[i]) != null) ? (mapping.get(tags[i])) : tags[i], 1);
 				result.add(newEntry);
 			} else {
 				POSTagEntry existingEntry = result.get(result.indexOf(parts[i]));

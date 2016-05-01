@@ -1,11 +1,9 @@
 package nlp.pos;
 
 import main.Config;
-import nlp.tokenize.AbstractTokenizer;
-import nlp.tokenize.OpennlpTokenizer;
+
 import nlp.tokenize.TokenizerFactory;
-import opennlp.MyTokenizer;
-import opennlp.POStagger;
+
 
 public class POSTaggerFactory {
 	
@@ -17,7 +15,7 @@ public class POSTaggerFactory {
 			}
 			
 			if(language.equals(Config.LANG_NL)){
-				return new OpennlpPOSTagger(Config.TOKENIZR_PATH_NL, 
+				return new OpennlpPOSTagger(Config.POSTAGGER_PATH_NL, 
 						TokenizerFactory.get(Config.LANG_NL));
 			}
 			
