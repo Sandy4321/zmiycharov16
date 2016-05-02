@@ -1,40 +1,74 @@
 package features.helpers;
 
-import java.util.LinkedHashMap;
+import java.util.Collections;
 import java.util.List;
 
 public class Distribution {
-	// TODO use generics instead of concrete types
-	private LinkedHashMap<String, Float> data;
-	// represents the value of the 25th percentile of the distribution
-	private int q1;
-	// represents the median value of the distribution. Median
-	// is the 50th percentile of the distribution
-	private int median;
-	// represents the value of the 75th percentile of the distribution
-	private int q3;
 
-	private List outliers;
-	private List<Integer> rankedDataSet;
-	
-	public List<Integer> getRankedDataSet() {
-		return rankedDataSet;
+	/**
+	 * Sorts the specified dataset object and returns it to the caller.
+	 * 
+	 * @param dataset
+	 *            original dataset (not ordered)
+	 * @return
+	 */
+	public static List<Integer> getRankedDataSet(List<Integer> dataset) {
+		Collections.sort(dataset);
+		return dataset;
 	}
 
-	
-	public int getQ1() {
-		return q1;
+	/**
+	 * 
+	 * 
+	 * @return first quartile of the ranked data set
+	 */
+	public static Float getFirstQuartile(List<Integer> rankedDataSet) {
+		int rankedDatasetSize = rankedDataSet.size();
+		if (rankedDataSet == null || rankedDatasetSize == 0) {
+			return null;
+		}
+		return getMedian(rankedDataSet.subList(0, rankedDatasetSize / 2));
 	}
 
-	public int getMedian() {
-		return median;
+	/**
+	 * 
+	 * 
+	 * @return second quartile of the ranked data set
+	 */
+	public static Float getMedian(List<Integer> rankedDataSet) {
+		int rankedDatasetSize = rankedDataSet.size();
+		if (rankedDataSet == null || rankedDatasetSize == 0) {
+			return null;
+		}
+		Float result = null;
+		// In case when the size of the dataset is even number
+		// as median we have to use the average number between the middle index
+		// and middle index minus one
+		if (rankedDatasetSize % 2 == 0) {
+			result = new Float(
+					rankedDataSet.get((rankedDatasetSize / 2) - 1) + rankedDataSet.get(rankedDatasetSize / 2)) / 2;
+		} else {
+			result = new Float(rankedDataSet.get((rankedDatasetSize / 2)));
+		}
+		return result;
 	}
 
-	public int getQ3() {
-		return q3;
-	}
-
-	protected LinkedHashMap<String, Float> getData() {
-		return this.data;
+	/**
+	 * 
+	 * @param rankedDataSet
+	 * @return third quartile of the ranked data set
+	 */
+	public static Float getThirdQuartile(List<Integer> rankedDataSet) {
+		int rankedDatasetSize = rankedDataSet.size();
+		if (rankedDataSet == null || rankedDatasetSize == 0) {
+			return null;
+		}
+		Float result = null;
+		if (rankedDatasetSize % 2 == 0) {
+			result = getMedian(rankedDataSet.subList(rankedDatasetSize / 2, rankedDatasetSize));
+		} else {
+			result = getMedian(rankedDataSet.subList((rankedDatasetSize / 2) + 1, rankedDatasetSize));
+		}
+		return result;
 	}
 }
