@@ -14,6 +14,7 @@ import java.util.TreeMap;
 
 import org.apache.lucene.wordnet.AnalyzerUtil;
 
+import edu.stanford.nlp.parser.lexparser.GermanUnknownWordModelTrainer;
 import main.Config;
 
 import org.apache.commons.io.FileUtils;
@@ -22,7 +23,7 @@ import nlp.pos.AbstractPOSTagger;
 
 import nlp.pos.POSTaggerFactory;
 
-public class DocumentPOSDistribution extends Distribution {
+public class DocumentPOSDistribution {
 	private File document;
 	private File postagCountDocument;
 	private String language;
@@ -36,6 +37,8 @@ public class DocumentPOSDistribution extends Distribution {
 		if (language == null || language.trim().isEmpty()) {
 			throw new RuntimeException("Language not specified.");
 		}
+		this.language = language;
+		this.document = document;
 		this.postagDistributions = new TreeMap<String, LinkedList<Integer>>();
 		this.document = document;
 		File postagDir = new File(document.getParent() + "/postag/");
@@ -52,9 +55,9 @@ public class DocumentPOSDistribution extends Distribution {
 				e.printStackTrace();
 			}
 			// If the distribution is already generated
-		} else {
-			// TODO implement !
 		}
+		//sets the distribution information in memory
+		setPostagDistributions(new File(document.getParent() + "/postag/" + document.getName()));
 	}
 
 	protected void persistPOStagOccurencesDistribution(String text, String language, File outputFile) {
@@ -82,9 +85,9 @@ public class DocumentPOSDistribution extends Distribution {
 					list = new LinkedList<Integer>(Collections.nCopies(sentences.length, 0));
 					// put zero number of occurrences for all previous
 					// sentences
-//					while (list.size() < sentenceIndex) {
-//						list.add(0);
-//					}
+					// while (list.size() < sentenceIndex) {
+					// list.add(0);
+					// }
 					list.set(sentenceIndex, 1);
 					this.postagDistributions.put(entry.getPostag(), list);
 				} else {
@@ -93,9 +96,9 @@ public class DocumentPOSDistribution extends Distribution {
 					// list.set(list.get(index),
 					// Integer.sum(list.get(list.size() - 1), 1));
 					// System.out.println(entry.getPostag());
-//					while (list.size() < sentenceIndex) {
-//						list.add(0);
-//					}
+					// while (list.size() < sentenceIndex) {
+					// list.add(0);
+					// }
 					list.set(sentenceIndex, Integer.sum(list.get(sentenceIndex), 1));
 				}
 			}
@@ -113,11 +116,6 @@ public class DocumentPOSDistribution extends Distribution {
 			System.err.println("File not found.");
 			return;
 		}
-		// This is where the file goes.
-
-		// This line isn't needed, but is really useful
-		// if you're a beginner and don't know where your file is going to end
-		// up.
 		System.out.println("Persisting postag distributions in " + outputFile.getAbsolutePath());
 		BufferedWriter writer = null;
 		try {
@@ -146,16 +144,28 @@ public class DocumentPOSDistribution extends Distribution {
 			}
 		}
 	}
-
+	
 	private void setPostagDistributions(File file) {
 		try {
 			List<String> lines = Files.readAllLines(Paths.get(file.getPath()));
 			for (String line : lines) {
-				String[] elements = line.split(",");
-				String postag = elements[0];
+				String[] elements;
+				String postag = null;
+				// check if the POS is comma
+				if (line != null && line.length() > 0 &&  line.charAt(0) == ',') {
+					postag = "" + line.charAt(0);
+					line = line.substring(1);
+					elements = line.split(",");				
+				} else {
+					elements = line.split(",");
+					postag = elements[0];
+				}
 				LinkedList<Integer> linkedList = new LinkedList<Integer>();
 				for (int i = 1; i < elements.length; i++) {
-					linkedList.add(Integer.getInteger(elements[i]));
+					linkedList.add(new Integer(elements[i]));
+				}
+				if (linkedList != null && linkedList.size() > 0 ) {
+					Collections.sort(linkedList);
 				}
 				this.postagDistributions.put(postag, linkedList);
 			}
@@ -165,10 +175,6 @@ public class DocumentPOSDistribution extends Distribution {
 		}
 	}
 
-	// LinkedHashMap<String, String> greekTags = greekTagger.tag(text);
-	// for (Map.Entry<String, String> greekEntry : greekTags.entrySet()) {
-	// System.out.println(greekEntry.getKey() + " -> " + greekEntry.getValue());
-	// }
 	// TODO return copy of the object in order to avoid external and possibly
 	// malicious changes
 	public TreeMap<String, LinkedList<Integer>> getPOStagDistributions() {

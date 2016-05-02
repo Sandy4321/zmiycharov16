@@ -27,7 +27,7 @@ public class MoreFunctions {
     protected static HashMap<String, SmallSetWordWithCategories> words;
     protected static HashMap<String, SmallSetWordWithCategories> endings1;
     protected static HashMap<String, SmallSetWordWithCategories> endings2;
-    protected static HashMap<String, SmallSetWordWithCategories> endings3;
+    protected static HashMap<String, SmallSetWordWithCategories> endings3; 
     protected static int corpus_used;
 
     //returns the 3 possible endings of a word

@@ -15,7 +15,13 @@ public class Distribution {
 	private int q3;
 
 	private List outliers;
+	private List<Integer> rankedDataSet;
+	
+	public List<Integer> getRankedDataSet() {
+		return rankedDataSet;
+	}
 
+	
 	public int getQ1() {
 		return q1;
 	}
