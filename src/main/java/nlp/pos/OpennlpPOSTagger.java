@@ -70,6 +70,13 @@ public class OpennlpPOSTagger extends AbstractPOSTagger {
 		mapping.put("WP", "pronoun");
 		mapping.put("WP$", "pronoun");
 		mapping.put("WRB", "adverb");
+		//Dutch mappings
+		mapping.put("Adj", "adjective");
+		mapping.put("Conj", "conjunction");
+		mapping.put("numeral", "numeral");
+		mapping.put("N", "noun");
+		
+		
 	}
 
 	public LinkedList<POSTagEntry> tag(String input) {

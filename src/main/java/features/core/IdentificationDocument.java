@@ -89,9 +89,6 @@ public class IdentificationDocument {
 		this.genre = genre;
 		//TODO revise !!!!!
 		this.postagDistributions = new DocumentPOSDistribution(file, language).getPOStagDistributions();
-		for(Map.Entry<String, LinkedList<Integer>> entry: this.postagDistributions.entrySet()) {
-			System.out.println(entry.getKey() + "  -> " + entry.getValue().toString());
-		}
 		setProperties();
 	}
 	

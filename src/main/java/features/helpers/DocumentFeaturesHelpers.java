@@ -3,18 +3,12 @@ package features.helpers;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Vector;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 
 import main.Config;
-
-import nlp.tokenize.AbstractTokenizer;
-import nlp.tokenize.TokenizerFactory;
-
-import opennlp.MyTokenizer;
 
 public class DocumentFeaturesHelpers {
 	/**
