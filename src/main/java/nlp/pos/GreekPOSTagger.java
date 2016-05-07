@@ -1,9 +1,7 @@
 package nlp.pos;
 
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import features.helpers.POSTagEntry;
 import gr.aueb.cs.nlp.postagger.SmallSetFunctions;
@@ -13,7 +11,7 @@ public class GreekPOSTagger extends AbstractPOSTagger {
 
 	@Override
 	public LinkedList<POSTagEntry> tag(String input) {
-		
+
 		List<WordWithCategory> taggedWords = SmallSetFunctions.smallSetClassifyString(input);
 		LinkedList<POSTagEntry> result = new LinkedList<POSTagEntry>();
 		for (WordWithCategory word : taggedWords) {
@@ -26,7 +24,6 @@ public class GreekPOSTagger extends AbstractPOSTagger {
 				result.set(result.indexOf(word.getWord()), existingEntry);
 			}
 		}
-
 		return result;
 	}
 }

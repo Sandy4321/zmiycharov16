@@ -70,13 +70,12 @@ public class OpennlpPOSTagger extends AbstractPOSTagger {
 		mapping.put("WP", "pronoun");
 		mapping.put("WP$", "pronoun");
 		mapping.put("WRB", "adverb");
-		//Dutch mappings
+		// Dutch mappings
 		mapping.put("Adj", "adjective");
 		mapping.put("Conj", "conjunction");
 		mapping.put("numeral", "numeral");
 		mapping.put("N", "noun");
-		
-		
+		mapping.put("V", "verb");
 	}
 
 	public LinkedList<POSTagEntry> tag(String input) {
@@ -88,7 +87,8 @@ public class OpennlpPOSTagger extends AbstractPOSTagger {
 				continue;
 			}
 			if (!result.contains(parts[i])) {
-				POSTagEntry newEntry = new POSTagEntry(parts[i], (mapping.get(tags[i]) != null) ? (mapping.get(tags[i])) : tags[i], 1);
+				POSTagEntry newEntry = new POSTagEntry(parts[i],
+						(mapping.get(tags[i]) != null) ? (mapping.get(tags[i])) : tags[i], 1);
 				result.add(newEntry);
 			} else {
 				POSTagEntry existingEntry = result.get(result.indexOf(parts[i]));

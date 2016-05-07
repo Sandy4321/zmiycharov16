@@ -1,14 +1,9 @@
 package nlp.pos;
 
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 import features.helpers.POSTagEntry;
-import opennlp.tools.util.ObjectStream;
-import opennlp.tools.util.PlainTextByLineStream;
+
 
 abstract public class AbstractPOSTagger {
 	/**
@@ -32,5 +27,9 @@ abstract public class AbstractPOSTagger {
 	 * 
 	 * 
 	 */
+	public static String POSTAG_NOUN = "noun";
+	public static String POSTAG_ADJECTIVE = "adjective";
+	public static String POSTAG_VERB = "verb";
+	
 	public abstract LinkedList<POSTagEntry> tag(String input);
 }
