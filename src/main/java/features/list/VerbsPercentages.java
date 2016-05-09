@@ -20,33 +20,39 @@ public class VerbsPercentages extends WordsPOSTagPercentages {
 		TreeMap<String, LinkedList<Integer>> dist2 = doc2.getPostagDistributions();
 		LinkedList<Integer> verbsDistr1 = dist1.get(AbstractPOSTagger.POSTAG_VERB);
 		LinkedList<Integer> verbsDistr2 = dist2.get(AbstractPOSTagger.POSTAG_VERB);
-		if (verbsDistr2 == null || verbsDistr2.size() == 0) {
-			System.out.println();
+		
+		if (verbsDistr1 == null || verbsDistr1.size() == 0 || verbsDistr2 == null || verbsDistr2.size() == 0) {
+			return 0.0;
 		}
+		Float minValue1 = (float) verbsDistr1.get(0);
 		Float firstQuartile1 = Distribution.getFirstQuartile(verbsDistr1);
 		Float median1 = Distribution.getMedian(verbsDistr1);
 		Float thirdQuartile1 = Distribution.getThirdQuartile(verbsDistr1);
-
-		Float firstQuartile2 = Distribution.getFirstQuartile(verbsDistr2);
-		Float median2 = Distribution.getMedian(verbsDistr2);
-		Float thirdQuartile2 = Distribution.getThirdQuartile(verbsDistr2);
-
-		// constructing vectors
+		Float maxValue1 = (float) verbsDistr1.getLast();
+		
+		// constructing vector
 		Vector<Float> v1 = new Vector<Float>();
+		v1.addElement(minValue1);
 		v1.addElement(firstQuartile1);
 		v1.addElement(median1);
 		v1.addElement(thirdQuartile1);
-
+		v1.addElement(maxValue1);
+		
+		Float minValue2 = (float) verbsDistr1.get(0);
+		Float firstQuartile2 = Distribution.getFirstQuartile(verbsDistr2);
+		Float median2 = Distribution.getMedian(verbsDistr2);
+		Float thirdQuartile2 = Distribution.getThirdQuartile(verbsDistr2);
+		Float maxValue2 = (float) verbsDistr2.getLast();
+		
 		Vector<Float> v2 = new Vector<Float>();
+		v2.addElement(minValue2);
 		v2.addElement(firstQuartile2);
 		v2.addElement(median2);
 		v2.addElement(thirdQuartile2);
+		v2.addElement(maxValue2);
+		
 		double distance = DocumentFeaturesHelpers.getEuclideanDistance(v1, v2);
-		if (doc1.getFileName().equals("document0022.txt") || doc1.getFileName().equals("document0026.txt")
-				|| doc1.getFileName().equals("document0045.txt")) {
 
-			System.out.println("verbs: " + doc1.getFileName() + " <-> " + doc2.getFileName() + ": " + distance);
-		}
-		return 0.5;
+		return distance;
 	}
 }

@@ -21,29 +21,41 @@ public class NounsPercentages extends WordsPOSTagPercentages {
 		TreeMap<String, LinkedList<Integer>> dist2 = doc2.getPostagDistributions();
 		LinkedList<Integer> nounsDistr1 = dist1.get(AbstractPOSTagger.POSTAG_NOUN);
 		LinkedList<Integer> nounsDistr2 = dist2.get(AbstractPOSTagger.POSTAG_NOUN);
+
+		if (nounsDistr1 == null || nounsDistr1.size() == 0 || nounsDistr2 == null || nounsDistr2.size() == 0) {
+			return 0.0;
+		}
+		
+		Float minValue1 = (float) nounsDistr1.get(0);
 		Float firstQuartile1 = Distribution.getFirstQuartile(nounsDistr1);
 		Float median1 = Distribution.getMedian(nounsDistr1);
 		Float thirdQuartile1 = Distribution.getThirdQuartile(nounsDistr1);
+		Float maxValue1 = (float) nounsDistr1.getLast();
 		
-		Float firstQuartile2 = Distribution.getFirstQuartile(nounsDistr2);
-		Float median2 = Distribution.getMedian(nounsDistr2);
-		Float thirdQuartile2 = Distribution.getThirdQuartile(nounsDistr2);
 		
-		//constructing vectors
-		Vector v1 = new Vector();
+		//constructing vector
+		Vector<Float> v1 = new Vector<Float>();
+		v1.addElement(minValue1);
 		v1.addElement(firstQuartile1);
 		v1.addElement(median1);
 		v1.addElement(thirdQuartile1);
+		v1.addElement(maxValue1);
 		
-		Vector v2 = new Vector();
+		
+		Float minValue2 = (float) nounsDistr2.get(0);
+		Float firstQuartile2 = Distribution.getFirstQuartile(nounsDistr2);
+		Float median2 = Distribution.getMedian(nounsDistr2);
+		Float thirdQuartile2 = Distribution.getThirdQuartile(nounsDistr2);
+		Float maxValue2 = (float) nounsDistr2.getLast();
+		//constructing vector
+		Vector<Float> v2 = new Vector<Float>();
+		v2.addElement(minValue2);
 		v2.addElement(firstQuartile2);
 		v2.addElement(median2);
 		v2.addElement(thirdQuartile2);
+		v2.addElement(maxValue2);
 		double distance = DocumentFeaturesHelpers.getEuclideanDistance(v1, v2);
-		if (doc1.getFileName().equals("document0022.txt") || doc1.getFileName().equals("document0026.txt")
-				|| doc1.getFileName().equals("document0045.txt")) {
-			System.out.println("Nouns: " + doc1.getFileName() + " <-> " + doc2.getFileName() + ": " + distance);
-		}
-		return 0.5;
+		
+		return distance;
 	}
 }

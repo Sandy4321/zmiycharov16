@@ -29,7 +29,7 @@ public class Distribution {
 		}
 		return getMedian(rankedDataSet.subList(0, rankedDatasetSize / 2));
 	}
-
+	
 	/**
 	 * 
 	 * 
@@ -61,7 +61,8 @@ public class Distribution {
 	public static Float getThirdQuartile(List<Integer> rankedDataSet) {
 		int rankedDatasetSize = rankedDataSet.size();
 		if (rankedDataSet == null || rankedDatasetSize == 0) {
-			return null;
+			//TODO revise !
+			return 0.0f;
 		}
 		Float result = null;
 		if (rankedDatasetSize % 2 == 0) {
