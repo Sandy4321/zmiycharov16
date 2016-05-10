@@ -66,4 +66,32 @@ public abstract class Feature {
 		
 		return 0;
 	}
+	
+	public double getMinScore() {
+		double min = Double.MAX_VALUE;
+		
+		for(String folder : this.similarities.keySet()) {
+			for(DocumentsSimilarity similarity : this.getSimilaritiesForFolder(folder)) {
+				if(similarity.getScore() < min) {
+					min = similarity.getScore();
+				}
+			}
+		}
+		
+		return min;
+	}
+
+	public double getMaxScore() {
+		double max = Double.MIN_VALUE;
+		
+		for(String folder : this.similarities.keySet()) {
+			for(DocumentsSimilarity similarity : this.getSimilaritiesForFolder(folder)) {
+				if(similarity.getScore() > max) {
+					max = similarity.getScore();
+				}
+			}
+		}
+		
+		return max;
+	}
 }

@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import entities.JsonProblem;
+import features.core.Feature;
 import features.core.FeaturesGenerator;
 
 public class Main {
@@ -96,6 +97,10 @@ public class Main {
 			
 			System.out.println("Rankings MAP: " + Errors.RankingsMAP);
 			System.out.println("Clusters F-score: " + Errors.ClustersFScore);
+		}
+		
+		for(Feature feature : Globals.Features) {
+			System.out.println(feature.getName() + ": Min - " + feature.getMinScore() + " Max - " + feature.getMaxScore());
 		}
 
 		System.out.println("Finished!");
