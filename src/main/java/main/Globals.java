@@ -29,8 +29,8 @@ public class Globals {
 		
 		Features = new ArrayList<Feature>();
 		Features.add(new MeanSentenceLength());
-		Features.add(new StopWordsPercentages());
-		Features.add(new PunctuationMarksPercentages());
+		// Features.add(new StopWordsPercentages());
+		// Features.add(new PunctuationMarksPercentages());
 		Features.add(new UniqueWordsPercentages());
 		Features.add(new NounsPercentages());
 		Features.add(new AdjectivesPercentages());
