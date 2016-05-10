@@ -49,7 +49,9 @@ public class FeaturesGenerator {
 	public static void generateFeaturesSimilarities(File parentFolder, String folderName) throws Exception {
 		setFeaturesSimilarities(folderName);
 		
-		normalizeFeaturesSimilarities();
+		if(Config.ARE_RESULTS_NORMALIZED) {
+			normalizeFeaturesSimilarities();
+		}
 	}
 
 	private static void setFeaturesSimilarities(String folderName) throws Exception {

@@ -6,6 +6,8 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 
 public class Config {
+	public static final boolean ARE_RESULTS_NORMALIZED = false;
+	
 	public static final double MIN_SCORE_TO_RANK = 0.7;
 
 	public static final String LANG_EN = "en";
