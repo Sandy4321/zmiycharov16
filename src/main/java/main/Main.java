@@ -3,12 +3,14 @@ import java.io.File;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import entities.DocumentsSimilarity;
 import entities.JsonProblem;
 import features.core.Feature;
 import features.core.FeaturesGenerator;
@@ -99,8 +101,44 @@ public class Main {
 			System.out.println("Clusters F-score: " + Errors.ClustersFScore);
 		}
 		
+		// Print Min and max score foreach feature
 		for(Feature feature : Globals.Features) {
 			System.out.println(feature.getName() + ": Min - " + feature.getMinScore() + " Max - " + feature.getMaxScore());
+		}
+
+		// Print mid scores for true and false documents foreach feature
+		if(Config.isTrainMode) {
+			Feature trainFeature = Globals.Features.get(Globals.Features.size() - 1);
+			for(int i = 0; i < Globals.Features.size() - 1;i++) {
+				Feature currentFeature = Globals.Features.get(i);
+				
+				int negativeCount = 0;
+				double negativeTotal = 0.0;
+
+				int positiveCount = 0;
+				double positiveTotal = 0.0;
+				
+				for(String folder : Globals.IdentificationDocs.keySet()) {
+					List<DocumentsSimilarity> currentSimilarities = currentFeature.getSimilaritiesForFolder(folder);
+					List<DocumentsSimilarity> trainSimilarities = trainFeature.getSimilaritiesForFolder(folder);
+					
+					for(int j = 0;j < currentSimilarities.size();j++) {
+						if(trainSimilarities.get(j).getScore() == 0) {
+							negativeCount++;
+							negativeTotal += currentSimilarities.get(j).getScore();
+						}
+						else {
+							positiveCount++;
+							positiveTotal += currentSimilarities.get(j).getScore();
+						}
+					}
+				}
+				
+				double negativeMid = negativeTotal / negativeCount;
+				double positiveMid = positiveTotal / positiveCount;
+				
+				System.out.println(currentFeature.getName() + ": Positive - " + positiveMid + "; Negative - " + negativeMid);
+			}
 		}
 
 		System.out.println("Finished!");
