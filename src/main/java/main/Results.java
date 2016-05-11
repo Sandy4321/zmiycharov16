@@ -57,6 +57,7 @@ public class Results {
 
 		for (DocumentsSimilarity similarity : CalculatedRankings.get(folderName)) {
 			if (similarity.getScore() >= Config.MIN_SCORE_TO_RANK) {
+				similarity.setScore(1.0);
 				rankings.add(similarity);
 			}
 		}
