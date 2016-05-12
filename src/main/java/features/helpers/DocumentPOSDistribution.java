@@ -122,7 +122,6 @@ public class DocumentPOSDistribution {
 			System.err.println("File not found.");
 			return;
 		}
-		System.out.println("Persisting postag distributions in " + outputFile.getAbsolutePath());
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(outputFile));
