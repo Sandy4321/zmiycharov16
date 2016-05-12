@@ -22,7 +22,7 @@ public class VerbsPercentages extends WordsPOSTagPercentages {
 		LinkedList<Integer> verbsDistr2 = dist2.get(AbstractPOSTagger.POSTAG_VERB);
 		
 		if (verbsDistr1 == null || verbsDistr1.size() == 0 || verbsDistr2 == null || verbsDistr2.size() == 0) {
-			return 0.0;
+			return 10.0;
 		}
 		Float minValue1 = (float) verbsDistr1.get(0);
 		Float firstQuartile1 = Distribution.getFirstQuartile(verbsDistr1);

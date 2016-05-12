@@ -35,6 +35,7 @@ public class Globals {
 		Features.add(new NounsPercentages());
 		Features.add(new AdjectivesPercentages());
 		Features.add(new VerbsPercentages());
+		Features.add(new ConjunctionPercentages());
 		
 		if(Config.isTrainMode) {
 			Features.add(new Train_Feature());

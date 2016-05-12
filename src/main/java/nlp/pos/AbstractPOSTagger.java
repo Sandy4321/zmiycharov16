@@ -30,6 +30,7 @@ abstract public class AbstractPOSTagger {
 	public static String POSTAG_NOUN = "noun";
 	public static String POSTAG_ADJECTIVE = "adjective";
 	public static String POSTAG_VERB = "verb";
+	public static String POSTAG_CONJUNCTION = "conjunction";
 	
 	public abstract LinkedList<POSTagEntry> tag(String input);
 }

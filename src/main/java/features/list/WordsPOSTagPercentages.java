@@ -25,8 +25,8 @@ public abstract class WordsPOSTagPercentages extends Feature {
 	public WordsPOSTagPercentages(String postag) {
 		super(postag);
 		this.postagType = postag;
-		if (!POSTAG_TYPE_NOUN.equals(postag) && !POSTAG_TYPE_VERB.equals(postag) && !POSTAG_TYPE_ADJ.equals(postag)) {
-			throw new IllegalArgumentException(postag + "type is not implemented. The default behavior will be used.");
+		if (!POSTAG_TYPE_NOUN.equals(postag) && !POSTAG_TYPE_VERB.equals(postag) && !POSTAG_TYPE_ADJ.equals(postag) && !POSTAG_TYPE_CONJ.equals(postag)) {
+			System.err.println(postag + "type is not implemented. The default behavior will be used.");
 		}
 	}
 }

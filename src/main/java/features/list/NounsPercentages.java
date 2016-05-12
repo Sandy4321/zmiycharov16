@@ -23,7 +23,7 @@ public class NounsPercentages extends WordsPOSTagPercentages {
 		LinkedList<Integer> nounsDistr2 = dist2.get(AbstractPOSTagger.POSTAG_NOUN);
 
 		if (nounsDistr1 == null || nounsDistr1.size() == 0 || nounsDistr2 == null || nounsDistr2.size() == 0) {
-			return 0.0;
+			return 10.0;
 		}
 		
 		Float minValue1 = (float) nounsDistr1.get(0);
