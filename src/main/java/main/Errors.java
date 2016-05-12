@@ -125,8 +125,8 @@ public class Errors {
 				
 				for (int i = 0; i < array.length; i++) {
 					for (int j = i + 1; j < array.length; j++) {
-						String doc1 = array[i].getContent();
-						String doc2 = array[j].getContent();
+						String doc1 = array[i].getDocument();
+						String doc2 = array[j].getDocument();
 						
 						if(doc1.compareTo(doc2) > 0) {
 							result.add(folderName + doc2 + doc1);

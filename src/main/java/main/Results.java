@@ -66,57 +66,108 @@ public class Results {
 	}
 
 	private static void generateClusters(String folderName) {
-		List<Set<ClusterDocument>> clusters = new ArrayList<Set<ClusterDocument>>();
+		List<Set<String>> clusters = new ArrayList<Set<String>>();
 
+		// Init clusters with all matching couples
 		for (int i = 0; i < JsonRankings.get(folderName).size(); i++) {
 			DocumentsSimilarity ranking = JsonRankings.get(folderName).get(i);
 
-			// Skip if ranking is clustered
-			if (isDocumentClustered(ranking.getDocument1(), clusters)) {
-				continue;
-			}
-
 			// Create new cluster
-			Set<ClusterDocument> cluster = new LinkedHashSet<ClusterDocument>();
-			cluster.add(new ClusterDocument(ranking.getDocument1()));
-			cluster.add(new ClusterDocument(ranking.getDocument2()));
-
-			for (int j = i + 1; j < JsonRankings.get(folderName).size(); j++) {
-				DocumentsSimilarity nextRanking = JsonRankings.get(folderName).get(j);
-				String doc1 = nextRanking.getDocument1();
-				String doc2 = nextRanking.getDocument2();
-
-				if (isDocumentContainedInCluster(cluster, doc1) && !isDocumentContainedInCluster(cluster, doc2)) {
-					cluster.add(new ClusterDocument(doc2));
-					j = i;
-				}
-
-				if (!isDocumentContainedInCluster(cluster, doc1) && isDocumentContainedInCluster(cluster, doc2)) {
-					cluster.add(new ClusterDocument(doc1));
-					j = i;
-				}
-			}
+			Set<String> cluster = new LinkedHashSet<String>();
+			cluster.add(ranking.getDocument1());
+			cluster.add(ranking.getDocument2());
 
 			clusters.add(cluster);
+		}
+
+		// Generate clusters:
+		// Add document X to existing cluster if
+		// X is similar to more than the half of the docs in the cluster
+		List<IdentificationDocument> folderDocs = Globals.IdentificationDocs.get(folderName).getDocuments();
+		for (Set<String> cluster : clusters) {
+			for (IdentificationDocument document : folderDocs) {
+				if (!cluster.contains(document.getFileName())) {
+
+					int rankedFromClusterCount = 0;
+					int minCountToAddToCluster = cluster.size() / 2;
+
+					String[] clusterDocs = cluster.toArray(new String[0]);
+					for (String clusterDoc : clusterDocs) {
+						if (areDocumentsRanked(clusterDoc, document.getFileName(), folderName)) {
+							rankedFromClusterCount++;
+						}
+					}
+
+					if (rankedFromClusterCount > minCountToAddToCluster) {
+						cluster.add(document.getFileName());
+					}
+				}
+			}
+		}
+
+		// Find docs which exist in more than one clusters
+		// Delete it from the more irrelevant cluster
+		for (int i = 0; i < clusters.size() - 1; i++) {
+			Set<String> currentCluster = clusters.get(i);
+			for (int j = i + 1; j < clusters.size(); j++) {
+				Set<String> otherCluster = clusters.get(j);
+				
+				List<String> docsToRemoveFromCluster1 = new ArrayList<String>();
+				List<String> docsToRemoveFromCluster2 = new ArrayList<String>();
+				
+				for(String cluster1Doc : currentCluster) {
+					for(String cluster2Doc : otherCluster) {
+						if(cluster1Doc.equals(cluster2Doc)) {
+							if(getSimilarDocumentsPercentage(currentCluster, cluster1Doc, folderName)
+									> getSimilarDocumentsPercentage(otherCluster, cluster1Doc, folderName)) {
+								docsToRemoveFromCluster2.add(cluster1Doc);
+							}
+							else {
+								docsToRemoveFromCluster1.add(cluster1Doc);
+							}
+						}
+					}
+				}
+
+				for(String doc : docsToRemoveFromCluster1) {
+					currentCluster.remove(doc);
+				}
+
+				for(String doc : docsToRemoveFromCluster2) {
+					otherCluster.remove(doc);
+				}
+			}
 		}
 
 		// Add single docs
 		for (IdentificationDocument doc : Globals.IdentificationDocs.get(folderName).getDocuments()) {
 			String document = doc.getFileName();
 			if (!isDocumentClustered(document, clusters)) {
-				Set<ClusterDocument> cluster = new HashSet<ClusterDocument>();
-				cluster.add(new ClusterDocument(document));
+				Set<String> cluster = new HashSet<String>();
+				cluster.add(document);
 				clusters.add(cluster);
 			}
 		}
-
-		JsonClusters.put(folderName, clusters);
+		
+		// Generate clusters in needed format
+		List<Set<ClusterDocument>> jsonClusters = new ArrayList<Set<ClusterDocument>>();
+		for (Set<String> cluster : clusters) {
+			if(cluster.size() > 0) {
+				Set<ClusterDocument> clustersSet = new HashSet<ClusterDocument>();
+				for (String document : cluster) {
+					clustersSet.add(new ClusterDocument(document));
+				}
+	
+				jsonClusters.add(clustersSet);
+			}
+		}
+		JsonClusters.put(folderName, jsonClusters);
 	}
 
-	private static boolean isDocumentClustered(String document, List<Set<ClusterDocument>> clusters) {
-		for (Set<ClusterDocument> cluster : clusters) {
-			for (ClusterDocument doc : cluster) {
-				if (doc.getContent().equals(document)) {
+	private static boolean isDocumentClustered(String document, List<Set<String>> clusters) {
+		for (Set<String> cluster : clusters) {
+			for (String doc : cluster) {
+				if (doc.equals(document)) {
 					return true;
 				}
 			}
@@ -125,14 +176,28 @@ public class Results {
 		return false;
 	}
 
-	private static boolean isDocumentContainedInCluster(Set<ClusterDocument> cluster, String document) {
-		for (ClusterDocument doc : cluster) {
-			if (doc.getContent().equals(document)) {
+	private static boolean areDocumentsRanked(String document1, String document2, String folderName) {
+		for (DocumentsSimilarity similarity : JsonRankings.get(folderName)) {
+			if ((document1.equals(similarity.getDocument1()) && document2.equals(similarity.getDocument2()))
+					|| (document1.equals(similarity.getDocument2()) && document2.equals(similarity.getDocument1()))) {
 				return true;
 			}
 		}
 
 		return false;
+	}
+	
+	private static double getSimilarDocumentsPercentage(Set<String> cluster, String document, String folderName) {
+		double totalCount = cluster.size();
+		double similarCount = 0;
+		
+		for(String clusterDoc : cluster) {
+			if(!clusterDoc.equals(document) && areDocumentsRanked(clusterDoc, document, folderName)) {
+				similarCount++;
+			}
+		}
+		
+		return similarCount / totalCount;
 	}
 
 	public static void generateOutput(File outputDir) throws Exception {

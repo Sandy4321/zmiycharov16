@@ -3,11 +3,11 @@ package entities;
 public class ClusterDocument {
 	private String document;
 
-	public String getContent() {
+	public String getDocument() {
 		return document;
 	}
 
-	public void setContent(String document) {
+	public void setDocument(String document) {
 		this.document = document;
 	}
 	
