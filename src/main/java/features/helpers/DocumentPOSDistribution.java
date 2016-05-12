@@ -41,11 +41,11 @@ public class DocumentPOSDistribution {
 		this.document = document;
 		this.postagDistributions = new TreeMap<String, LinkedList<Integer>>();
 		this.document = document;
-		File postagDir = new File(document.getParent() + "/postag/");
+		File postagDir = new File("./postag/" + document.getParentFile().getName());
 		if (!postagDir.exists()) {
 			postagDir.mkdir();
 		}
-		this.postagCountDocument = new File(document.getParent() + "/postag/" + document.getName());
+		this.postagCountDocument = new File(postagDir, document.getName());
 		if (!this.postagCountDocument.exists()) {
 			try {
 				persistPOStagOccurencesDistribution(FileUtils.readFileToString(document), language,
@@ -57,7 +57,7 @@ public class DocumentPOSDistribution {
 			// If the distribution is already generated
 		}
 		//sets the distribution information in memory
-		setPostagDistributions(new File(document.getParent() + "/postag/" + document.getName()));
+		setPostagDistributions(this.postagCountDocument);
 	}
 
 	protected void persistPOStagOccurencesDistribution(String text, String language, File outputFile) {
