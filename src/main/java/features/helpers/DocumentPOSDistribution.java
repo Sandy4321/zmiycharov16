@@ -41,7 +41,13 @@ public class DocumentPOSDistribution {
 		this.document = document;
 		this.postagDistributions = new TreeMap<String, LinkedList<Integer>>();
 		this.document = document;
-		File postagDir = new File("./postag/" + document.getParentFile().getName());
+		
+		File postagParentDir = new File("./postag");
+		if (!postagParentDir.exists()) {
+			postagParentDir.mkdir();
+		}
+		
+		File postagDir = new File(postagParentDir, document.getParentFile().getName());
 		if (!postagDir.exists()) {
 			postagDir.mkdir();
 		}
