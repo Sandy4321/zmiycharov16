@@ -15,6 +15,7 @@ import entities.DocumentsSimilarity;
 import entities.JsonProblem;
 import features.core.Feature;
 import features.core.FeaturesGenerator;
+import net.sf.javaml.featureselection.scoring.RELIEF;
 
 public class Main {
 
@@ -50,7 +51,7 @@ public class Main {
 			}
 
 			FeaturesGenerator.generateFeaturesSimilarities(inputFolder, folderName);
-
+			
 			Date now = new Date();
 
 			long total = now.getTime() - start.getTime();
@@ -61,7 +62,16 @@ public class Main {
 			System.out.println("Generated features: " + folderName + " (" + seconds + "."
 					+ String.format("%03d", millis) + " sec)");
 		}
+		
 
+		if(Config.ARE_RESULTS_NORMALIZED) {
+			FeaturesGenerator.normalizeFeaturesSimilarities();
+		}
+		
+		if(Config.DOES_RESULTS_USE_RELIEF){
+			FeaturesGenerator.applyRelief();
+		}
+		
 		// TRAIN
 		Trainer.setWekaAttributes();
 		Trainer.trainResults();
@@ -86,7 +96,7 @@ public class Main {
 			Results.generateResults(folderName);
 
 			Results.generateOutput(new File(outputFolder, folderName));
-
+			
 			Date now = new Date();
 
 			long total = now.getTime() - start.getTime();
@@ -120,10 +130,10 @@ public class Main {
 
 				int negativeCount = 0;
 				double negativeTotal = 0.0;
-
+				
 				int positiveCount = 0;
 				double positiveTotal = 0.0;
-
+				
 				for (String folder : Globals.IdentificationDocs.keySet()) {
 					List<DocumentsSimilarity> currentSimilarities = currentFeature.getSimilaritiesForFolder(folder);
 					List<DocumentsSimilarity> trainSimilarities = trainFeature.getSimilaritiesForFolder(folder);
@@ -160,7 +170,7 @@ public class Main {
 			double positiveTotal = 0.0;
 			double positiveMax = Double.MIN_VALUE;
 			double positiveMin = Double.MAX_VALUE;
-
+			
 			for (String folder : Globals.IdentificationDocs.keySet()) {
 				List<DocumentsSimilarity> trainSimilarities = trainFeature.getSimilaritiesForFolder(folder);
 				List<DocumentsSimilarity> calculatedRankings = Results.CalculatedRankings.get(folder);
@@ -195,10 +205,11 @@ public class Main {
 
 			double negativeMid = negativeTotal / negativeCount;
 			double positiveMid = positiveTotal / positiveCount;
-
+			
 			System.out.println("===== Total mid scores =====");
 			System.out.println("Positive: Min: " + positiveMin + "; Middle: " + positiveMid + "; Max: " + positiveMax + ";");
 			System.out.println("Negative: Min: " + negativeMin + "; Middle: " + negativeMid + "; Max: " + negativeMax + ";");
+			
 		}
 
 		System.out.println("Finished!");

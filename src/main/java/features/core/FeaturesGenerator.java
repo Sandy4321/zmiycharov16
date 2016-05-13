@@ -2,6 +2,8 @@ package features.core;
 import java.io.File;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -17,6 +19,11 @@ import features.helpers.*;
 import main.Config;
 import main.Globals;
 import main.Utils;
+import net.sf.javaml.core.Dataset;
+import net.sf.javaml.core.DefaultDataset;
+import net.sf.javaml.core.DenseInstance;
+import net.sf.javaml.core.Instance;
+import net.sf.javaml.featureselection.scoring.RELIEF;
 
 public class FeaturesGenerator {
 
@@ -48,10 +55,6 @@ public class FeaturesGenerator {
 	// GENERATE FEATURES SIMILARITY
 	public static void generateFeaturesSimilarities(File parentFolder, String folderName) throws Exception {
 		setFeaturesSimilarities(folderName);
-		
-		if(Config.ARE_RESULTS_NORMALIZED) {
-			normalizeFeaturesSimilarities();
-		}
 	}
 
 	private static void setFeaturesSimilarities(String folderName) throws Exception {
@@ -63,7 +66,7 @@ public class FeaturesGenerator {
 		    	IdentificationDocument doc1 = docs.get(i);
 		    	for(int j = i+1; j < docs.size();j++) {
 		    		IdentificationDocument doc2 = docs.get(j);
-			    	
+		    		
 			    	DocumentsSimilarity similarity = new DocumentsSimilarity();
 			    	similarity.setDocument1(doc1.getFileName());
 			    	similarity.setDocument2(doc2.getFileName());
@@ -79,9 +82,45 @@ public class FeaturesGenerator {
 		}
 	}
 
-	private static void normalizeFeaturesSimilarities() {
+	public static void normalizeFeaturesSimilarities() {
 		for (Feature feature : Globals.Features) {
 			feature.normalizeSimilarities();
+		}
+	}
+	
+	public static void applyRelief(){
+		for (String folder : Globals.IdentificationDocs.keySet()) {
+			Dataset data = new DefaultDataset();
+			
+			List<Double> values = new LinkedList<Double>();
+			for(Feature feature : Globals.Features){
+				
+				List<Double> features = new LinkedList<Double>();
+				
+				List<DocumentsSimilarity> items = 
+						feature.getSimilaritiesForFolder(folder);
+				
+				for (Iterator iterator = items.iterator(); iterator.hasNext();) {
+					DocumentsSimilarity similarity = (DocumentsSimilarity) iterator.next();
+					features.add(similarity.getScore());
+					
+					double[] target = new double[values.size()];
+					for (int i = 0; i < target.length; i++) {
+						target[i] = values.get(i).doubleValue();
+					}
+					
+					data.add(new DenseInstance(target));
+					
+				}
+			}
+			
+			RELIEF r = new RELIEF();
+			r.build(data);
+			System.out.println("AAAAA");
+			
+			for (int i = 0; i < r.noAttributes(); i++){
+				System.out.println(r.score(i));
+			}
 		}
 	}
 	

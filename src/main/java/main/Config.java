@@ -6,7 +6,9 @@ import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.Options;
 
 public class Config {
-	public static final boolean ARE_RESULTS_NORMALIZED = false;
+	public static final boolean ARE_RESULTS_NORMALIZED  = true;
+	
+	public static final boolean DOES_RESULTS_USE_RELIEF = true;
 	
 	public static final double MIN_SCORE_TO_RANK = 0.75;
 
