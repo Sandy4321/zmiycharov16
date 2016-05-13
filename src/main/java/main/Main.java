@@ -98,14 +98,6 @@ public class Main {
 					"Generated output: " + folderName + " (" + seconds + "." + String.format("%03d", millis) + " sec)");
 		}
 
-		// CALCULATE ERROR ONLY IF TRAIN MODE
-		if (Config.isTrainMode) {
-			Errors.calculateError();
-
-			System.out.println("Rankings MAP: " + Errors.RankingsMAP);
-			System.out.println("Clusters F-score: " + Errors.ClustersFScore);
-		}
-		
 		// Print Min and max score foreach feature
 		for (Feature feature : Globals.Features) {
 			System.out.println(
@@ -201,6 +193,14 @@ public class Main {
 			System.out.println("Negative: Min: " + negativeMin + "; Middle: " + negativeMid + "; Max: " + negativeMax + ";");
 		}
 
+		// CALCULATE ERROR ONLY IF TRAIN MODE
+		if (Config.isTrainMode) {
+			Errors.calculateError();
+
+			System.out.println("Rankings MAP: " + Errors.RankingsMAP);
+			System.out.println("Clusters F-score: " + Errors.ClustersFScore);
+		}
+		
 		System.out.println("Finished!");
 	}
 }
