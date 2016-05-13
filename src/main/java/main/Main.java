@@ -15,6 +15,7 @@ import entities.DocumentsDifference;
 import entities.JsonProblem;
 import features.core.Feature;
 import features.core.FeaturesGenerator;
+import features.helpers.DocumentPOSDistribution;
 
 public class Main {
 
@@ -23,6 +24,12 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 		// SET IsTrainMode
 		Config.isTrainMode = !(new File(Trainer.TRAIN_FOLDER_PATH).exists());
+		
+		// SET IisLocalRun
+		Config.isLocalRun = (new File(Config.LOCAL_FILE_PATH).exists());
+		
+		// INIT POSTAG DIRS
+		DocumentPOSDistribution.initDirs();
 
 		// INIT
 		Globals.init();

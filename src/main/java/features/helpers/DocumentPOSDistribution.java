@@ -33,6 +33,17 @@ public class DocumentPOSDistribution {
 	private String language;
 
 	private TreeMap<String, LinkedList<Integer>> postagDistributions = new TreeMap<String, LinkedList<Integer>>();
+	
+	public static void initDirs() throws Exception {
+		File postagParentDir = new File("./postag");
+		if (!postagParentDir.exists()) {
+			postagParentDir.mkdir();
+		}
+		
+		if(!Config.isLocalRun) {
+			FileUtils.cleanDirectory(postagParentDir);
+		}
+	}
 
 	public DocumentPOSDistribution(File document, String language) {
 		if (document == null || !document.exists()) {
@@ -47,10 +58,7 @@ public class DocumentPOSDistribution {
 		this.document = document;
 		
 		File postagParentDir = new File("./postag");
-		if (!postagParentDir.exists()) {
-			postagParentDir.mkdir();
-		}
-		
+	
 		File postagDir = new File(postagParentDir, document.getParentFile().getName());
 		if (!postagDir.exists()) {
 			postagDir.mkdir();

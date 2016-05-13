@@ -25,8 +25,11 @@ public class Config {
 	
 	public static final String POSTAGGER_PATH_EN = "./dependencies/opennlp/en-pos-maxent.bin";
 	public static final String POSTAGGER_PATH_NL = "./dependencies/opennlp/nl-pos-maxent.bin";
+
+	public static final String LOCAL_FILE_PATH = "./local.txt";
 	
 	public static boolean isTrainMode;
+	public static boolean isLocalRun;
 	
 	public static String inputFolderPath;
 	public static String outputFolderPath;
