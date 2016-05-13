@@ -97,6 +97,15 @@ public class IdentificationDocument {
 	private Map<String, StopWordItem> stopWordsMap;
 	private double[] punctuationMarksPercentages;
 	private double uniqueWordsPercentage;
+	private int sentencesCount;
+
+	public int getSentencesCount() {
+		return sentencesCount;
+	}
+
+	public void setSentencesCount(int sentencesCount) {
+		this.sentencesCount = sentencesCount;
+	}
 
 	public double getMeanSentenceLength() {
 		return meanSentenceLength;
@@ -104,6 +113,7 @@ public class IdentificationDocument {
 	
 	private void setMeanSentenceLength() {
 		String[] sentences = AnalyzerUtil.getSentences(this.getContent(), 0);
+		this.sentencesCount = sentences.length;
 		this.meanSentenceLength = DocumentFeaturesHelpers.getMeanSentenceLength(sentences);
 	}
 

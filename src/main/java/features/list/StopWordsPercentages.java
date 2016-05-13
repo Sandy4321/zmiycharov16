@@ -20,7 +20,10 @@ public class StopWordsPercentages extends Feature {
 		double result = 0.0;
 
 		for(String key : doc1Map.keySet()) {
-			result += Math.abs(doc1Map.get(key).getPercent() - doc2Map.get(key).getPercent());
+			double doc1Value = (double)doc1Map.get(key).getCount() / doc1.getSentencesCount();
+			double doc2Value = (double)doc2Map.get(key).getCount() / doc2.getSentencesCount();
+			
+			result += Math.abs(doc1Value - doc2Value);
 		}
 
 		return result;
