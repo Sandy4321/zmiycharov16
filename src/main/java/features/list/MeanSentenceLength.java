@@ -10,11 +10,11 @@ public class MeanSentenceLength extends Feature {
 	}
 
 	@Override
-	public double getSimilarity(IdentificationDocument doc1, IdentificationDocument doc2) {
+	public double getDifference(IdentificationDocument doc1, IdentificationDocument doc2) {
 		double mslDoc1 = doc1.getMeanSentenceLength();
 		double mslDoc2 = doc2.getMeanSentenceLength();
 
-		double result = mslDoc1 > mslDoc2 ? (mslDoc2 / mslDoc1) : (mslDoc1 / mslDoc2);
+		double result = Math.abs(mslDoc1 - mslDoc2);
 		return result;
 	}
 }

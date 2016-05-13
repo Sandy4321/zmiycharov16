@@ -1,6 +1,6 @@
 package entities;
 
-public class DocumentsSimilarity {
+public class DocumentsDifference {
 	private String document1;
 	private String document2;
 	// Positive number

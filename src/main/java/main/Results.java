@@ -15,14 +15,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import entities.ClusterDocument;
-import entities.DocumentsSimilarity;
+import entities.DocumentsDifference;
 import entities.FolderInfo;
 import features.core.IdentificationDocument;
 import weka.core.Instances;
 
 public class Results {
-	public static Map<String, List<DocumentsSimilarity>> CalculatedRankings = new HashMap<String, List<DocumentsSimilarity>>();
-	public static Map<String, List<DocumentsSimilarity>> JsonRankings = new HashMap<String, List<DocumentsSimilarity>>();
+	public static Map<String, List<DocumentsDifference>> CalculatedRankings = new HashMap<String, List<DocumentsDifference>>();
+	public static Map<String, List<DocumentsDifference>> JsonRankings = new HashMap<String, List<DocumentsDifference>>();
 	public static Map<String, List<Set<ClusterDocument>>> JsonClusters = new HashMap<String, List<Set<ClusterDocument>>>();
 
 	public static void generateResults(String folderName) throws Exception {
@@ -32,33 +32,33 @@ public class Results {
 	}
 
 	private static void calculateRankings(String folderName) throws Exception {
-		List<DocumentsSimilarity> rankings = new ArrayList<DocumentsSimilarity>();
+		List<DocumentsDifference> rankings = new ArrayList<DocumentsDifference>();
 
 		FolderInfo folderInfo = Globals.IdentificationDocs.get(folderName);
 		Instances instances = Trainer.getTrainInstances(folderInfo.getLanguage(), folderInfo.getGenre());
 
-		for (int i = 0; i < Globals.Features.get(0).getSimilaritiesForFolder(folderName).size(); i++) {
-			DocumentsSimilarity configSimilarity = Globals.Features.get(0).getSimilaritiesForFolder(folderName).get(i);
+		for (int i = 0; i < Globals.Features.get(0).getDifferencesForFolder(folderName).size(); i++) {
+			DocumentsDifference configDifference = Globals.Features.get(0).getDifferencesForFolder(folderName).get(i);
 
-			DocumentsSimilarity similarity = new DocumentsSimilarity();
-			similarity.setDocument1(configSimilarity.getDocument1());
-			similarity.setDocument2(configSimilarity.getDocument2());
+			DocumentsDifference difference = new DocumentsDifference();
+			difference.setDocument1(configDifference.getDocument1());
+			difference.setDocument2(configDifference.getDocument2());
 
-			similarity.setScore(Trainer.classify(folderName, i, instances));
+			difference.setScore(Trainer.classify(folderName, i, instances));
 
-			rankings.add(similarity);
+			rankings.add(difference);
 		}
 
 		CalculatedRankings.put(folderName, rankings);
 	}
 
 	private static void generateRankings(String folderName) {
-		List<DocumentsSimilarity> rankings = new ArrayList<DocumentsSimilarity>();
+		List<DocumentsDifference> rankings = new ArrayList<DocumentsDifference>();
 
-		for (DocumentsSimilarity similarity : CalculatedRankings.get(folderName)) {
-			if (similarity.getScore() >= Config.MIN_SCORE_TO_RANK) {
-				similarity.setScore(1.0);
-				rankings.add(similarity);
+		for (DocumentsDifference difference : CalculatedRankings.get(folderName)) {
+			if (difference.getScore() >= Config.MIN_SCORE_TO_RANK) {
+				difference.setScore(1.0);
+				rankings.add(difference);
 			}
 		}
 
@@ -70,7 +70,7 @@ public class Results {
 
 		// Init clusters with all matching couples
 		for (int i = 0; i < JsonRankings.get(folderName).size(); i++) {
-			DocumentsSimilarity ranking = JsonRankings.get(folderName).get(i);
+			DocumentsDifference ranking = JsonRankings.get(folderName).get(i);
 
 			// Create new cluster
 			Set<String> cluster = new LinkedHashSet<String>();
@@ -177,9 +177,9 @@ public class Results {
 	}
 
 	private static boolean areDocumentsRanked(String document1, String document2, String folderName) {
-		for (DocumentsSimilarity similarity : JsonRankings.get(folderName)) {
-			if ((document1.equals(similarity.getDocument1()) && document2.equals(similarity.getDocument2()))
-					|| (document1.equals(similarity.getDocument2()) && document2.equals(similarity.getDocument1()))) {
+		for (DocumentsDifference difference : JsonRankings.get(folderName)) {
+			if ((document1.equals(difference.getDocument1()) && document2.equals(difference.getDocument2()))
+					|| (document1.equals(difference.getDocument2()) && document2.equals(difference.getDocument1()))) {
 				return true;
 			}
 		}

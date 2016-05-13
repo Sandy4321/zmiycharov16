@@ -124,7 +124,7 @@ public class Trainer {
 		Feature lastFeature = Globals.Features.get(Globals.Features.size() - 1);
 		int totalCount = 0;
 		for (String folder : Globals.IdentificationDocs.keySet()) {
-			totalCount += lastFeature.getSimilaritiesForFolder(folder).size();
+			totalCount += lastFeature.getDifferencesForFolder(folder).size();
 		}
 
 		// Create an empty training set
@@ -135,27 +135,27 @@ public class Trainer {
 		List<String> folders = getFoldersForCriteria(language, genre);
 
 		for (String folder : folders) {
-			for (int siimilarityIndex = 0; siimilarityIndex < lastFeature.getSimilaritiesForFolder(folder)
+			for (int siimilarityIndex = 0; siimilarityIndex < lastFeature.getDifferencesForFolder(folder)
 					.size(); siimilarityIndex++) {
 
 				// Create the instance
 				Instance instance = new Instance(Globals.Features.size());
 
 				for (int featureIndex = 0; featureIndex < Globals.Features.size()-1; featureIndex++) {
-					double similarity = Globals.Features.get(featureIndex).getSimilaritiesForFolder(folder)
+					double difference = Globals.Features.get(featureIndex).getDifferencesForFolder(folder)
 							.get(siimilarityIndex).getScore();
 
-					instance.setValue((Attribute) wekaAttributes.elementAt(featureIndex), similarity);
+					instance.setValue((Attribute) wekaAttributes.elementAt(featureIndex), difference);
 
 				}
 				
-				double lastSimilarity = lastFeature.getSimilaritiesForFolder(folder)
+				double lastDifference = lastFeature.getDifferencesForFolder(folder)
 						.get(siimilarityIndex).getScore();
 
-				instance.setValue((Attribute) wekaAttributes.elementAt(Globals.Features.size()-1), lastSimilarity);
+				instance.setValue((Attribute) wekaAttributes.elementAt(Globals.Features.size()-1), lastDifference);
 				
 				// Multiply positive to match negative
-				if(lastSimilarity == 1) {
+				if(lastDifference == 1) {
 					int multiplyTimes = Globals.FolderEvaluations.get(folder).multiplyNumberForDocument;
 					for (int i = 0; i < multiplyTimes; i++) {
 						trainingSet.add(instance);
@@ -179,7 +179,7 @@ public class Trainer {
 		weka.core.SerializationHelper.write(getClassifierPath(language, genre), classifier);
 	}
 
-	public static double classify(String folderName, int similarityIndex, Instances instances) throws Exception {
+	public static double classify(String folderName, int differenceIndex, Instances instances) throws Exception {
 
 		FolderInfo folderInfo = Globals.IdentificationDocs.get(folderName);
 		
@@ -188,10 +188,10 @@ public class Trainer {
 		Instance instance = new Instance(Globals.Features.size());
 		
 		for (int featureIndex = 0; featureIndex < Globals.Features.size()-1; featureIndex++) {
-			double similarity = Globals.Features.get(featureIndex).getSimilaritiesForFolder(folderName)
-					.get(similarityIndex).getScore();
+			double difference = Globals.Features.get(featureIndex).getDifferencesForFolder(folderName)
+					.get(differenceIndex).getScore();
 
-			instance.setValue(featureIndex, similarity);
+			instance.setValue(featureIndex, difference);
 		}
 		
 		instance.setValue(Globals.Features.size()-1, Instance.missingValue());

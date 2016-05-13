@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import entities.DocumentsSimilarity;
+import entities.DocumentsDifference;
 import entities.FolderEvaluationData;
 import entities.FolderInfo;
 import entities.JsonProblem;
@@ -16,7 +16,7 @@ public class Globals {
 	public static List<Feature> Features;
 	
 	public static Map<String, FolderInfo> IdentificationDocs;
-	public static Map<String, List<DocumentsSimilarity>> TrainSimilarities; 
+	public static Map<String, List<DocumentsDifference>> TrainDifferences; 
 
 	public static Map<String, FolderEvaluationData> FolderEvaluations;
 
@@ -24,7 +24,7 @@ public class Globals {
 	
 	public static void init() {
 		IdentificationDocs = new HashMap<String, FolderInfo>();
-		TrainSimilarities = new HashMap<String, List<DocumentsSimilarity>>(); 
+		TrainDifferences = new HashMap<String, List<DocumentsDifference>>(); 
 		FolderEvaluations = new HashMap<String, FolderEvaluationData>();
 		
 		Features = new ArrayList<Feature>();
@@ -53,12 +53,12 @@ public class Globals {
 		return result;
 	}
 	
-	public static boolean existsTrainSimilarity(String folderName, String doc1, String doc2) {
-		for (DocumentsSimilarity similarity : Globals.TrainSimilarities.get(folderName)) {
-			if ((similarity.getDocument1().equals(doc1)
-					&& similarity.getDocument2().equals(doc2))
-					|| (similarity.getDocument1().equals(doc2)
-							&& similarity.getDocument2().equals(doc1))) {
+	public static boolean existsTrainDifference(String folderName, String doc1, String doc2) {
+		for (DocumentsDifference difference : Globals.TrainDifferences.get(folderName)) {
+			if ((difference.getDocument1().equals(doc1)
+					&& difference.getDocument2().equals(doc2))
+					|| (difference.getDocument1().equals(doc2)
+							&& difference.getDocument2().equals(doc1))) {
 				return true;
 			}
 		}

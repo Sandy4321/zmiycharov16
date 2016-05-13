@@ -15,7 +15,7 @@ public class AdjectivesPercentages extends WordsPOSTagPercentages {
 	}
 
 	@Override
-	public double getSimilarity(IdentificationDocument doc1, IdentificationDocument doc2) {
+	public double getDifference(IdentificationDocument doc1, IdentificationDocument doc2) {
 		TreeMap<String, LinkedList<Integer>> dist1 = doc1.getPostagDistributions();
 		TreeMap<String, LinkedList<Integer>> dist2 = doc2.getPostagDistributions();
 		LinkedList<Integer> adjDistr1 = dist1.get(AbstractPOSTagger.POSTAG_ADJECTIVE);

@@ -3,13 +3,13 @@ package features.list;
 import features.core.Feature;
 
 /**
- * This class is used to provide similarity measure between two instances of
+ * This class is used to provide difference measure between two instances of
  * {@link features.core.IdentificationDocument IdentificationDocument} by using
  * already generated statistical distributions. These distributions contains
  * information about all POS tags that appears in the document, and the number
  * of all occurrrences in any sentence of the document.
  * <p>
- * The similarity is measured by using Euclidean distance between the first,
+ * The difference is measured by using Euclidean distance between the first,
  * second and the third quartiles of the two documents.
  * 
  */

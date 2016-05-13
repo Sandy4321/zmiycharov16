@@ -11,7 +11,7 @@ import org.apache.commons.io.FileUtils;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import entities.DocumentsSimilarity;
+import entities.DocumentsDifference;
 import entities.JsonProblem;
 import features.core.Feature;
 import features.core.FeaturesGenerator;
@@ -46,10 +46,10 @@ public class Main {
 			FeaturesGenerator.generateIdentificationDocs(inputFolder, problem);
 
 			if (Config.isTrainMode) {
-				FeaturesGenerator.setActualSimilarities(folderName);
+				FeaturesGenerator.setActualDifferences(folderName);
 			}
 
-			FeaturesGenerator.generateFeaturesSimilarities(inputFolder, folderName);
+			FeaturesGenerator.generateFeaturesDifferences(inputFolder, folderName);
 
 			Date now = new Date();
 
@@ -125,16 +125,16 @@ public class Main {
 				double positiveTotal = 0.0;
 
 				for (String folder : Globals.IdentificationDocs.keySet()) {
-					List<DocumentsSimilarity> currentSimilarities = currentFeature.getSimilaritiesForFolder(folder);
-					List<DocumentsSimilarity> trainSimilarities = trainFeature.getSimilaritiesForFolder(folder);
+					List<DocumentsDifference> currentDifferences = currentFeature.getDifferencesForFolder(folder);
+					List<DocumentsDifference> trainDifferences = trainFeature.getDifferencesForFolder(folder);
 
-					for (int j = 0; j < currentSimilarities.size(); j++) {
-						if (trainSimilarities.get(j).getScore() == 0) {
+					for (int j = 0; j < currentDifferences.size(); j++) {
+						if (trainDifferences.get(j).getScore() == 0) {
 							negativeCount++;
-							negativeTotal += currentSimilarities.get(j).getScore();
+							negativeTotal += currentDifferences.get(j).getScore();
 						} else {
 							positiveCount++;
-							positiveTotal += currentSimilarities.get(j).getScore();
+							positiveTotal += currentDifferences.get(j).getScore();
 						}
 					}
 				}
@@ -162,13 +162,13 @@ public class Main {
 			double positiveMin = Double.MAX_VALUE;
 
 			for (String folder : Globals.IdentificationDocs.keySet()) {
-				List<DocumentsSimilarity> trainSimilarities = trainFeature.getSimilaritiesForFolder(folder);
-				List<DocumentsSimilarity> calculatedRankings = Results.CalculatedRankings.get(folder);
+				List<DocumentsDifference> trainDifferences = trainFeature.getDifferencesForFolder(folder);
+				List<DocumentsDifference> calculatedRankings = Results.CalculatedRankings.get(folder);
 				
 				for (int i = 0; i < calculatedRankings.size(); i++) {
 					double score = calculatedRankings.get(i).getScore();
 					
-					if(trainSimilarities.get(i).getScore() == 0) {
+					if(trainDifferences.get(i).getScore() == 0) {
 						negativeCount++;
 						negativeTotal += score;
 						

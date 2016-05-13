@@ -1,6 +1,6 @@
 package features.list;
 
-import entities.DocumentsSimilarity;
+import entities.DocumentsDifference;
 import features.core.Feature;
 import features.core.IdentificationDocument;
 import main.Globals;
@@ -12,13 +12,13 @@ public class Train_Feature extends Feature {
 	}
 
 	@Override
-	public double getSimilarity(IdentificationDocument doc1, IdentificationDocument doc2) {
-		for (DocumentsSimilarity similarity : Globals.TrainSimilarities.get(doc1.getFolderName())) {
-			if ((similarity.getDocument1().equals(doc1.getFileName())
-					&& similarity.getDocument2().equals(doc2.getFileName()))
-					|| (similarity.getDocument1().equals(doc2.getFileName())
-							&& similarity.getDocument2().equals(doc1.getFileName()))) {
-				return similarity.getScore();
+	public double getDifference(IdentificationDocument doc1, IdentificationDocument doc2) {
+		for (DocumentsDifference difference : Globals.TrainDifferences.get(doc1.getFolderName())) {
+			if ((difference.getDocument1().equals(doc1.getFileName())
+					&& difference.getDocument2().equals(doc2.getFileName()))
+					|| (difference.getDocument1().equals(doc2.getFileName())
+							&& difference.getDocument2().equals(doc1.getFileName()))) {
+				return difference.getScore();
 			}
 		}
 

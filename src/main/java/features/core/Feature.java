@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import entities.DocumentsSimilarity;
+import entities.DocumentsDifference;
 import main.Globals;
 
 public abstract class Feature {
 	private String name;
-	private Map<String, List<DocumentsSimilarity>> similarities;
+	private Map<String, List<DocumentsDifference>> differences;
 	
 	public String getName() {
 		return name;
@@ -17,50 +17,50 @@ public abstract class Feature {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<DocumentsSimilarity> getSimilaritiesForFolder(String folderName) {
-		return similarities.get(folderName);
+	public List<DocumentsDifference> getDifferencesForFolder(String folderName) {
+		return differences.get(folderName);
 	}
-	public void setSimilarities(String folderName, List<DocumentsSimilarity> similarities) {
-		this.similarities.put(folderName, similarities);
+	public void setDifferences(String folderName, List<DocumentsDifference> differences) {
+		this.differences.put(folderName, differences);
 	}
 
-	public void clearSimilarities() {
-		this.similarities = new HashMap<String, List<DocumentsSimilarity>>();
+	public void clearDifferences() {
+		this.differences = new HashMap<String, List<DocumentsDifference>>();
 	}
 	
-	public abstract double getSimilarity(IdentificationDocument doc1, IdentificationDocument doc2);
+	public abstract double getDifference(IdentificationDocument doc1, IdentificationDocument doc2);
 	
-	public void normalizeSimilarities() {
-		for(String key : this.similarities.keySet()) {
-			List<DocumentsSimilarity> folderSimilarities = this.similarities.get(key);
+	public void normalizeDifferences() {
+		for(String key : this.differences.keySet()) {
+			List<DocumentsDifference> folderDifferences = this.differences.get(key);
 			
 			double maxScore = 0;
 			
-			for (DocumentsSimilarity similarity : folderSimilarities) {
-			    if(maxScore < similarity.getScore()) {
-			    	maxScore = similarity.getScore();
+			for (DocumentsDifference difference : folderDifferences) {
+			    if(maxScore < difference.getScore()) {
+			    	maxScore = difference.getScore();
 			    }
 			}
 
-			for (DocumentsSimilarity similarity : folderSimilarities) {
-				double score = similarity.getScore() / maxScore;
-				similarity.setScore(score);
+			for (DocumentsDifference difference : folderDifferences) {
+				double score = difference.getScore() / maxScore;
+				difference.setScore(score);
 			}
 		}
 	}
 	
 	public Feature(String name) {
 		this.setName(name);
-		this.similarities = new HashMap<String, List<DocumentsSimilarity>>();
+		this.differences = new HashMap<String, List<DocumentsDifference>>();
 	}
 	
 	public double getScore(String folderName, String document1, String document2) {
-		for(DocumentsSimilarity similarity : this.getSimilaritiesForFolder(folderName)) {
+		for(DocumentsDifference difference : this.getDifferencesForFolder(folderName)) {
 			if(
-					(similarity.getDocument1().equals(document1) && similarity.getDocument2().equals(document2))
-					|| (similarity.getDocument1().equals(document2) && similarity.getDocument2().equals(document1))
+					(difference.getDocument1().equals(document1) && difference.getDocument2().equals(document2))
+					|| (difference.getDocument1().equals(document2) && difference.getDocument2().equals(document1))
 				) {
-				return similarity.getScore();
+				return difference.getScore();
 			}
 		}
 		
@@ -70,10 +70,10 @@ public abstract class Feature {
 	public double getMinScore() {
 		double min = Double.MAX_VALUE;
 		
-		for(String folder : this.similarities.keySet()) {
-			for(DocumentsSimilarity similarity : this.getSimilaritiesForFolder(folder)) {
-				if(similarity.getScore() < min) {
-					min = similarity.getScore();
+		for(String folder : this.differences.keySet()) {
+			for(DocumentsDifference difference : this.getDifferencesForFolder(folder)) {
+				if(difference.getScore() < min) {
+					min = difference.getScore();
 				}
 			}
 		}
@@ -84,10 +84,10 @@ public abstract class Feature {
 	public double getMaxScore() {
 		double max = Double.MIN_VALUE;
 		
-		for(String folder : this.similarities.keySet()) {
-			for(DocumentsSimilarity similarity : this.getSimilaritiesForFolder(folder)) {
-				if(similarity.getScore() > max) {
-					max = similarity.getScore();
+		for(String folder : this.differences.keySet()) {
+			for(DocumentsDifference difference : this.getDifferencesForFolder(folder)) {
+				if(difference.getScore() > max) {
+					max = difference.getScore();
 				}
 			}
 		}

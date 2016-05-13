@@ -14,7 +14,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import entities.ClusterDocument;
-import entities.DocumentsSimilarity;
+import entities.DocumentsDifference;
 import entities.JsonProblem;
 
 public class Errors {
@@ -35,12 +35,12 @@ public class Errors {
 
 			double resultForFolder = 0;
 
-			List<DocumentsSimilarity> folderRankings = Results.JsonRankings.get(folderName);
+			List<DocumentsDifference> folderRankings = Results.JsonRankings.get(folderName);
 
 			double relevantDocsUntilNow = 0;
 
 			for (int i = 0; i < folderRankings.size(); i++) {
-				if (Globals.existsTrainSimilarity(folderName, folderRankings.get(i).getDocument1(),
+				if (Globals.existsTrainDifference(folderName, folderRankings.get(i).getDocument1(),
 						folderRankings.get(i).getDocument2())) {
 					relevantDocsUntilNow++;
 
@@ -48,7 +48,7 @@ public class Errors {
 				}
 			}
 
-			result += resultForFolder / Globals.TrainSimilarities.get(folderName).size();
+			result += resultForFolder / Globals.TrainDifferences.get(folderName).size();
 		}
 
 		RankingsMAP = result / Globals.JsonProblems.size();
