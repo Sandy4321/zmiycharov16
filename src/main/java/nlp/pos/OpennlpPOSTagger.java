@@ -92,7 +92,7 @@ public class OpennlpPOSTagger extends AbstractPOSTagger {
 				result.add(newEntry);
 			} else {
 				POSTagEntry existingEntry = result.get(result.indexOf(parts[i]));
-				Integer.sum(existingEntry.getNumberOfOccurrences(), 1);
+				//Integer.sum(existingEntry.getNumberOfOccurrences(), 1);
 			}
 		}
 		return result;

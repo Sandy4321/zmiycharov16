@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -11,6 +13,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
+import javax.management.StandardMBean;
 
 import org.apache.lucene.wordnet.AnalyzerUtil;
 
@@ -105,7 +109,7 @@ public class DocumentPOSDistribution {
 					// while (list.size() < sentenceIndex) {
 					// list.add(0);
 					// }
-					list.set(sentenceIndex, Integer.sum(list.get(sentenceIndex), 1));
+					list.set(sentenceIndex, list.get(sentenceIndex) + 1);
 				}
 			}
 		}
@@ -152,7 +156,7 @@ public class DocumentPOSDistribution {
 	
 	private void setPostagDistributions(File file) {
 		try {
-			List<String> lines = Files.readAllLines(Paths.get(file.getPath()));
+			List<String> lines = Files.readAllLines(Paths.get(file.getPath()),StandardCharsets.UTF_8);
 			for (String line : lines) {
 				String[] elements;
 				String postag = null;

@@ -20,7 +20,7 @@ public class GreekPOSTagger extends AbstractPOSTagger {
 				result.add(newEntry);
 			} else {
 				POSTagEntry existingEntry = result.get(result.indexOf(word.getWord()));
-				Integer.sum(existingEntry.getNumberOfOccurrences(), 1);
+				//Integer.sum(existingEntry.getNumberOfOccurrences(), 1);
 				result.set(result.indexOf(word.getWord()), existingEntry);
 			}
 		}

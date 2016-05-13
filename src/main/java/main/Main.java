@@ -1,4 +1,4 @@
-package main;
+	package main;
 
 import java.io.File;
 import java.lang.reflect.Type;
@@ -78,7 +78,7 @@ public class Main {
 
 		// GENERATE RESULTS
 		for (JsonProblem problem : Globals.JsonProblems) {
-
+			
 			Date start = new Date();
 
 			String folderName = problem.getFolder();
@@ -105,13 +105,13 @@ public class Main {
 			System.out.println("Rankings MAP: " + Errors.RankingsMAP);
 			System.out.println("Clusters F-score: " + Errors.ClustersFScore);
 		}
-
+		
 		// Print Min and max score foreach feature
 		for (Feature feature : Globals.Features) {
 			System.out.println(
 					feature.getName() + ": Min - " + feature.getMinScore() + " Max - " + feature.getMaxScore());
 		}
-
+		
 		// Print mid scores for true and false documents foreach feature
 		if (Config.isTrainMode) {
 			Feature trainFeature = Globals.Features.get(Globals.Features.size() - 1);
@@ -203,5 +203,4 @@ public class Main {
 
 		System.out.println("Finished!");
 	}
-
 }
