@@ -1,11 +1,6 @@
 [
   [
     {
-      "document": "document0001.txt"
-    }
-  ],
-  [
-    {
       "document": "document0002.txt"
     }
   ],
@@ -21,33 +16,15 @@
   ],
   [
     {
-      "document": "document0044.txt"
-    },
-    {
-      "document": "document0008.txt"
-    }
-  ],
-  [
-    {
       "document": "document0010.txt"
     }
   ],
   [
     {
-      "document": "document0013.txt"
-    }
-  ],
-  [
-    {
       "document": "document0015.txt"
-    }
-  ],
-  [
-    {
-      "document": "document0014.txt"
     },
     {
-      "document": "document0036.txt"
+      "document": "document0014.txt"
     }
   ],
   [
@@ -57,10 +34,10 @@
   ],
   [
     {
-      "document": "document0028.txt"
+      "document": "document0025.txt"
     },
     {
-      "document": "document0025.txt"
+      "document": "document0028.txt"
     },
     {
       "document": "document0045.txt"
@@ -91,10 +68,10 @@
   ],
   [
     {
-      "document": "document0041.txt"
+      "document": "document0037.txt"
     },
     {
-      "document": "document0037.txt"
+      "document": "document0041.txt"
     }
   ],
   [
@@ -107,18 +84,7 @@
   ],
   [
     {
-      "document": "document0048.txt"
-    },
-    {
-      "document": "document0039.txt"
-    }
-  ],
-  [
-    {
-      "document": "document0046.txt"
-    },
-    {
-      "document": "document0054.txt"
+      "document": "document0001.txt"
     }
   ],
   [
@@ -138,6 +104,11 @@
   ],
   [
     {
+      "document": "document0008.txt"
+    }
+  ],
+  [
+    {
       "document": "document0009.txt"
     }
   ],
@@ -149,6 +120,11 @@
   [
     {
       "document": "document0012.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0013.txt"
     }
   ],
   [
@@ -223,6 +199,16 @@
   ],
   [
     {
+      "document": "document0036.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0039.txt"
+    }
+  ],
+  [
+    {
       "document": "document0040.txt"
     }
   ],
@@ -234,6 +220,21 @@
   [
     {
       "document": "document0043.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0044.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0046.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0048.txt"
     }
   ],
   [
@@ -254,6 +255,11 @@
   [
     {
       "document": "document0053.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0054.txt"
     }
   ]
 ]
