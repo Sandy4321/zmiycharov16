@@ -1,17 +1,15 @@
 [
   [
     {
+      "document": "document0026.txt"
+    },
+    {
       "document": "document0001.txt"
     }
   ],
   [
     {
       "document": "document0004.txt"
-    }
-  ],
-  [
-    {
-      "document": "document0005.txt"
     },
     {
       "document": "document0062.txt"
@@ -20,27 +18,27 @@
   [
     {
       "document": "document0010.txt"
-    }
-  ],
-  [
+    },
     {
-      "document": "document0060.txt"
+      "document": "document0046.txt"
     }
   ],
   [
     {
       "document": "document0016.txt"
-    },
-    {
-      "document": "document0078.txt"
     }
   ],
   [
     {
       "document": "document0018.txt"
-    },
+    }
+  ],
+  [
     {
       "document": "document0019.txt"
+    },
+    {
+      "document": "document0050.txt"
     }
   ],
   [
@@ -49,6 +47,14 @@
     },
     {
       "document": "document0020.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0064.txt"
+    },
+    {
+      "document": "document0022.txt"
     }
   ],
   [
@@ -64,10 +70,10 @@
   ],
   [
     {
-      "document": "document0032.txt"
+      "document": "document0049.txt"
     },
     {
-      "document": "document0049.txt"
+      "document": "document0032.txt"
     }
   ],
   [
@@ -80,34 +86,39 @@
   ],
   [
     {
-      "document": "document0051.txt"
+      "document": "document0057.txt"
     },
-    {
-      "document": "document0037.txt"
-    }
-  ],
-  [
     {
       "document": "document0080.txt"
     },
     {
       "document": "document0059.txt"
-    },
-    {
-      "document": "document0057.txt"
     }
   ],
   [
     {
-      "document": "document0079.txt"
+      "document": "document0060.txt"
     },
     {
+      "document": "document0076.txt"
+    }
+  ],
+  [
+    {
       "document": "document0065.txt"
+    },
+    {
+      "document": "document0079.txt"
     }
   ],
   [
     {
       "document": "document0002.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0005.txt"
     }
   ],
   [
@@ -167,11 +178,6 @@
   ],
   [
     {
-      "document": "document0022.txt"
-    }
-  ],
-  [
-    {
       "document": "document0023.txt"
     }
   ],
@@ -183,11 +189,6 @@
   [
     {
       "document": "document0025.txt"
-    }
-  ],
-  [
-    {
-      "document": "document0026.txt"
     }
   ],
   [
@@ -218,6 +219,11 @@
   [
     {
       "document": "document0036.txt"
+    }
+  ],
+  [
+    {
+      "document": "document0037.txt"
     }
   ],
   [
@@ -257,11 +263,6 @@
   ],
   [
     {
-      "document": "document0046.txt"
-    }
-  ],
-  [
-    {
       "document": "document0047.txt"
     }
   ],
@@ -272,7 +273,7 @@
   ],
   [
     {
-      "document": "document0050.txt"
+      "document": "document0051.txt"
     }
   ],
   [
@@ -308,11 +309,6 @@
   [
     {
       "document": "document0063.txt"
-    }
-  ],
-  [
-    {
-      "document": "document0064.txt"
     }
   ],
   [
@@ -367,12 +363,12 @@
   ],
   [
     {
-      "document": "document0076.txt"
+      "document": "document0077.txt"
     }
   ],
   [
     {
-      "document": "document0077.txt"
+      "document": "document0078.txt"
     }
   ]
 ]
