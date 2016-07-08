@@ -215,8 +215,10 @@ public class Trainer {
 				Date start = new Date();
 				
 				if (Config.isTrainMode) {
+					System.out.println("Generate train folder");
 					generateTrainFolder(language, genre);
 					generateDataSet(language, genre);
+					System.out.println("Generate classifier");
 					generateClassifier(language, genre);
 				}
 				
