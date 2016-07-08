@@ -8,7 +8,7 @@ import org.apache.commons.cli.Options;
 public class Config {
 	public static final boolean ARE_RESULTS_NORMALIZED = false;
 	
-	public static final double MIN_SCORE_TO_RANK = 0.8;
+	public static final double MAX_DIFFERENCE_TO_RANK = 0.5;
 
 	public static final String LANG_EN = "en";
 	public static final String LANG_NL = "nl";

@@ -56,7 +56,7 @@ public class Results {
 		List<DocumentsDifference> rankings = new ArrayList<DocumentsDifference>();
 
 		for (DocumentsDifference difference : CalculatedRankings.get(folderName)) {
-			if (difference.getScore() >= Config.MIN_SCORE_TO_RANK) {
+			if (difference.getScore() <= Config.MAX_DIFFERENCE_TO_RANK) {
 				difference.setScore(1.0);
 				rankings.add(difference);
 			}
