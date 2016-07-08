@@ -42,17 +42,6 @@ public class Globals {
 		}
 	}
 	
-	public static int getCustomFeaturesCount() {
-		int result = Globals.Features.size();
-		
-		// In train mode last feature is TrainFeature
-		if(Config.isTrainMode) {
-			result = result -1;
-		}
-
-		return result;
-	}
-	
 	public static boolean existsTrainDifference(String folderName, String doc1, String doc2) {
 		for (DocumentsDifference difference : Globals.TrainDifferences.get(folderName)) {
 			if ((difference.getDocument1().equals(doc1)
