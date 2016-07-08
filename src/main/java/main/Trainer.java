@@ -154,14 +154,6 @@ public class Trainer {
 
 				instance.setValue((Attribute) wekaAttributes.elementAt(Globals.Features.size()-1), lastDifference);
 				
-				// Multiply positive to match negative
-				if(lastDifference == 1) {
-					int multiplyTimes = Globals.FolderEvaluations.get(folder).multiplyNumberForDocument;
-					for (int i = 0; i < multiplyTimes; i++) {
-						trainingSet.add(instance);
-					}
-				}
-
 				// add the instance
 				trainingSet.add(instance);
 			}
@@ -220,6 +212,7 @@ public class Trainer {
 					generateDataSet(language, genre);
 					System.out.println("Generate classifier");
 					generateClassifier(language, genre);
+					System.out.println("Finished classifier");
 				}
 				
 				// Always deserialize model

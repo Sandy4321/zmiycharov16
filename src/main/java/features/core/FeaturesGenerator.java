@@ -97,8 +97,6 @@ public class FeaturesGenerator {
 		FolderEvaluationData evaluations = new FolderEvaluationData();
 		evaluations.trainEvaluatedCouplesCount = result.size();
 		evaluations.totalDocCouplesCount = Utils.calculateCouplesCountFromTotal(Globals.IdentificationDocs.get(folderName).getDocuments().size());
-		
-		evaluations.multiplyNumberForDocument = evaluations.totalDocCouplesCount / evaluations.trainEvaluatedCouplesCount; 
 
 		Globals.FolderEvaluations.put(folderName, evaluations);
 	}
