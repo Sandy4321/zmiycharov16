@@ -48,7 +48,7 @@ public class Errors {
 				}
 			}
 
-			result += resultForFolder / Globals.TrainDifferences.get(folderName).size();
+			result += resultForFolder / Globals.TrainSimilarities.get(folderName).size();
 		}
 
 		RankingsMAP = result / Globals.JsonProblems.size();

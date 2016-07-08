@@ -13,7 +13,7 @@ public class Train_Feature extends Feature {
 
 	@Override
 	public double getDifference(IdentificationDocument doc1, IdentificationDocument doc2) {
-		for (DocumentsDifference difference : Globals.TrainDifferences.get(doc1.getFolderName())) {
+		for (DocumentsDifference difference : Globals.TrainSimilarities.get(doc1.getFolderName())) {
 			if ((difference.getDocument1().equals(doc1.getFileName())
 					&& difference.getDocument2().equals(doc2.getFileName()))
 					|| (difference.getDocument1().equals(doc2.getFileName())

@@ -25,7 +25,7 @@ public class Main {
 		// SET IsTrainMode
 		Config.isTrainMode = !(new File(Trainer.TRAIN_FOLDER_PATH).exists());
 		
-		// SET IisLocalRun
+		// SET isLocalRun
 		Config.isLocalRun = (new File(Config.LOCAL_FILE_PATH).exists());
 		
 		// INIT POSTAG DIRS
@@ -128,7 +128,7 @@ public class Main {
 					List<DocumentsDifference> trainDifferences = trainFeature.getDifferencesForFolder(folder);
 
 					for (int j = 0; j < currentDifferences.size(); j++) {
-						if (trainDifferences.get(j).getScore() == 0) {
+						if (trainDifferences.get(j).getScore() == 1) {
 							negativeCount++;
 							negativeTotal += currentDifferences.get(j).getScore();
 						} else {
@@ -167,7 +167,7 @@ public class Main {
 				for (int i = 0; i < calculatedRankings.size(); i++) {
 					double score = calculatedRankings.get(i).getScore();
 					
-					if(trainDifferences.get(i).getScore() == 0) {
+					if(trainDifferences.get(i).getScore() == 1) {
 						negativeCount++;
 						negativeTotal += score;
 						

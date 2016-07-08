@@ -16,7 +16,7 @@ public class Globals {
 	public static List<Feature> Features;
 	
 	public static Map<String, FolderInfo> IdentificationDocs;
-	public static Map<String, List<DocumentsDifference>> TrainDifferences; 
+	public static Map<String, List<DocumentsDifference>> TrainSimilarities; 
 
 	public static Map<String, FolderEvaluationData> FolderEvaluations;
 
@@ -24,7 +24,7 @@ public class Globals {
 	
 	public static void init() {
 		IdentificationDocs = new HashMap<String, FolderInfo>();
-		TrainDifferences = new HashMap<String, List<DocumentsDifference>>(); 
+		TrainSimilarities = new HashMap<String, List<DocumentsDifference>>(); 
 		FolderEvaluations = new HashMap<String, FolderEvaluationData>();
 		
 		Features = new ArrayList<Feature>();
@@ -43,7 +43,7 @@ public class Globals {
 	}
 	
 	public static boolean existsTrainDifference(String folderName, String doc1, String doc2) {
-		for (DocumentsDifference difference : Globals.TrainDifferences.get(folderName)) {
+		for (DocumentsDifference difference : Globals.TrainSimilarities.get(folderName)) {
 			if ((difference.getDocument1().equals(doc1)
 					&& difference.getDocument2().equals(doc2))
 					|| (difference.getDocument1().equals(doc2)

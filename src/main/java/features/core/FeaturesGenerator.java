@@ -92,7 +92,7 @@ public class FeaturesGenerator {
 		Type listType = new TypeToken<ArrayList<DocumentsDifference>>() {}.getType();
 		List<DocumentsDifference> result = new Gson().fromJson(FileUtils.readFileToString(truthFile), listType);
 
-		Globals.TrainDifferences.put(folderName, result);
+		Globals.TrainSimilarities.put(folderName, result);
 		
 		FolderEvaluationData evaluations = new FolderEvaluationData();
 		evaluations.trainEvaluatedCouplesCount = result.size();
