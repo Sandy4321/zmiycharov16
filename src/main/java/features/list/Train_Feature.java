@@ -18,10 +18,11 @@ public class Train_Feature extends Feature {
 					&& difference.getDocument2().equals(doc2.getFileName()))
 					|| (difference.getDocument1().equals(doc2.getFileName())
 							&& difference.getDocument2().equals(doc1.getFileName()))) {
-				return difference.getScore();
+				// In this case documents are from the same author: difference = 0
+				return 0;
 			}
 		}
 
-		return 0;
+		return 1;
 	}
 }
