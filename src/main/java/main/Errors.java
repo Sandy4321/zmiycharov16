@@ -40,7 +40,7 @@ public class Errors {
 			double relevantDocsUntilNow = 0;
 
 			for (int i = 0; i < folderRankings.size(); i++) {
-				if (Globals.existsTrainDifference(folderName, folderRankings.get(i).getDocument1(),
+				if (Globals.existsTrainSimilarity(folderName, folderRankings.get(i).getDocument1(),
 						folderRankings.get(i).getDocument2())) {
 					relevantDocsUntilNow++;
 

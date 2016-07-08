@@ -42,7 +42,7 @@ public class Globals {
 		}
 	}
 	
-	public static boolean existsTrainDifference(String folderName, String doc1, String doc2) {
+	public static boolean existsTrainSimilarity(String folderName, String doc1, String doc2) {
 		for (DocumentsDifference difference : Globals.TrainSimilarities.get(folderName)) {
 			if ((difference.getDocument1().equals(doc1)
 					&& difference.getDocument2().equals(doc2))
