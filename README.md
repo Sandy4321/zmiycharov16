@@ -56,6 +56,7 @@ Example json file describing the input folders.
 
 ## Output format
 The application should provide two outputs for each input folder:
+
 – Complete author clustering result: each cluster should contain all documents
 found in the collection by a specific author. The clusters should be non-overlapping,
 i.e. each document should belong to exactly one cluster.
